@@ -6,8 +6,22 @@ from cycler import cycler
 
 import typing as t
 
-plt.style.use('ggplot')
-mpl.rcParams['axes.prop_cycle'] = cycler(color=['#8f5e77', '#62aebf', '#E24A33', '#467821', '#348ABD', '#7A68A6', '#A60628', '#CF4457', '#188487', 'tab:orange'])
+plt.style.use("ggplot")
+mpl.rcParams["axes.prop_cycle"] = cycler(
+    color=[
+        "#8f5e77",
+        "#62aebf",
+        "#E24A33",
+        "#467821",
+        "#348ABD",
+        "#7A68A6",
+        "#A60628",
+        "#CF4457",
+        "#188487",
+        "tab:orange",
+    ]
+)
+
 
 def plot_bar(
     bar_names: list[str],
@@ -52,4 +66,4 @@ def plot_pie(
         plt.savefig(save_path)
     if show:
         plt.show()
-    return None  
+    return None
