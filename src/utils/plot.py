@@ -49,6 +49,13 @@ def plot_bar(
         plt.show()
     return None
 
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        return '{p:.2f}%\n({v:d})'.format(p=pct,v=val)
+    return my_autopct
+
 
 def plot_pie(
     slice_names: list[str],
@@ -56,10 +63,15 @@ def plot_pie(
     title: t.Optional[str] = None,
     save_path: t.Optional[str] = None,
     show: bool = True,
+    legend: bool = True
 ) -> None:
     """Drawn and optionally show and save a pie chart."""
-    fig, ax = plt.subplots()
-    ax.pie(slice_vals, labels=slice_names)
+    fig, ax = plt.subplots(figsize=(10,10))
+    if legend:
+        ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals))
+        ax.legend(labels=slice_names)
+    else:
+        ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
     if title:
         ax.set_title(title)
     if save_path:
