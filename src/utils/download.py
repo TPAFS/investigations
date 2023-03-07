@@ -1,8 +1,13 @@
+import os
 import shutil
 import urllib
 
 
 def download_file_from_url(url: str, target_filepath: str) -> None:
+    if os.path.exists(target_filepath):
+        print(f"Target file {target_filepath} already exists.")
+        return None
+
     print(f"Downloading file from: {url}.")
     try:
         req = urllib.request.Request(url)
