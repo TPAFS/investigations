@@ -49,11 +49,13 @@ def plot_bar(
         plt.show()
     return None
 
+
 def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
-        val = int(round(pct*total/100.0))
-        return '{p:.2f}%\n({v:d})'.format(p=pct,v=val)
+        val = int(round(pct * total / 100.0))
+        return "{p:.2f}%\n({v:d})".format(p=pct, v=val)
+
     return my_autopct
 
 
@@ -63,10 +65,10 @@ def plot_pie(
     title: t.Optional[str] = None,
     save_path: t.Optional[str] = None,
     show: bool = True,
-    legend: bool = True
+    legend: bool = True,
 ) -> None:
     """Drawn and optionally show and save a pie chart."""
-    fig, ax = plt.subplots(figsize=(10,10))
+    fig, ax = plt.subplots(figsize=(10, 10))
     if legend:
         ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals))
         ax.legend(labels=slice_names)
@@ -74,6 +76,34 @@ def plot_pie(
         ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
     if title:
         ax.set_title(title)
+    if save_path:
+        plt.savefig(save_path)
+    if show:
+        plt.show()
+    return None
+
+
+def plot_hist(
+    vals: list[float],
+    bins: t.Optional[list[float]] = None,
+    title: t.Optional[str] = None,
+    y_label: t.Optional[str] = None,
+    x_label: t.Optional[str] = None,
+    save_path: t.Optional[str] = None,
+    show: bool = True,
+) -> None:
+    """Draw and optionally show and save a histogram."""
+    fig, ax = plt.subplots()
+    if bins is not None:
+        ax.hist(vals, alpha=0.8, bins=np.linspace(0, 0.5, 11))
+    else:
+        ax.hist(vals, alpha=0.8)
+    if title:
+        ax.set_title(title)
+    if y_label:
+        ax.set_ylabel(y_label)
+    if x_label:
+        ax.set_xlabel(x_label)
     if save_path:
         plt.savefig(save_path)
     if show:
