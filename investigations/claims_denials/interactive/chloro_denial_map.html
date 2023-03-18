@@ -40,11 +40,13 @@
       };
 
       info.update = function (props) {
-        const contents = props
-          ? props.claims_received
-            ? `<div class="denial-details"><b>${props.name}</b>
-           <br />
-           <br/ >
+        var contents = "";
+        if (props) {
+          contents = contents.concat(
+            `<div class="denial-details"><b>${props.name}</b><br/ ><br/ >`
+          );
+          if (props.claims_received) {
+            contents = contents.concat(`<div class="denial-details">
            <u><i>Claims Submitted:</i></u> ${props.claims_received}
            <br />
            <br/ >
@@ -58,9 +60,17 @@
            <br/ >
            <u><i>Issuer with Most Denied Claims:</i></u><br/><br/>  ${
              props.top_issuers[0]
-           }</div>`
-            : `<div class="denial-details"><b>This state is not represented in the data.</b></div><br/>`
-          : '<div class="denial-details">Hover over a state for more info.<br/><br/> Click a state for yet more info.<br/></div>';
+           }</div>`);
+          } else {
+            contents = contents.concat(
+              `<div class="denial-details"><b>This state is not represented in the data.</b></div><br/>`
+            );
+          }
+        } else {
+          contents = contents.concat(
+            `<div class="denial-details">Hover over a state for more info.<br/><br/> Click a state for yet more info.<br/></div>`
+          );
+        }
         this._div.innerHTML = props
           ? `${contents}`
           : `<h2 class="denial-details"><b>Claims Denial Rates: <br/> <br/>  Federal Marketplace 2021</b></h2><br/>${contents}`;
