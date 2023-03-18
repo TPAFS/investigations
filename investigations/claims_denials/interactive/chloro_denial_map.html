@@ -16,19 +16,19 @@
     <div id="chloro_denial_map"></div>
     <script
       type="text/javascript"
-      src="federal_marketplace_state_denials.js"></script>
+      src="federal_marketplace_state_denials_2021.js"></script>
 
     <script type="text/javascript">
       const map = L.map("chloro_denial_map").setView([37.8, -96], 4);
 
-      const tiles = L.tileLayer(
-        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        }
-      ).addTo(map);
+      // const tiles = L.tileLayer(
+      //   "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      //   {
+      //     maxZoom: 19,
+      //     attribution:
+      //       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      //   }
+      // ).addTo(map);
 
       // control that shows state info on hover
       const info = L.control();
@@ -41,31 +41,38 @@
 
       info.update = function (props) {
         const contents = props
-          ? `<b>${props.name}</b>
-             <br />
-             <br/ >
-             <u><i>Claims Submitted:</i></u> ${props.claims_received}
-             <br />
-             <br/ >
-             <u><i>Claims Denied:</i></u> ${props.claims_denied}
-             <br/>
-             <br/ >
-             <u><i>Initial Denial Rate:</i></u>  ${Math.round(
-               props.denial_rate * 100
-             )}%
-             <br/>
-             <br/ >
-             <u><i>Issuer with Most Denied Claims:</i></u>  ${
-               props.top_issuers[0]
-             }`
-          : "Hover over a state for more info";
-        this._div.innerHTML = `<h4>Claims Denial Rates In Federal Marketplace States</h4>${contents}`;
+          ? props.claims_received
+            ? `<div class="denial-details"><b>${props.name}</b>
+           <br />
+           <br/ >
+           <u><i>Claims Submitted:</i></u> ${props.claims_received}
+           <br />
+           <br/ >
+           <u><i>Claims Denied:</i></u> ${props.claims_denied}
+           <br/>
+           <br/ >
+           <u><i>Initial Denial Rate:</i></u>  ${Math.round(
+             props.denial_rate * 100
+           )}%
+           <br/>
+           <br/ >
+           <u><i>Issuer with Most Denied Claims:</i></u><br/><br/>  ${
+             props.top_issuers[0]
+           }</div>`
+            : `<div class="denial-details"><b>This state is not represented in the data.</b></div><br/>`
+          : '<div class="denial-details">Hover over a state for more info.<br/><br/> Click a state for yet more info.<br/></div>';
+        this._div.innerHTML = props
+          ? `${contents}`
+          : `<h2 class="denial-details"><b>Claims Denial Rates: <br/> <br/>  Federal Marketplace 2021</b></h2><br/>${contents}`;
       };
 
       info.addTo(map);
 
       // get color depending on denial rate
       function getColor(d) {
+        if (d === undefined) {
+          return "#999DA0";
+        }
         return d >= 0.5
           ? "#800026"
           : d >= 0.4
@@ -84,7 +91,7 @@
           weight: 2,
           opacity: 1,
           color: "white",
-          dashArray: "3",
+          dashArray: "10",
           fillOpacity: 0.7,
           fillColor: getColor(feature.properties.denial_rate),
         };
@@ -137,9 +144,9 @@
         const grades = [0, 0.1, 0.2, 0.3, 0.4, 0.5];
         const labels = [];
         let from, to;
+        labels.push(`<i class="no-denial-data"></i> No data <br/>`);
 
         for (let i = 0; i < grades.length; i++) {
-          console.log(from);
           from = grades[i];
           to = grades[i + 1];
 
