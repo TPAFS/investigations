@@ -44,7 +44,7 @@ def plot_bar(
     if cat_axis_label:
         ax.set_xlabel(cat_axis_label)
     if save_path:
-        plt.savefig(save_path)
+        plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
         plt.show()
     return None
@@ -77,7 +77,7 @@ def plot_pie(
     if title:
         ax.set_title(title)
     if save_path:
-        plt.savefig(save_path)
+        plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
         plt.show()
     return None
@@ -105,7 +105,7 @@ def plot_hist(
     if x_label:
         ax.set_xlabel(x_label)
     if save_path:
-        plt.savefig(save_path)
+        plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
         plt.show()
     return None
