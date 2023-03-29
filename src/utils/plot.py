@@ -22,6 +22,12 @@ mpl.rcParams["axes.prop_cycle"] = cycler(
     ]
 )
 
+COLOR = '#C5C5C5'
+mpl.rcParams['text.color'] = COLOR
+mpl.rcParams['axes.labelcolor'] = COLOR
+mpl.rcParams['xtick.color'] = COLOR
+mpl.rcParams['ytick.color'] = COLOR
+
 
 def plot_bar(
     bar_names: list[str],
@@ -71,7 +77,7 @@ def plot_pie(
     fig, ax = plt.subplots(figsize=(10, 10))
     if legend:
         ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals))
-        ax.legend(labels=slice_names)
+        ax.legend(labels=slice_names, labelcolor='black')
     else:
         ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
     if title:
