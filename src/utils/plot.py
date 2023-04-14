@@ -47,7 +47,7 @@ def plot_bar(
     ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
     plt.xticks(rotation=30, ha="right")
     if title:
-        ax.set_title(title, pad=20)
+        ax.set_title(title)
     if val_axis_label:
         ax.set_ylabel(val_axis_label)
     if cat_axis_label:
@@ -84,7 +84,7 @@ def plot_pie(
     else:
         ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
     if title:
-        ax.set_title(title, pad=20)
+        ax.set_title(title)
     if save_path:
         plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
@@ -108,7 +108,7 @@ def plot_hist(
     else:
         ax.hist(vals, alpha=0.8)
     if title:
-        ax.set_title(title, pad=20)
+        ax.set_title(title)
     if y_label:
         ax.set_ylabel(y_label)
     if x_label:
