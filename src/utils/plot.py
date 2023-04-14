@@ -29,7 +29,7 @@ mpl.rcParams["axes.titlepad"] = 20
 mpl.rcParams["xtick.color"] = COLOR
 mpl.rcParams["ytick.color"] = COLOR
 mpl.rcParams["grid.alpha"] = .2
-mpl.rcParams["legend.loc"] = "lower right"
+mpl.rcParams["legend.loc"] = "upper right"
 
 
 def plot_bar(
