@@ -22,12 +22,14 @@ mpl.rcParams["axes.prop_cycle"] = cycler(
     ]
 )
 
-COLOR = "#C5C5C5"
+COLOR = "#969696"
 mpl.rcParams["text.color"] = COLOR
 mpl.rcParams["axes.labelcolor"] = COLOR
+mpl.rcParams["axes.titlepad"] = 20 
 mpl.rcParams["xtick.color"] = COLOR
 mpl.rcParams["ytick.color"] = COLOR
 mpl.rcParams["grid.alpha"] = .2
+mpl.rcParams["legend.loc"] = "lower right"
 
 
 def plot_bar(
@@ -45,7 +47,7 @@ def plot_bar(
     ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
     plt.xticks(rotation=30, ha="right")
     if title:
-        ax.set_title(title)
+        ax.set_title(title, pad=20)
     if val_axis_label:
         ax.set_ylabel(val_axis_label)
     if cat_axis_label:
@@ -77,12 +79,12 @@ def plot_pie(
     """Drawn and optionally show and save a pie chart."""
     fig, ax = plt.subplots(figsize=(10, 10))
     if legend:
-        ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals))
+        ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals), textprops={'color':"black"})
         ax.legend(labels=slice_names, labelcolor="black")
     else:
         ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
     if title:
-        ax.set_title(title)
+        ax.set_title(title, pad=20)
     if save_path:
         plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
@@ -106,7 +108,7 @@ def plot_hist(
     else:
         ax.hist(vals, alpha=0.8)
     if title:
-        ax.set_title(title)
+        ax.set_title(title, pad=20)
     if y_label:
         ax.set_ylabel(y_label)
     if x_label:
