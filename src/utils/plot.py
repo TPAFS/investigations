@@ -27,6 +27,7 @@ mpl.rcParams["text.color"] = COLOR
 mpl.rcParams["axes.labelcolor"] = COLOR
 mpl.rcParams["xtick.color"] = COLOR
 mpl.rcParams["ytick.color"] = COLOR
+mpl.rcParams["grid.alpha"] = .2
 
 
 def plot_bar(
