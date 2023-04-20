@@ -47,6 +47,12 @@
           );
           if (props.claims_received) {
             contents = contents.concat(`<div class="denial-details">
+              <u><i>Reported consumers:</i></u> ${props.enrolled_consumers}
+           <br />
+           <br/ >
+           <u><i>Reported insurers:</i></u> ${props.num_issuers_represented}
+           <br />
+           <br/ >
            <u><i>Claims Submitted:</i></u> ${props.claims_received}
            <br />
            <br/ >
@@ -58,9 +64,12 @@
            )}%
            <br/>
            <br/ >
-           <u><i>Issuer with Most Denied Claims:</i></u><br/><br/>  ${
-             props.top_issuers[0]
-           }</div>`);
+           <u><i>Issuers with most Denials:</i></u><br/> <ol>`  );
+           for (issuer of props.top_issuers)
+           {
+            contents = contents.concat(`<li>${issuer}</li>`)
+           }
+           contents = contents.concat(` </ol></div>`);
           } else {
             contents = contents.concat(
               `<div class="denial-details"><b>This state is not represented in the data.</b></div><br/>`

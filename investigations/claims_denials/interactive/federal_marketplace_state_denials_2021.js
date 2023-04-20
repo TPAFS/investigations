@@ -14,6 +14,8 @@ var stateDenials = {
           "Blue Cross and Blue Shield of Alabama",
           "Bright Health Insurance Company",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 168717,
       },
       geometry: {
         type: "Polygon",
@@ -69,6 +71,8 @@ var stateDenials = {
           "Premera Blue Cross Blue Shield of Alaska",
           "Moda Assurance Company",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 16707,
       },
       geometry: {
         type: "MultiPolygon",
@@ -1320,6 +1324,8 @@ var stateDenials = {
           "Blue Cross and Blue Shield of Arizona, Inc.",
           "Cigna HealthCare of Arizona, Inc",
         ],
+        num_issuers_represented: 6,
+        enrolled_consumers: 115409,
       },
       geometry: {
         type: "Polygon",
@@ -1375,6 +1381,8 @@ var stateDenials = {
           "Celtic Insurance Company",
           "QCA Health Plan, Inc.",
         ],
+        num_issuers_represented: 5,
+        enrolled_consumers: 59629,
       },
       geometry: {
         type: "Polygon",
@@ -1638,6 +1646,8 @@ var stateDenials = {
           "Celtic Insurance Company",
           "Blue Cross and Blue Shield of Florida",
         ],
+        num_issuers_represented: 10,
+        enrolled_consumers: 1867568,
       },
       geometry: {
         type: "Polygon",
@@ -1739,6 +1749,8 @@ var stateDenials = {
           "Anthem Blue Cross and Blue Shield",
           "CareSource Georgia Co.",
         ],
+        num_issuers_represented: 6,
+        enrolled_consumers: 387441,
       },
       geometry: {
         type: "Polygon",
@@ -1812,6 +1824,8 @@ var stateDenials = {
           "Hawaii Medical Service Association",
           "Kaiser Foundation Health Plan, Inc.",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 16343,
       },
       geometry: {
         type: "MultiPolygon",
@@ -1980,6 +1994,8 @@ var stateDenials = {
           "Celtic Insurance Company",
           "Health Alliance Medical Plans, Inc.",
         ],
+        num_issuers_represented: 7,
+        enrolled_consumers: 248363,
       },
       geometry: {
         type: "Polygon",
@@ -2070,6 +2086,8 @@ var stateDenials = {
           "Celtic Insurance Company",
           "Anthem Ins Companies Inc(Anthem BCBS)",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 91625,
       },
       geometry: {
         type: "Polygon",
@@ -2139,6 +2157,8 @@ var stateDenials = {
           "Medica Insurance Company",
           "Oscar Insurance Company",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 40699,
       },
       geometry: {
         type: "Polygon",
@@ -2212,6 +2232,8 @@ var stateDenials = {
           "Medica Insurance Company",
           "Blue Cross and Blue Shield of Kansas City",
         ],
+        num_issuers_represented: 5,
+        enrolled_consumers: 43716,
       },
       geometry: {
         type: "Polygon",
@@ -2335,6 +2357,8 @@ var stateDenials = {
           "Vantage Health Plan, Inc.",
           "Louisiana Health Service & Indemnity Company",
         ],
+        num_issuers_represented: 4,
+        enrolled_consumers: 78236,
       },
       geometry: {
         type: "Polygon",
@@ -2641,6 +2665,8 @@ var stateDenials = {
           "Blue Cross Blue Shield of Michigan Mutual Insurance Company",
           "Priority Health",
         ],
+        num_issuers_represented: 8,
+        enrolled_consumers: 138398,
       },
       geometry: {
         type: "MultiPolygon",
@@ -2924,6 +2950,8 @@ var stateDenials = {
           "Ambetter of Magnolia Inc.",
           "Molina Healthcare of Mississippi, Inc",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 50769,
       },
       geometry: {
         type: "Polygon",
@@ -2993,6 +3021,8 @@ var stateDenials = {
           "Cigna Health and Life Insurance Company",
           "Healthy Alliance Life Co(Anthem BCBS)",
         ],
+        num_issuers_represented: 8,
+        enrolled_consumers: 113034,
       },
       geometry: {
         type: "Polygon",
@@ -3069,6 +3099,8 @@ var stateDenials = {
           "Montana Health Cooperative",
           "PacificSource Health Plans",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 41233,
       },
       geometry: {
         type: "Polygon",
@@ -3143,6 +3175,8 @@ var stateDenials = {
           "Medica Insurance Company",
           "Bright Health Insurance Company",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 48619,
       },
       geometry: {
         type: "Polygon",
@@ -3228,6 +3262,8 @@ var stateDenials = {
           "Celtic Insurance Company",
           "Harvard Pilgrim Health Care of NE",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 34360,
       },
       geometry: {
         type: "Polygon",
@@ -3432,6 +3468,8 @@ var stateDenials = {
           "Ambetter of North Carolina Inc.",
           "Cigna HealthCare of North Carolina, Inc.",
         ],
+        num_issuers_represented: 5,
+        enrolled_consumers: 284269,
       },
       geometry: {
         type: "Polygon",
@@ -3516,6 +3554,8 @@ var stateDenials = {
           "Sanford Health Plan",
           "Medica Health Plans",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 21803,
       },
       geometry: {
         type: "Polygon",
@@ -3555,6 +3595,8 @@ var stateDenials = {
           "Buckeye Community Health Plan",
           "Medical Health Insuring Corp. of Ohio",
         ],
+        num_issuers_represented: 10,
+        enrolled_consumers: 138349,
       },
       geometry: {
         type: "Polygon",
@@ -3625,6 +3667,8 @@ var stateDenials = {
           "Medica Insurance Company",
           "CommunityCare HMO Inc.",
         ],
+        num_issuers_represented: 4,
+        enrolled_consumers: 138695,
       },
       geometry: {
         type: "Polygon",
@@ -3693,6 +3737,8 @@ var stateDenials = {
           "Regence BlueCross BlueShield of Oregon",
           "Moda Health Plan, Inc.",
         ],
+        num_issuers_represented: 6,
+        enrolled_consumers: 111343,
       },
       geometry: {
         type: "Polygon",
@@ -3850,6 +3896,8 @@ var stateDenials = {
           "MOLINA HEALTHCARE OF SOUTH CAROLINA, INC",
           "Absolute Total Care, Inc",
         ],
+        num_issuers_represented: 3,
+        enrolled_consumers: 179317,
       },
       geometry: {
         type: "Polygon",
@@ -3913,6 +3961,8 @@ var stateDenials = {
         claims_denied: 44532,
         denial_rate: 0.057,
         top_issuers: ["Sanford Health Plan", "Avera Health Plans, Inc."],
+        num_issuers_represented: 2,
+        enrolled_consumers: 25419,
       },
       geometry: {
         type: "Polygon",
@@ -3965,6 +4015,8 @@ var stateDenials = {
           "Cigna Health and Life Insurance Company",
           "Celtic Insurance Company",
         ],
+        num_issuers_represented: 6,
+        enrolled_consumers: 140672,
       },
       geometry: {
         type: "Polygon",
@@ -4031,6 +4083,8 @@ var stateDenials = {
           "Community Health Choice, Inc.",
           "Molina Healthcare of Texas, Inc.",
         ],
+        num_issuers_represented: 10,
+        enrolled_consumers: 591074,
       },
       geometry: {
         type: "Polygon",
@@ -4206,6 +4260,8 @@ var stateDenials = {
           "University of Utah Health Insurance Plans",
           "Regence BlueCross BlueShield of Utah",
         ],
+        num_issuers_represented: 6,
+        enrolled_consumers: 151905,
       },
       geometry: {
         type: "Polygon",
@@ -4281,6 +4337,8 @@ var stateDenials = {
           "Cigna Health and Life Insurance Company",
           "Optima Health Plan",
         ],
+        num_issuers_represented: 9,
+        enrolled_consumers: 224605,
       },
       geometry: {
         type: "MultiPolygon",
@@ -4487,6 +4545,8 @@ var stateDenials = {
           "CareSource West Virginia Co.",
           "Highmark Blue Cross Blue Shield West Virginia",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 7069,
       },
       geometry: {
         type: "Polygon",
@@ -4575,6 +4635,8 @@ var stateDenials = {
           "Dean Health Plan",
           "Quartz Health Benefit Plans Corporation",
         ],
+        num_issuers_represented: 13,
+        enrolled_consumers: 128863,
       },
       geometry: {
         type: "Polygon",
@@ -4672,6 +4734,8 @@ var stateDenials = {
           "Blue Cross Blue Shield of Wyoming",
           "Montana Health Cooperative",
         ],
+        num_issuers_represented: 2,
+        enrolled_consumers: 26777,
       },
       geometry: {
         type: "Polygon",
