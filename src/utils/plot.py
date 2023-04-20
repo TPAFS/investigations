@@ -25,10 +25,10 @@ mpl.rcParams["axes.prop_cycle"] = cycler(
 COLOR = "#969696"
 mpl.rcParams["text.color"] = COLOR
 mpl.rcParams["axes.labelcolor"] = COLOR
-mpl.rcParams["axes.titlepad"] = 20 
+mpl.rcParams["axes.titlepad"] = 20
 mpl.rcParams["xtick.color"] = COLOR
 mpl.rcParams["ytick.color"] = COLOR
-mpl.rcParams["grid.alpha"] = .2
+mpl.rcParams["grid.alpha"] = 0.2
 mpl.rcParams["legend.loc"] = "upper right"
 
 
@@ -79,7 +79,12 @@ def plot_pie(
     """Drawn and optionally show and save a pie chart."""
     fig, ax = plt.subplots(figsize=(10, 10))
     if legend:
-        ax.pie(slice_vals, labels=None, autopct=make_autopct(slice_vals), textprops={'color':"black"})
+        ax.pie(
+            slice_vals,
+            labels=None,
+            autopct=make_autopct(slice_vals),
+            textprops={"color": "black"},
+        )
         ax.legend(labels=slice_names, labelcolor="black")
     else:
         ax.pie(slice_vals, labels=slice_names, autopct=make_autopct(slice_vals))
