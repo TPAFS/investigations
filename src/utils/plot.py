@@ -40,18 +40,27 @@ def plot_bar(
     cat_axis_label: t.Optional[str] = None,
     save_path: t.Optional[str] = None,
     show: bool = True,
+    bar_label: bool = False,
+    figsize: tuple = None
 ) -> None:
     """Draw and optionally show and save a bar chart."""
-    fig, ax = plt.subplots()
+    if figsize:
+        fig, ax = plt.subplots(figsize=figsize)
+    else:
+        fig, ax = plt.subplots()
     x = np.arange(1, len(bar_names) + 1)
-    ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
+    bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
     plt.xticks(rotation=30, ha="right")
+    ax.ticklabel_format(useOffset=False, style="plain", axis='y')
+    ax.set_yticks(ax.get_yticks()[:-1], [f"{int(x):,}" for x in ax.get_yticks()[:-1]])
     if title:
         ax.set_title(title)
     if val_axis_label:
         ax.set_ylabel(val_axis_label)
     if cat_axis_label:
         ax.set_xlabel(cat_axis_label)
+    if bar_label:
+        ax.bar_label(bar, fmt='{:,.0f}')
     if save_path:
         plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
