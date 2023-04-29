@@ -42,6 +42,7 @@ def plot_bar(
     show: bool = True,
     bar_label: bool = False,
     figsize: tuple = None,
+    int_vals: bool = True,
 ) -> None:
     """Draw and optionally show and save a bar chart."""
     if figsize:
@@ -52,7 +53,11 @@ def plot_bar(
     bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
     plt.xticks(rotation=30, ha="right")
     ax.ticklabel_format(useOffset=False, style="plain", axis="y")
-    ax.set_yticks(ax.get_yticks()[:-1], [f"{int(x):,}" for x in ax.get_yticks()[:-1]])
+    if int_vals:
+        y_tick_fmt = lambda x: f"{int(x):,}"
+    else:
+        y_tick_fmt = lambda x: f"{float(x):.3f}"
+    ax.set_yticks(ax.get_yticks()[:-1], [y_tick_fmt(x) for x in ax.get_yticks()[:-1]])
     if title:
         ax.set_title(title)
     if val_axis_label:
@@ -60,7 +65,10 @@ def plot_bar(
     if cat_axis_label:
         ax.set_xlabel(cat_axis_label)
     if bar_label:
-        ax.bar_label(bar, fmt="{:,.0f}")
+        if int_vals:
+            ax.bar_label(bar, fmt="{:,.0f}")
+        else:
+            ax.bar_label(bar, fmt="{:,.3f}")
     if save_path:
         plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
