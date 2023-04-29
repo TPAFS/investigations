@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Data
+*.csv
+*.xlsx
+*.zip
+*.json
+
+# Visualization Artifacts
+*.png
