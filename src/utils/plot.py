@@ -126,7 +126,7 @@ def plot_hist(
     """Draw and optionally show and save a histogram."""
     fig, ax = plt.subplots()
     if bins is not None:
-        ax.hist(vals, alpha=0.8, bins=np.linspace(0, 0.5, 11))
+        ax.hist(vals, alpha=0.8, bins=bins)
     else:
         ax.hist(vals, alpha=0.8)
     if title:
