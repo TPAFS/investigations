@@ -274,7 +274,13 @@ def annotate_heatmap(
 
 
 def heatmap_from_df_cols(
-    df: pd.DataFrame, col1: str, col2: str, top_k1: int, top_k2: int, heat_val_name: str
+    df: pd.DataFrame,
+    col1: str,
+    col2: str,
+    top_k1: int,
+    top_k2: int,
+    heat_val_name: str,
+    normalize: bool = True,
 ):
     vals1 = list(df[col1].value_counts().keys()[:top_k1])
     vals2 = list(df[col2].value_counts().keys()[:top_k2])
@@ -287,6 +293,9 @@ def heatmap_from_df_cols(
             arr[row_idx, col_idx] += 1
         except ValueError:
             pass
+
+    if normalize:
+        arr = arr / arr.sum(axis=0)
 
     fig, ax = plt.subplots()
 
