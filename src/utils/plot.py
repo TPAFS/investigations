@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
+import pandas as pd
 
 from cycler import cycler
 
@@ -270,3 +271,30 @@ def annotate_heatmap(
             texts.append(text)
 
     return texts
+
+
+def heatmap_from_df_cols(
+    df: pd.DataFrame, col1: str, col2: str, top_k1: int, top_k2: int, heat_val_name: str
+):
+    vals1 = list(df[col1].value_counts().keys()[:top_k1])
+    vals2 = list(df[col2].value_counts().keys()[:top_k2])
+
+    arr = np.zeros((len(vals1), len(vals2)))
+    for idx, row in df.iterrows():
+        try:
+            row_idx = vals1.index(row[col1])
+            col_idx = vals2.index(row[col2])
+            arr[row_idx, col_idx] += 1
+        except ValueError:
+            pass
+
+    fig, ax = plt.subplots()
+
+    im, cbar = heatmap(
+        arr, vals1, vals2, ax=ax, cmap="Purples", cbarlabel=heat_val_name
+    )
+    # texts = annotate_heatmap(im, valfmt="{x:.1f} t")
+
+    fig.tight_layout()
+    plt.show()
+    return None
