@@ -50,7 +50,7 @@ Please start a discussion thread for any question or concerns related to licensi
 
 If you find this repository useful in your work, please consider mentioning it, providing a link, or citing it to help increase our exposure, even if you don't end up using it directly. We'd greatly appreciate that.
 
-In adhering to the attribution clause of the license governing the data, documentation and other media, you can attribute this work as "Persius Investigations Repository", and share the url: https://github.com/TPAFS/investigations
+For those directly using this, in adhering to the attribution clause of the license governing the data, documentation and other media, you can attribute this work as "Persius Investigations Repository", and share the url: https://github.com/TPAFS/investigations
 
 For publications that use this work, please use the following citation:
 
