@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from cycler import cycler
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 import typing as t
 
@@ -184,9 +185,13 @@ def heatmap(
     # Plot the heatmap
     im = ax.imshow(data, **kwargs)
 
-    # Create colorbar
-    cbar = ax.figure.colorbar(im, ax=ax, **cbar_kw)
+    # Create colorbar, make its size consistent with imshow plot
+    # Taken from: https://stackoverflow.com/a/18195921
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.3)
+    cbar = plt.colorbar(im, cax=cax, **cbar_kw)
     cbar.ax.set_ylabel(cbarlabel, rotation=-90, va="bottom")
+
 
     # Show all ticks and label them with the respective list entries.
     ax.set_xticks(np.arange(data.shape[1]), labels=col_labels)
@@ -281,6 +286,12 @@ def heatmap_from_df_cols(
     top_k2: int,
     heat_val_name: str,
     normalize: bool = True,
+    title: t.Optional[str] = None,
+    y_label: t.Optional[str] = None,
+    x_label: t.Optional[str] = None,
+    save_path: t.Optional[str] = None,
+    show: bool = True,
+    figsize: tuple = None,
 ):
     vals1 = list(df[col1].value_counts().keys()[:top_k1])
     vals2 = list(df[col2].value_counts().keys()[:top_k2])
@@ -297,13 +308,27 @@ def heatmap_from_df_cols(
     if normalize:
         arr = arr / arr.sum(axis=0)
 
-    fig, ax = plt.subplots()
+    if figsize:
+        fig, ax = plt.subplots(figsize=figsize)
+    else:
+        fig, ax = plt.subplots()
 
     im, cbar = heatmap(
         arr, vals1, vals2, ax=ax, cmap="Purples", cbarlabel=heat_val_name
     )
     # texts = annotate_heatmap(im, valfmt="{x:.1f} t")
 
-    fig.tight_layout()
-    plt.show()
+    if title:
+        ax.set_title(title, pad=40)
+    if y_label:
+        ax.set_ylabel(y_label, loc="center", labelpad=30)
+    if x_label:
+        ax.xaxis.set_label_position('top')
+        ax.set_xlabel(x_label, loc="center", labelpad=0)
+
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path, transparent=True, bbox_inches="tight")
+    if show:
+        plt.show()
     return None
