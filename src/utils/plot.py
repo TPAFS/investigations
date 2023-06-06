@@ -192,7 +192,6 @@ def heatmap(
     cbar = plt.colorbar(im, cax=cax, **cbar_kw)
     cbar.ax.set_ylabel(cbarlabel, rotation=-90, va="bottom")
 
-
     # Show all ticks and label them with the respective list entries.
     ax.set_xticks(np.arange(data.shape[1]), labels=col_labels)
     ax.set_yticks(np.arange(data.shape[0]), labels=row_labels)
@@ -307,9 +306,9 @@ def heatmap_from_df_cols(
 
     if normalize:
         # Avoid division by zero
-        eps = .0001
+        eps = 0.0001
         sum_cols = arr.sum(axis=0)
-        sum_cols[sum_cols==0] = eps
+        sum_cols[sum_cols == 0] = eps
         arr = arr / sum_cols
 
     arr = arr[:top_k1, :top_k2]
@@ -331,7 +330,7 @@ def heatmap_from_df_cols(
     if y_label:
         ax.set_ylabel(y_label, loc="center", labelpad=30)
     if x_label:
-        ax.xaxis.set_label_position('top')
+        ax.xaxis.set_label_position("top")
         ax.set_xlabel(x_label, loc="center", labelpad=0)
 
     plt.tight_layout()
