@@ -306,9 +306,11 @@ def heatmap_from_df_cols(
             pass
 
     if normalize:
-        arr = arr / arr.sum(axis=0)
-        # Convert division by zero cases to 0
-        arr = np.nan_to_num(arr, nan=0.0)
+        # Avoid division by zero
+        eps = .0001
+        sum_cols = arr.sum(axis=0)
+        sum_cols[sum_cols==0] = eps
+        arr = arr / sum_cols
 
     arr = arr[:top_k1, :top_k2]
     vals1 = vals1[:top_k1]
