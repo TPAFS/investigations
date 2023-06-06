@@ -293,8 +293,8 @@ def heatmap_from_df_cols(
     show: bool = True,
     figsize: tuple = None,
 ):
-    vals1 = list(df[col1].value_counts().keys()[:top_k1])
-    vals2 = list(df[col2].value_counts().keys()[:top_k2])
+    vals1 = list(df[col1].value_counts().keys())
+    vals2 = list(df[col2].value_counts().keys())
 
     arr = np.zeros((len(vals1), len(vals2)))
     for idx, row in df.iterrows():
@@ -307,6 +307,12 @@ def heatmap_from_df_cols(
 
     if normalize:
         arr = arr / arr.sum(axis=0)
+        # Convert division by zero cases to 0
+        arr = np.nan_to_num(arr, nan=0.0)
+
+    arr = arr[:top_k1, :top_k2]
+    vals1 = vals1[:top_k1]
+    vals2 = vals2[:top_k2]
 
     if figsize:
         fig, ax = plt.subplots(figsize=figsize)
