@@ -1,3 +1,4 @@
+import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
@@ -8,11 +9,14 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 import typing as t
 
+PRIMARY_HEX = "#8f5e77"
+SECONDARY_HEX = "#62aebf"
+
 plt.style.use("ggplot")
 mpl.rcParams["axes.prop_cycle"] = cycler(
     color=[
-        "#8f5e77",
-        "#62aebf",
+        PRIMARY_HEX,
+        SECONDARY_HEX,
         "#E24A33",
         "#467821",
         "#348ABD",
@@ -32,6 +36,36 @@ mpl.rcParams["xtick.color"] = COLOR
 mpl.rcParams["ytick.color"] = COLOR
 mpl.rcParams["grid.alpha"] = 0.2
 mpl.rcParams["legend.loc"] = "upper right"
+
+
+def create_custom_colormap(
+    end_color, start_color=(1, 1, 1), interval=(.2, 1), cmap_name="custom_cmap"
+):
+    # Convert hex color code to RGB values
+    rgb = mcolors.hex2color(end_color)
+
+    # Generate a range of color values
+    timesteps = np.linspace(interval[0], interval[1], 256)
+
+    # Linear interpolation from start_color to end_color
+    colors = [
+        (
+            (rgb[0] * t) + start_color[0] * (1 - t),
+        (rgb[1] * t) + start_color[1] * (1 - t),
+            (rgb[2] * t) + start_color[2] * (1 - t),
+        )
+        for t in timesteps
+    ]
+
+    # Create a color map using the list of colors
+    cmap = mcolors.LinearSegmentedColormap.from_list(cmap_name, colors, N=256)
+
+    return cmap
+
+
+# Sequential color maps
+PRIMARY_CMAP = create_custom_colormap(PRIMARY_HEX, cmap_name="persius_primary")
+SECONDARY_CMAP = create_custom_colormap(SECONDARY_HEX, cmap_name="persius_secondary")
 
 
 def plot_bar(
@@ -321,7 +355,7 @@ def heatmap_from_df_cols(
         fig, ax = plt.subplots()
 
     im, cbar = heatmap(
-        arr, vals1, vals2, ax=ax, cmap="Purples", cbarlabel=heat_val_name
+        arr, vals1, vals2, ax=ax, cmap=PRIMARY_CMAP, cbarlabel=heat_val_name
     )
     # texts = annotate_heatmap(im, valfmt="{x:.1f} t")
 
