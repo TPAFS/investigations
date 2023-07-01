@@ -17,9 +17,9 @@ mpl.rcParams["axes.prop_cycle"] = cycler(
     color=[
         PRIMARY_HEX,
         SECONDARY_HEX,
+        "#348ABD",
         "#E24A33",
         "#467821",
-        "#348ABD",
         "#7A68A6",
         "#A60628",
         "#CF4457",
