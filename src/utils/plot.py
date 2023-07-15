@@ -80,6 +80,8 @@ def plot_bar(
     bar_label: bool = False,
     figsize: tuple = None,
     int_vals: bool = True,
+    float_precision_depth: int = 3,
+    color_hex: t.Optional[str] = None,
 ) -> None:
     """Draw and optionally show and save a bar chart."""
     if figsize:
@@ -87,7 +89,12 @@ def plot_bar(
     else:
         fig, ax = plt.subplots()
     x = np.arange(1, len(bar_names) + 1)
-    bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
+    if color_hex:
+        bar = ax.bar(
+            x, height=bar_vals, tick_label=bar_names, log=False, color=color_hex
+        )
+    else:
+        bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
     plt.xticks(rotation=30, ha="right")
     ax.ticklabel_format(useOffset=False, style="plain", axis="y")
     if int_vals:
@@ -105,7 +112,7 @@ def plot_bar(
         if int_vals:
             ax.bar_label(bar, fmt="{:,.0f}")
         else:
-            ax.bar_label(bar, fmt="{:,.3f}")
+            ax.bar_label(bar, fmt=f"{{:,.{float_precision_depth}f}}")
     if save_path:
         plt.savefig(save_path, transparent=True, bbox_inches="tight")
     if show:
