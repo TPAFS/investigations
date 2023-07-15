@@ -11,13 +11,14 @@ import typing as t
 
 PRIMARY_HEX = "#8f5e77"
 SECONDARY_HEX = "#62aebf"
+TERTIARY_HEX = "#348ABD"
 
 plt.style.use("ggplot")
 mpl.rcParams["axes.prop_cycle"] = cycler(
     color=[
         PRIMARY_HEX,
         SECONDARY_HEX,
-        "#348ABD",
+        TERTIARY_HEX,
         "#E24A33",
         "#467821",
         "#7A68A6",
