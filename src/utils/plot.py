@@ -39,7 +39,7 @@ mpl.rcParams["legend.loc"] = "upper right"
 
 
 def create_custom_colormap(
-    end_color, start_color=(1, 1, 1), interval=(.2, 1), cmap_name="custom_cmap"
+    end_color, start_color=(1, 1, 1), interval=(0.2, 1), cmap_name="custom_cmap"
 ):
     # Convert hex color code to RGB values
     rgb = mcolors.hex2color(end_color)
@@ -51,7 +51,7 @@ def create_custom_colormap(
     colors = [
         (
             (rgb[0] * t) + start_color[0] * (1 - t),
-        (rgb[1] * t) + start_color[1] * (1 - t),
+            (rgb[1] * t) + start_color[1] * (1 - t),
             (rgb[2] * t) + start_color[2] * (1 - t),
         )
         for t in timesteps
