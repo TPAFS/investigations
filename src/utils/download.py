@@ -15,11 +15,11 @@ def download_file_from_url(url: str, target_filepath: str) -> None:
             target_filepath, "wb"
         ) as target_file:
             shutil.copyfileobj(response, target_file)
+        print("Success.")
     except urllib.error.HTTPError as e:
         print("The server couldn't fulfill the request.")
         print("Error code: ", e.code)
     except urllib.error.URLError as e:
         print("We failed to reach a server.")
         print("Reason: ", e.reason)
-    print("Success.")
     return None
