@@ -10,3 +10,12 @@ __pycache__/
 
 # Visualization Artifacts
 *.png
+
+# Latex artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
