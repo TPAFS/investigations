@@ -1,0 +1,259 @@
+\documentclass[psamsfonts]{amsart}
+
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2in}
+\calclayout
+
+\usepackage{comment}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{amscd}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{rotating}
+\usepackage[colorlinks,citecolor = blue, linkcolor=blue]{hyperref}
+\usepackage{bm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{subcaption}
+
+%--------Theorem Environments--------
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Lemma}
+
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{quest}[thm]{Question}
+\newtheorem{remark}[thm]{Remark}
+
+\title{Claims Denials In US Health Insurance}
+
+\author{Mike Gartner}
+
+
+\begin{document}
+	
+\maketitle
+
+
+\begin{abstract}
+Claims denials in U.S. health insurance pose a serious problem for consumers
+navigating their care. In this report we present and analyze data that sheds
+light on the occurrence and prevalence of claims denials, and propose both policies
+to improve patient outcomes, and existing avenues for consumer recourse.
+\end{abstract}
+
+
+
+{
+	\hypersetup{linkcolor=black}
+	\tableofcontents
+}
+	
+
+\section{Introduction}
+\label{Introduction}
+Claims are a fundamental and atomic unit of US health insurance: every time an insured consumer attempts to use their health insurance to cover a portion of a bill, a claim is submitted to their insurer on their behalf. The claim records details about the care received, and the cost of the care. The primary role of health insurers is to receive and adjudicate these claims based on the contracts they sell, and ultimately pay for some portion of them, on behalf of those who purchased the contracts (typically employers or individuals).\\
+
+When insurers adjudicate a claim to determine whether they will pay for it, they review the contracts that govern the coverage which has been purchased on behalf of the insured. The content of these contracts is itself often restricted by various laws and regulations, and the contracts may also include references to external documents (e.g. ``clinical policy bulletins", or ``scientific literature") that are explicitly cited as things that will be used to make coverage determinations. We will say a coverage decision or denial is contractually inappropriate if the decision is inconsistent with the insurance contract governing a policy, or the laws and regulations that apply to that policy.\\
+
+We note that there are many coverage decisions that one might deem morally or medically inappropriate that would not be considered contractually inappropriate. For example, it would be morally reprehensible for corporations with enormous profits to sell policies that completely exclude the use of certain scientifically proven but expensive treatments for those facing dire medical situations, and then to enforce those exclusions despite pleas from patients on their deathbeds. However, such behavior is, unfortunately, not necessarily contractually inappropriate or illegal, depending on the contract in question.\\
+
+The prevalence of contractually inappropriate claims denials, and lack of recourse for consumers even in these cases, have been serious problems for a long time. There are organizations that regularly publish reports \cite{pollitz2021} about the limited publicly available claims denial data that point to this prevalence (e.g. when comparing appeal rates to appeal success rates), and the subject has been discussed in policy research, legal research \cite{fox2010}, and popular journalism \cite{konrad2010} for a long time. Very recently, there have been numerous investigations and articles that have brought to light for the general public just how heinous some of the inappropriate practices taking place really are \cite{armstrong2023a}, \cite{armstrong2023b}. Finally, there are those most seriously affected; many of those with dire, serious, or chronic medical needs (and their friends and families) have long known about the lack of recourse they enjoy, and the frequency with which contractually inappropriate denials occur just in seeking their own care -- they have been on the front lines for decades, suffering the consequences of unregulated corporate greed.\\
+	
+\subsection{A Primer on Claims Denials}
+\hfill\\
+
+\indent A \emph{claim denial} occurs when a claim is submitted to an insurer, and the insurer decides they will not pay for it. In practice, such decisions are made for many reasons; some valid \footnote{\emph{Valid} here could mean medically, morally or contractually valid. We again note that these notions of validity are rarely the same. We will always explicitly qualify the words appropriate or valid if we are specifically referring to a particular notion}, and others inappropriate or indefensible.\\
+
+When a claim is denied, a patient is typically left with an out of pocket expense larger than what they would otherwise face.
+
+\subsection{Measuring Claims Denial Rates}
+
+ne of the most basic metrics that one can use to investigate how claims handling varies is an overall \emph{claims denial rate}. This measures the fraction all claims submitted that are denied:
+
+\begin{equation*}
+	\text{Denial Rate} = \dfrac{\text{Claims Denied}}{\text{Claims Received}}
+\end{equation*}
+\hfill\\
+In fact, this is not a uniquely defined notion, because the numerator and denominator can be defined in various ways. For example, one could compute this ratio for all claims submitted to a particular insurer over the course of a year, or for all of the claims submitted for a particular plan over a month, or even for all claims submitted from just one individual to a given plan over the course of a year \footnote{Trying to estimate this last number when choosing an insurer is particularly important for individuals with serious health needs who would be unable to afford the care they need if it were to get denied by their insurer.}. We will calculate denial rates that fit this form from a few different lenses in what follows.\\
+
+It is worth noting that:
+
+\begin{enumerate}
+\item A low denial rate is always a good thing for patients, \emph{among the claims that are appropriate} \footnote{Of course not all claims are actually appropriate. For example, sometimes two duplicate claims are submitted for the same care (administratively inappropriate), and approving such claims would in no way help patients. }.
+\item High denial rates can be caused by numerous things, and do not always indicate contractually inappropriate insurer practices.
+\end{enumerate}
+
+
+\subsection{Appeals}
+
+When insurers deny claims, patients are often entitled to an appeals process (e.g. those with federal marketplace plans \href{https://www.healthcare.gov/appeal-insurance-company-decision/appeals/}{are afforded such recourse}, as are all others with so-called \emph{non-grandfathered} qualified health plans; see \cite{pollitz2021} for more background).\\
+
+The details of these processes vary based on details of ones insurance plan, but typically they allow patients to initially file an internal appeal of the denial, which is adjudicated by the insurer themselves. If the internal appeal process (which in some plans requires two attempts at an internal appeal) results in the insurer upholding their denial, patients are then often able to file an external appeal. This means they can submit an appeal of the decision to a (purportedly unbiased \footnote{While we do not have evidence to suggest these organizations make determinations in ways biased towards favorable insurer outcomes, we maintain a healthy dose of skepticism about the independence of their decisions, given the landscape of perverse incentives plaguing the entire space. For example, it is unclear to what extent employees migrate between insurance companies and external review agencies. We invite regulators and lawmakers to publish more data publicly supporting the independence and unbiased nature of such agencies. Lack of public consumer access to detailed denial data, including e.g. determination patterns and methodologies among different review agencies, inspires distrust in a system alread plagued by injustices.}) third party, who is responsible for weighing on the decision; insurers are then legally obligated to uphold the final determinations of these third parties. The third parties, and processes by which external appeals are submitted to them and reviewed by them, vary by plan and by state.\\
+
+In understanding the landscape of claims denials, it is useful to understand the frequency of occurrence, and distribution of outcomes, of these appeal processes.\\
+
+\subsubsection{Initial Appeal Rates}
+
+We define the \emph{initial appeal rate} to be the fraction of denied claims that are appealed at the lowest level available to consumers.\\
+
+\begin{equation*}
+	\text{Initial Appeal Rate} = \dfrac{\text{Claims Appealed (@ first level)}}{\text{Claims Denied}}
+\end{equation*}
+\hfill\\
+
+Again, this is a loose definition that we will specify more precisely in each particular calculation below.\\
+
+Of those denials that are internally appealed, we denote the fraction that are overturned by the insurer as the \emph{initial appeal success rate}.\\
+	
+\begin{equation*}
+	\text{Initial Appeal Success Rate} = \dfrac{\text{Claims Overturned (@ first level)}}{\text{Claims Appealed (@ first level)}}
+\end{equation*}
+\hfill\\
+	
+
+\subsubsection{External Appeal Rates}
+
+We define the \emph{external appeal rate} to be the fraction of internally appealed and subsequently upheld denials which are then additionally externally appealed by consumers.\\
+
+\begin{equation*}
+	\text{External Appeal Rate} = \dfrac{\text{Claims Appealed Externally}}{\text{Claims Internally Appealed and Upheld}}
+\end{equation*}
+\hfill\\
+
+
+Of those denials that are externally appealed, we denote the fraction that are overturned by a third party as the \emph{external appeal success rate}.
+
+\begin{equation*}
+	\text{External Appeal Success Rate} = \dfrac{\text{Claims Overturned Externally}}{\text{Claims Appealed Externally}}
+\end{equation*}
+\hfill\\
+
+
+\subsubsection{Expected Appeal Phenomenology}
+
+We expect initial appeal success rates to be lower than external appeal success rates, assuming the same population of claims were reviewed \footnote{Note that in practice, one can't compare external and internal appeal success rates directly for the same pool of claims denials. Those appeals that make it to an external review have typically already been through an internal review that was upheld, so the distribution of externally reviewed claims almost never includes e.g. denial cases that an insurer agrees are contractually inappropriate. Presumably, all such cases where an insurer agrees to overturn their initial decision would also be overturned by third parties, if the third parties ever saw them.}. We hold this expectation for two reasons. One is that insurers have a monetary incentive to uphold denials, while third parties do not. The other is that insurers make the initial determinations about what claims to deny, so they obviously have some alignment with the initial denial rationale to begin with. On the other hand, external reviewers may view claims from completely different lenses than that with which an insurer initially viewed them, leading to a higher likelihood of a different conclusion about contractual validity.\\
+
+Finally, we note that both the internal and external appeal systems have the potential to be completely biased, so we should take care to note when we are drawing conclusions from the data that assumes some impartiality in either process. We expect that of all of the data publicly available, external appeal success rates can best inform the underlying validity of (some subset of) initial denials, since at least one third party with no monetary stake in the judgment has been involved in adjudication. Internal appeal data reflects a situation that is opaque by design -- it is difficult to take seriously the purported impartiality of a reviewer that is both reviewing their own decision, and that stands to generate more profit by upholding that decision. There is a reason we don't have juries consisting of the best friends of a defendant.
+
+\subsection{A Dive Into Public Claims Denial Data}
+
+To understand the landscape of claims denials, contractually inappropriate claims denials, appeals, and effective consumer recourse, we need data. Unfortunately for consumers, requirements for insurers to publicly disclose claims denial data are few and far between, and the extent to which requirements that do exist are enforced and regulated is unclear. It would be invaluable for regulators to require broad, transparent claims denial information, and to strictly enforce and audit validity of the data.\\
+
+We make use of a few data sources that are public:\\
+
+\begin{enumerate}
+	\item Centers for Medicare and Medicaid Services (CMS) \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{Public Use Files} (PUFs)\\
+	
+	Each year CMS releases a collection of transparency data related to federal marketplace insurers. Here we are interested in the \emph{transparency in coverage} \footnote{The term transparency in coverage has been overloaded, and used in different contexts by CMS and other government agencies. Our use of the term here does not refer to the \href{https://www.federalregister.gov/documents/2019/11/27/2019-25011/transparency-in-coverage}{CMS rule published in 2019} requiring health plans to publish certain rate data, which is \href{https://www.cms.gov/healthplan-price-transparency}{broadly being referenced} as the transparency in coverage rule. Instead, it refers only to the \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{public use files distributed by CMS} documenting federal marketplace denials and appeals (among other things). Note that these are also referred to by CMS as transparency in coverage files, and in fact have been in existence, and referred to in this way, far longer than the TiC rule. Obviously the two efforts are not completely unrelated, and it would be most welcome if reporting requirements in the TiC rule were expanded to incorporate reporting about denial transparency, as do these federal marketplace PUFs. See further discussion in the policy section.} (TIC) public use files. These are files compiled from self-reported insurer data specifying aggregate counts of claims submitted, claims denied, and claims appealed, among other things. This data is limited in scope, and clearly accuracy is not strictly validated based on the frequency of impossible records in the data, but it is the closest thing we have to a denial transparency requirement with broad impact. It is compiled and reported to the public in accordance with the Department of Health and Human Services (HHS) \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-K/section-155.1040}{rule 45 of the Code of Federal Regulations (CFR), part 155, subpart K} (cf \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-C/section-156.220}{CFR 156 subpart C)}.\\
+	
+	
+	\item \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{New York Health Care Claim Reports}\\
+	
+	Thanks to \href{https://www.nysenate.gov/legislation/laws/ISC/345}{legislation from 2020}, New York publishes \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{health care claim reports} for insurance companies (as of plan year 2022) that contain aggregate counts of claims submitted, claims denied, and claims appealed for each NY insurer, among other things. Unfortunately, the data for insurers is not aggregated into a single file, or served in a particularly friendly format for analysis, but we perform this aggregation here and make the transformed data publicly available.\\
+	
+	
+	\item \href{https://www.dfs.ny.gov/public-appeal/search}{New York External Appeal Outcome Data}\\
+	
+	External appeals of denials from New York marketplace plans, fully insured group plans, and Medicaid managed care plans are adjudicated by Independent Review Organizations. The New York Department of Financial Services manages such appeal processes, and maintains a public database of results from external appeals.\\
+	
+	
+	\item \href{https://fortress.wa.gov/oic/consumertoolkit/Search.aspx?searchtype=indrev}{Washington External Appeal Outcome Data}\\
+	
+	External appeals of denials from Washington marketplace plans are adjudicated by Independent Review Organizations. According to \href{https://apps.leg.wa.gov/wac/default.aspx?cite=284-43-3030}{Washington Administrative Code 284-43-3030} and the \href{https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.530}{Revised Code of Washington 48.43.530}, insurers must support both internal appeal and external processes, and report resulting data to the insurance commissioner. The code above provides for external appeals to be sought as soon as an internal process is exhausted, or 30 days after internal appeal initiation has occurred, whichever is sooner. Details of the rules pertaining to external appeals are described in the \href{https://app.leg.wa.gov/rcw/default.aspx?cite=48.43.535}{Revised Code of Washington 48.43.535}.\\
+	
+	The Office of the Insurance Commissioner in Washington state maintains a public database of results from these external appeals.\\
+	
+	
+	\item California External Appeal Data from the \href{https://interactive.web.insurance.ca.gov/apex_extprd/f?p=192:1:2660782937251:::::}{California Department of Insurance (CDI)} and the \href{https://dmhc.ca.gov/AbouttheDMHC/DMHCReports/AnnualReports.aspx}{Department of Managed Health Care (DMHC)}\\
+	
+	California releases data related to internal and external appeal outcomes in at least four places, all of which we consider:\\
+	
+	\begin{enumerate}
+	\item Yearly CDI \href{https://www.insurance.ca.gov/0400-news/0200-studies-reports/0700-commissioner-report/}{commissioner reports}.\\
+	
+	These reports include summary statistics, such as the total numbers of claims and internal appeals submitted by consumers. The specific yearly reports we consider here are released by commissioner Ricardo Lara. \\
+	
+	\item Yearly DMHC \href{https://dmhc.ca.gov/AbouttheDMHC/DMHCReports/AnnualReports.aspx}{secretary reports}.\\
+	
+	These reports include summary statistics, such as the total numbers of claims and internal appeals submitted by consumers. The specific yearly reports we consider here are released by director Mary Watanabe.\\
+	
+	\item A \href{https://interactive.web.insurance.ca.gov/apex_extprd/f?p=192:1:5191948876739:::::}{database of Internal Medical Review (IMR) outcomes adjudicated by the California Department of Insurance}.\\
+	
+	This data corresponds to plans regulated by the CDI.\\
+	
+	\item A \href{https://data.chhs.ca.gov/dataset/independent-medical-review-imr-determinations-trend}{database of Internal Medical Review (IMR) outcomes pertaining to health maintenance organizations (HMOs)}.\\
+	
+	This data corresponds to plans regulated by the Caifornia Department of Managed Health Care (DMHC).\\
+	
+	\end{enumerate}
+	
+	External appeals (aka internal medical reviews) in California follow processes dictated by two pieces of the California Insurance Code (CIC).\\
+	
+	\begin{enumerate}
+	
+	
+	\item \href{https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=INS&division=2.&title=&part=2.&chapter=1.&article=3.5.}{Sections 10169.1 - 10169.5}, which initially became effective January 1, 2001, describe rules that apply to IMR sought for health coverage decisions purportedly related to medical necessity. There have been numerous modifications to the law since then. The current law expressly provides for the inclusion of those on Medicare and Medicare Advantage plans, however it also allows for processes to be subsumed by existing state Medicare resolution outlets. It allows IMRs to be sought as soon as an internal process is exhausted, or 30 days after internal initiation has occurred, whichever is sooner. It also allows the CDI to contract with the DMHC to administer the IMR as desired (which has come into play for managed care plans, such as HMOs, as described in the last dataset description above.)\\
+	
+	\item \href{https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=INS&sectionNum=10145.3.}{Section 10145.3}, also effective as of January 1, 2001, describes particular rules that apply to IMR sought for insurer decisions stemming from deeming treatment or services as experimental or investigational in nature.\\
+	
+	\end{enumerate}
+	
+	
+	\item Connecticut Denial Data From \href{https://portal.ct.gov/CID/Reports/Consumer-Report-Card-on-Health-Insurance-Carriers-in-Connecticut}{Consumer Report Cards}
+	
+	Connecticut's state Department of Insurance releases a report, the so called Consumer Report Card on Health Insurance Carriers, each year. The report includes various aggregate statistics about health insurance plans, including utilization for certain services, member satisfaction, and aggregate denial statistics.\\
+\end{enumerate}
+	
+To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data.\\
+
+An overview of the data we analyze in this report is detailed below.\\
+
+	\begin{table}[!h]
+	\centering
+	\begin{tabular}{|p{4cm}|p{4cm}|p{2cm}|p{2cm}|p{3cm}|}
+		\hline
+		Data Source (plan years considered) & Market Segment & Num Denials & Denials Represented & Consumer Population Represented  \\ \hline
+		CMS TIC PUF (2021) & Federal marketplace & 48,302,001 & All & 8,251,703 \\ \hline
+		NY Health Care Claims Reports (2022) & All NY Issuers & 25,996,601 & All & Unknown, but $\geq$ 5,000,000  \\ \hline
+		NY External Appeals Database (2019-2023) & NY marketplace, fully insured group plans, and Medicaid managed care plans & 26,036 & Externally Appealed (IMR) & Unknown, but $\geq$ 5,000,000  \\ \hline
+		WA External Appeals Database (2016-2023) & WA marketplace & 8774 & Externally Appealed (IMR) & 222,731  \\ \hline
+		CA DOI External Appeals Database (2011-2023) & CA marketplace, and fully insured group plans & 4,658 & Externally Appealed (IMR) & 852,506 \footnote{We use the total enrollment noted in the 2021 CDI report, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly. }  \\ \hline
+		CA DMHC External Appeals Database (2001-2023) & Large group and self funded plans regulated by DMHC & 34,615 & Externally Appealed (IMR) & 23,474,332  \\ \hline
+		Connecticut Consumer Report Card (2021) & All CT issuers (excluding government sponsored) & 2,708,724 & All & 1,991,903  \\ \hline
+	\end{tabular}
+\end{table}
+	
+
+\subsection{Federal Marketplace Insurers}
+
+\subsection{New York Health Care Claims Reports}
+
+
+
+\subsection{Acknowledgements}
+It is a pleasure to thank the following people for their support and guidance in reviewing this manuscript:
+
+
+
+\bibliographystyle{alpha}
+\bibliography{References}
+
+	
+\end{document}
