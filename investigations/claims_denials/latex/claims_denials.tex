@@ -22,6 +22,7 @@
 \usepackage{bm}
 \usepackage[shortlabels]{enumitem}
 \usepackage{subcaption}
+\usepackage{tablefootnote}
 
 %--------Theorem Environments--------
 \theoremstyle{plain}
@@ -223,25 +224,204 @@ We make use of a few data sources that are public:\\
 	
 To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data.\\
 
-An overview of the data we analyze in this report is detailed below.\\
+An overview of the data we analyze in this report is detailed in Table \ref{summarytable} below.
 
-	\begin{table}[!h]
+	\begin{table}[!ht]
 	\centering
-	\begin{tabular}{|p{4cm}|p{4cm}|p{2cm}|p{2cm}|p{3cm}|}
+	\begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{4cm}|}
 		\hline
-		Data Source (plan years considered) & Market Segment & Num Denials & Denials Represented & Consumer Population Represented  \\ \hline
+		\textbf{Data Source (plan years considered)} & \textbf{Market Segment} & \textbf{Num Denials} & \textbf{Denials Represented} & \textbf{Consumer Population Represented}  \\ \hline
 		CMS TIC PUF (2021) & Federal marketplace & 48,302,001 & All & 8,251,703 \\ \hline
-		NY Health Care Claims Reports (2022) & All NY Issuers & 25,996,601 & All & Unknown, but $\geq$ 5,000,000  \\ \hline
+		NY Health Care Claims Reports (2022) & All NY Issuers & 25,996,601 & All & Unknown, but $\geq$ 5,000,000 \tablefootnote{It is unclear which exact pool of insurance plans, and therefore consumers, this data covers. It appears the DFS has jurisdiction to regulate external appeals for all individual marketplace plans, fully insured group plans, and Medicaid managed care plans. We planned to estimate this population using the \href{https://www.dfs.ny.gov/system/files/documents/2022/08/ny_consumer_guide_health_insurers_2022.pdf}{DFS consumer report for the 2021 plan year}, but found it does not include enrollment. In fact, we couldn't even corroborate the denial numbers from the 2021 plan year from the aforementioned report, and found a significant discrepancy between the total number of external denials listed in that report, and the number that exist in the DFS database. We belive this discrepancy comes from the fact that the report excludes summary statistics for numerous categories of smaller plans, such as HMOs with less than 500 members, and commercial and EPO/PPO plans with less than 50 million in premiums.
+			
+			However, we can say that the population of consumers corresponding to plans that the DFS regulates at least includes marketplace plans, and according to New York State of Health \href{https://info.nystateofhealth.ny.gov/enrollmentdata}{enrollment data}, that population has hovered between 4.5-7 million over the years represented here.}  \\ \hline
 		NY External Appeals Database (2019-2023) & NY marketplace, fully insured group plans, and Medicaid managed care plans & 26,036 & Externally Appealed (IMR) & Unknown, but $\geq$ 5,000,000  \\ \hline
 		WA External Appeals Database (2016-2023) & WA marketplace & 8774 & Externally Appealed (IMR) & 222,731  \\ \hline
-		CA DOI External Appeals Database (2011-2023) & CA marketplace, and fully insured group plans & 4,658 & Externally Appealed (IMR) & 852,506 \footnote{We use the total enrollment noted in the 2021 CDI report, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly. }  \\ \hline
-		CA DMHC External Appeals Database (2001-2023) & Large group and self funded plans regulated by DMHC & 34,615 & Externally Appealed (IMR) & 23,474,332  \\ \hline
-		Connecticut Consumer Report Card (2021) & All CT issuers (excluding government sponsored) & 2,708,724 & All & 1,991,903  \\ \hline
+		CA DOI External Appeals Database (2011-2023) & CA marketplace, and fully insured group plans & 4,658 & Externally Appealed (IMR) & 852,506 \tablefootnote{We use the total enrollment noted in the \href{https://www.insurance.ca.gov/0400-news/0200-studies-reports/0700-commissioner-report/}{2021 CDI report}, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly. }  \\ \hline
+		CA DMHC External Appeals Database (2001-2023) & Large group and self funded plans regulated by DMHC & 34,615 & Externally Appealed (IMR) & 23,474,332 \tablefootnote{We use the total enrollment noted in the \href{https://dmhc.ca.gov/AbouttheDMHC/DMHCReports/AnnualReports.aspx}{2021 DMHC secretary report}, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly.}  \\ \hline
+		Connecticut Consumer Report Card (2021) & All CT issuers (excluding government sponsored) & 2,708,724 & All & 1,991,903 \tablefootnote{We use the total enrollment noted in the \href{https://portal.ct.gov/CID/Reports/Consumer-Report-Card-on-Health-Insurance-Carriers-in-Connecticut}{2021 consumer report card}, since it is explicitly noted.}  \\ \hline
 	\end{tabular}
+\caption{Summary of Datasets Considered}
+\label{summarytable}
 \end{table}
 	
 
 \subsection{Federal Marketplace Insurers}
+\hfill\\
+\indent Using CMS TIC PUF data, we analyzed the landscape of federal marketplace denials and appeals from 2021 \footnote{Note that the CMS TIC PUF data is reported and labeled two years later than the date to which it corresponds. Thus the 2021 data is labeled by CMS as the 2023 TIC PUF.}. The data suggests denials are generally prevalent, while appeals of all forms are scarce. For those that do appeal, however, overturn rates are high. \\
+
+\subsubsection{Initial Denial Rates}
+\hfill\\
+
+Of note, 16\% of all federal marketplace claims submitted in 2021 were initially denied. The data is displayed in Figure \ref{federal_denial_rate}.\\
+
+\begin{figure}
+	\centering
+	\textbf{Aggregate Claims Denial Rate, Federal Marketplace Insurers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/overall_denial_pie.png}
+	\caption{Aggregate denial rate across federal marketplace insurers in 2021. Approximately 16\% of all federal marketplace claims were initially denied in 2021, according to CMS TIC PUF data. Source: CMS TIC PUF data.}
+	\label{federal_denial_rate}
+\end{figure}
+
+
+The distribution of denial rates across insurers, plans, plan types, and regions varies drastically. Figure \ref{federal_denial_rate_hist} shows the distribution of overall issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%.
+
+\begin{figure}
+	\centering
+	\textbf{Claims Denial Rates Across Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/denial_rates_all_insurers.png}
+	\caption{Distribution of claims denial rates across federal marketplace issuers in 2021. Across issuers, denial rates vary from approximately 0\% to 50\%. Source: CMS TIC PUF data.}
+	\label{federal_denial_rate_hist}
+\end{figure}
+
+Federal marketplace plans included in this CMS TIC PUF data sometimes report rationales for claim denials. When reported, the available options for these rationales are:\\
+
+\begin{enumerate}
+	\item Referral Required
+	\item Out of Network
+	\item Services Excluded
+	\item Not Medically Necessary
+	\item Other
+\end{enumerate}
+
+Most denials logged in the CMS PUF data are associated with a rationale of "Other" (see Figure \ref{federal_denials_by_rationale}), which provides little information to the public.\\
+
+\begin{figure}
+	\centering
+	\textbf{Claims Denials By Rationale, Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/denials_by_rationale.png}
+	\caption{Distribution of claims denial rationales in a subset of the TIC PUF data. Denial rationales are reported at the plan level, and we only included here those plans which reported denial rationales which either summed to the total number of denials reported, or which summed to this value when excluding out of network denials. We could not resolve whether the other data could be trusted by any reporting standard. Source: CMS TIC PUF data.}
+	\label{federal_denials_by_rationale}
+\end{figure}
+
+Effectively, this reporting scheme allows insurers to withhold reporting the actual reason for a denial to the public if they so choose, since it is not completely clear what is allowed to be reported in this bucket, and there is no strict validation of the reported data. Whether or not insurers actually abuse this system cannot be gleaned from this data alone.\\
+
+
+Figure \ref{federal_denial_map} shows the average issuer level claims denial rates for each region represented in the CMS TIC PUF data. We also present a more comprehensive summary of the data in Table \ref{federal_denial_data_by_region_table}\\
+
+\begin{figure}
+	\centering
+	\textbf{Claims Denial Rates By Region, Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/federal_denial_rates.png}
+	\caption{Claims denial rates broken down by region. Source: CMS TIC PUF data.}
+	\label{federal_denial_map}
+\end{figure}
+
+Among this federal marketplace data, Mississippi stands out for having a uniquely high aggregate denial rate, with Texas, Alabama, Alaska, Georgia, Ohio, Indiana and Michigan occupying the next batch of worst offenders. In many regions, a relatively small collection of issuers contribute a majority of the claims denied.\\
+
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|}
+		\hline
+		State or Region & Denial Rate & Claims Received & Claims Denied & Number of Consumers & Number of Insurers \\ \hline
+		Alaska & 0.235 & 611313 & 143836 & 16707 & 2 \\ \hline
+		Alabama & 0.224 & 7657061 & 1716993 & 168717 & 2 \\ \hline
+		Arkansas & 0.185 & 15180958 & 2808497 & 59629 & 5 \\ \hline
+		Arizona & 0.192 & 3612118 & 694976 & 115409 & 6 \\ \hline
+		Florida & 0.131 & 75588407 & 9868686 & 1867568 & 10 \\ \hline
+		Georgia & 0.289 & 10825149 & 3127963 & 387441 & 6 \\ \hline
+		Hawaii & 0.244 & 486179 & 118578 & 16343 & 2 \\ \hline
+		Iowa & 0.149 & 2828360 & 421458 & 40699 & 3 \\ \hline
+		Illinois & 0.176 & 10755531 & 1893905 & 248363 & 7 \\ \hline
+		Indiana & 0.236 & 4233263 & 997114 & 91625 & 3 \\ \hline
+		Kansas & 0.135 & 2333613 & 314062 & 43716 & 5 \\ \hline
+		Louisiana & 0.151 & 5040194 & 761581 & 78236 & 4 \\ \hline
+		Michigan & 0.205 & 7783687 & 1599048 & 138398 & 8 \\ \hline
+		Missouri & 0.191 & 6173944 & 1182181 & 113034 & 8 \\ \hline
+		Mississippi & 0.381 & 1411877 & 537222 & 50769 & 2 \\ \hline
+		Montana & 0.096 & 1379424 & 132490 & 41233 & 3 \\ \hline
+		North Carolina & 0.125 & 26446640 & 3295778 & 284269 & 5 \\ \hline
+		North Dakota & 0.042 & 1873450 & 77936 & 21803 & 3 \\ \hline
+		Nebraska & 0.102 & 3305776 & 338692 & 48619 & 2 \\ \hline
+		New Hampshire & 0.184 & 1436531 & 264608 & 34360 & 3 \\ \hline
+		Ohio & 0.217 & 5795555 & 1255800 & 138349 & 10 \\ \hline
+		Oklahoma & 0.163 & 8986426 & 1461998 & 138695 & 4 \\ \hline
+		Oregon & 0.07 & 1999967 & 139605 & 111343 & 6 \\ \hline
+		South Carolina & 0.18 & 10502152 & 1885641 & 179317 & 3 \\ \hline
+		South Dakota & 0.057 & 776818 & 44532 & 25419 & 2 \\ \hline
+		Tennessee & 0.18 & 11196451 & 2011182 & 140672 & 6 \\ \hline
+		Texas & 0.204 & 35256067 & 7201165 & 591074 & 10 \\ \hline
+		Utah & 0.138 & 10086291 & 1391050 & 151905 & 6 \\ \hline
+		Virginia & 0.164 & 9224112 & 1508696 & 224605 & 9 \\ \hline
+		Wisconsin & 0.117 & 5952081 & 694105 & 128863 & 13 \\ \hline
+		West Virginia & 0.162 & 883377 & 143100 & 7069 & 2 \\ \hline
+		Wyoming & 0.128 & 1157244 & 148487 & 26777 & 2 \\ \hline
+	\end{tabular}
+\caption{Summary of Federal Marketplace Denial Data, Broken Down By Region}
+	\label{federal_denial_data_by_region_table}
+\end{table}
+
+\subsubsection{Internal Appeals}
+
+The data are striking in that they make clear that while appeals of all forms are extremely rare among marketplace consumers, those that do appeal have a high appeal success rate. Figure \ref{federal_internal_appeal_rates} shows the fraction of initially denied claims that are appealed by consumers, while Figure \ref{federal_internal_appeal_success_rates} shows the fraction of appeals
+that are overturned.\\
+
+\begin{figure}
+	\centering
+	\textbf{Internal Appeal Rates, Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/internal_appeal_rates_all_insurers.png}
+	\caption{ Internal appeal rates among federal marketplace issuers in 2021. Only 1/5 of a percent of the approximately 50 million initially denied claims are appealed. Source: CMS TIC PUF data.}
+	\label{federal_internal_appeal_rates}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\textbf{Internal Appeal Success Rates, Federal Marketplace Issuers, 2021}\par\medskip
+\includegraphics[width=0.85\columnwidth]{images/cms_puf/internal_appeal_success_rates_all_insurers.png}
+	\caption{ Internal appeal success rates among federal marketplace issuers in 2021. Only 1/5 of a percent of the approximately 50 million initially denied claims are appealed, but of those that are, 41 percent get immediately overturned on a first level internal review. Source: CMS TIC PUF data.}
+	\label{federal_internal_appeal_success_rates}
+\end{figure}
+
+
+The initial appeal rate is about .2\%, while the initial success rate among internally appealed claims is about 41\%. We note that the disparity between the fraction of denials being appealed and the fraction of those appeals being internally overturned could be rooted in various phenomenon \footnote{For example, it could be the case that the distribution of cases being internally appealed are those that are particularly egregious or obvious inappropriate denials, and that the expected appeal success rate would drop drastically if one were to appeal every denial with the adjudication processes remaining fixed.}. Nonetheless, it is informative to consider what this disparity would imply under different assumptions. \\
+
+Let's consider what would happen if more federal marketplace insurer denials were appealed. Suppose:
+
+\begin{enumerate}
+\item The fraction of denials appealed initially is X\% (X=.1899506X=.1899506\% in the data above).
+\item The initial appeal success rate is Y\% (Y=41.32Y=41.32\% in the data above).
+\item The average value per denied claim is \$Z (we do not have enough information to estimate Z for this distribution of claims data).
+\end{enumerate}
+
+Note that even for a highly conservative estimate, scaling appeal rates has high value implications. For example, scaling currently observed internal appeal success rates (41.32\%) to 1\% of all denied claims on the federal marketplace with an average value per claim of just \$10 (X=1, Y=41.32, Z=10), would result in approximately 150k extra overturned claims and an extra 1.5 million USD of value returned to consumers.\\
+
+This does not include all of the insurance denials that occur outside of the federal marketplaces, or those that were not reported in this incomplete data, nor does it take into account the fact that external appeals are a less biased process that data suggests would lead to even more overturns.\\
+
+The takeaway is that consumers should be appealing inappropriate denials whenever possible, and we need organizations, regulators, and individuals to support consumers and aid them in scaling the rate at which they are following through with such appeals when faced with contractually inappropriate denials.\\
+
+The monetary value alone is significant to consumers, and there are many important additional implications for their health (see Section \ref{policy_section} below for more details).\\
+
+
+\subsubsection{External Appeals}
+
+In Figures \ref{federal_external_appeal_rates} and \ref{federal_external_appeal_success_rates} we display the external appeal rates and external appeal success rates from the CMS TIC PUF data.\\
+
+
+
+\begin{figure}
+	\centering
+	\textbf{External Appeal Rates, Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/external_appeal_rates_all_insurers.png}
+	\caption{External appeal rates among federal marketplace issuers that reported the data in 2021. Not all issuers and plans reported external appeal data in the CMS PUF. Among the issuers reporting external appeal data, only 5 percent of the approximately 34 thousand denials upheld on internal appeal are externally appealed Source: CMS TIC PUF data.}
+	\label{federal_external_appeal_rates}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\textbf{External Appeal Success Rates, Federal Marketplace Issuers, 2021}\par\medskip
+	\includegraphics[width=0.85\columnwidth]{images/cms_puf/external_appeal_success_rates.png}
+	\caption{External appeal success rates among federal marketplace issuers that reported the data in 2021. Not all issuers and plans reported external appeal data in the CMS PUF. Among the issuers reporting external appeal data, only 5 percent of the approximately 34 thousand denials upheld on internal appeal are externally appealed, but of those, nearly 49 percent get overturned when reviewed by an independent external agency. Source: CMS TIC PUF data.}
+	\label{federal_external_appeal_success_rates}
+\end{figure}
+
+A key fact to take away from the external appeal data is the rate at which claims that are denied, and then subsequently re-reviewed internally by insurers on request, and finally upheld as denials, are then overturned when reviewed by impartial expert third parties with no monetary stake in the decision outcome. Of the 1760 claims represented in this data that were denied, internally appealed, upheld as denials, and then externally appealed, a staggering 49\% were deemed by external reviewers to be inappropriate.\\
+
+This result clearly shows that internal review processes cannot be trusted to be impartial, fair, or adjudicate appropriately.\\
+
+Internal processes are, effectively, a means by which regulators and insurers force consumers to jump through hoops before receiving unbiased consideration. The insurers understand this data well (and if they claim they do not, they are at best grossly negligent for not understanding this data), and know that most consumers will never jump through the last hoop to access their right to an independent external review (evidently 95\% of the consumers in this data who make it to the second to last hoop don't have the wherewithal to make it to the last hoop).\\
+
 
 \subsection{New York Health Care Claims Reports}
 
