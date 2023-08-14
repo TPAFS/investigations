@@ -82,6 +82,7 @@ def plot_bar(
     int_vals: bool = True,
     float_precision_depth: int = 3,
     color_hex: t.Optional[str] = None,
+    htick_rotation: int = 30
 ) -> None:
     """Draw and optionally show and save a bar chart."""
     if figsize:
@@ -95,7 +96,7 @@ def plot_bar(
         )
     else:
         bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
-    plt.xticks(rotation=30, ha="right")
+    plt.xticks(rotation=htick_rotation, ha="right")
     ax.ticklabel_format(useOffset=False, style="plain", axis="y")
     if int_vals:
         y_tick_fmt = lambda x: f"{int(x):,}"
