@@ -125,7 +125,7 @@ def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
         val = int(round(pct * total / 100.0))
-        return "{p:.2f}%\n({v:d})".format(p=pct, v=val)
+        return "{p:.2f}%\n({v:,d})".format(p=pct, v=val)
 
     return my_autopct
 
@@ -137,15 +137,19 @@ def plot_pie(
     save_path: t.Optional[str] = None,
     show: bool = True,
     legend: bool = True,
+    figsize: tuple = (10, 10),
 ) -> None:
     """Drawn and optionally show and save a pie chart."""
-    fig, ax = plt.subplots(figsize=(10, 10))
+    if figsize:
+        fig, ax = plt.subplots(figsize=figsize)
+    else:
+        fig, ax = plt.subplots()
     if legend:
         ax.pie(
             slice_vals,
             labels=None,
             autopct=make_autopct(slice_vals),
-            textprops={"color": "black"},
+            textprops={"color": "black", "fontsize": 13},
         )
         ax.legend(labels=slice_names, labelcolor="black")
     else:
