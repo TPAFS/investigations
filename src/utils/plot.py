@@ -82,7 +82,7 @@ def plot_bar(
     int_vals: bool = True,
     float_precision_depth: int = 3,
     color_hex: t.Optional[str] = None,
-    htick_rotation: int = 30,
+    htick_rotation: int = 50,
 ) -> None:
     """Draw and optionally show and save a bar chart."""
     if figsize:
