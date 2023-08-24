@@ -82,6 +82,7 @@ def plot_bar(
     int_vals: bool = True,
     float_precision_depth: int = 3,
     color_hex: t.Optional[str] = None,
+    htick_rotation: int = 50,
 ) -> None:
     """Draw and optionally show and save a bar chart."""
     if figsize:
@@ -95,7 +96,7 @@ def plot_bar(
         )
     else:
         bar = ax.bar(x, height=bar_vals, tick_label=bar_names, log=False)
-    plt.xticks(rotation=30, ha="right")
+    plt.xticks(rotation=htick_rotation, ha="right")
     ax.ticklabel_format(useOffset=False, style="plain", axis="y")
     if int_vals:
         y_tick_fmt = lambda x: f"{int(x):,}"
@@ -124,7 +125,7 @@ def make_autopct(values):
     def my_autopct(pct):
         total = sum(values)
         val = int(round(pct * total / 100.0))
-        return "{p:.2f}%\n({v:d})".format(p=pct, v=val)
+        return "{p:.2f}%\n({v:,d})".format(p=pct, v=val)
 
     return my_autopct
 
@@ -136,15 +137,19 @@ def plot_pie(
     save_path: t.Optional[str] = None,
     show: bool = True,
     legend: bool = True,
+    figsize: tuple = (10, 10),
 ) -> None:
     """Drawn and optionally show and save a pie chart."""
-    fig, ax = plt.subplots(figsize=(10, 10))
+    if figsize:
+        fig, ax = plt.subplots(figsize=figsize)
+    else:
+        fig, ax = plt.subplots()
     if legend:
         ax.pie(
             slice_vals,
             labels=None,
             autopct=make_autopct(slice_vals),
-            textprops={"color": "black"},
+            textprops={"color": "black", "fontsize": 13},
         )
         ax.legend(labels=slice_names, labelcolor="black")
     else:
