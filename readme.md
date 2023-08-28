@@ -39,6 +39,11 @@ from the top level of this directory.
 
 Each notebook in each investigation should now be usable in a self-contained way.
 
+## Contributing
+
+We welcome contributions from all, and constructive feedback and discussion of any form.
+
+Please see .github/CONTRIBUTING.md for more information about how to contribute to this project, or head to the github Discussions tab to join or start a conversation.
 ## License
 
 **Data, Documentation and Other Media**
