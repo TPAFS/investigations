@@ -1,10 +1,6 @@
-\documentclass[psamsfonts]{amsart}
+\documentclass[12pt, a4paper]{report}
 
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
-\calclayout
 
-\usepackage{comment}
 \usepackage{mathrsfs}
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -18,34 +14,16 @@
 \usepackage{cancel}
 \usepackage{amssymb}
 \usepackage{rotating}
-\usepackage[colorlinks,citecolor = blue, linkcolor=blue]{hyperref}
+\usepackage[colorlinks,citecolor = blue, linkcolor=blue, urlcolor=PineGreen]{hyperref}
 \usepackage{bm}
 \usepackage[shortlabels]{enumitem}
 \usepackage{subcaption}
 \usepackage{tablefootnote}
 
-%--------Theorem Environments--------
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{claim}[thm]{Lemma}
-
-
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{exmp}[thm]{Example}
-
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{quest}[thm]{Question}
-\newtheorem{remark}[thm]{Remark}
-
+\setcounter{secnumdepth}{0}
 \title{Claims Denials In US Health Insurance}
 
 \author{Mike Gartner}
-
 
 \begin{document}
 	
@@ -75,9 +53,9 @@ When insurers adjudicate a claim to determine whether they will pay for it, they
 
 We note that there are many coverage decisions that one might deem morally or medically inappropriate that would not be considered contractually inappropriate. For example, it would be morally reprehensible for corporations with enormous profits to sell policies that completely exclude the use of certain scientifically proven but expensive treatments for those facing dire medical situations, and then to enforce those exclusions despite pleas from patients on their deathbeds. However, such behavior is, unfortunately, not necessarily contractually inappropriate or illegal, depending on the contract in question.\\
 
-The prevalence of contractually inappropriate claims denials, and lack of recourse for consumers even in these cases, have been serious problems for a long time. There are organizations that regularly publish reports \cite{pollitz2021} about the limited publicly available claims denial data that point to this prevalence (e.g. when comparing appeal rates to appeal success rates), and the subject has been discussed in policy research, legal research \cite{fox2010}, and popular journalism \cite{konrad2010} for a long time. Very recently, there have been numerous investigations and articles that have brought to light for the general public just how heinous some of the inappropriate practices taking place really are \cite{armstrong2023a}, \cite{armstrong2023b}. Finally, there are those most seriously affected; many of those with dire, serious, or chronic medical needs (and their friends and families) have long known about the lack of recourse they enjoy, and the frequency with which contractually inappropriate denials occur just in seeking their own care -- they have been on the front lines for decades, suffering the consequences of unregulated corporate greed.\\
+The prevalence of contractually inappropriate claims denials, and lack of recourse for consumers even in these cases, have been serious problems for a long time. There are organizations that regularly publish reports \cite{pollitz2021} about the limited publicly available claims denial data that point to this prevalence (e.g. when comparing appeal rates to appeal success rates), and the subject has been discussed in policy research, legal research \cite{fox2022}, and popular journalism \cite{konrad2010} for a long time. Very recently, there have been numerous investigations and articles that have brought to light for the general public just how heinous some of the inappropriate practices taking place really are \cite{armstrong2023a}, \cite{armstrong2023b}. Finally, there are those most seriously affected; many of those with dire, serious, or chronic medical needs (and their friends and families) have long known about the lack of recourse they enjoy, and the frequency with which contractually inappropriate denials occur just in seeking their own care -- they have been on the front lines for decades, suffering the consequences of unregulated corporate greed.\\
 	
-\subsection{A Primer on Claims Denials}
+\section{A Primer on Claims Denials}
 \hfill\\
 
 \indent A \emph{claim denial} occurs when a claim is submitted to an insurer, and the insurer decides they will not pay for it. In practice, such decisions are made for many reasons; some valid \footnote{\emph{Valid} here could mean medically, morally or contractually valid. We again note that these notions of validity are rarely the same. We will always explicitly qualify the words appropriate or valid if we are specifically referring to a particular notion}, and others inappropriate or indefensible.\\
@@ -153,7 +131,8 @@ We expect initial appeal success rates to be lower than external appeal success 
 
 Finally, we note that both the internal and external appeal systems have the potential to be completely biased, so we should take care to note when we are drawing conclusions from the data that assumes some impartiality in either process. We expect that of all of the data publicly available, external appeal success rates can best inform the underlying validity of (some subset of) initial denials, since at least one third party with no monetary stake in the judgment has been involved in adjudication. Internal appeal data reflects a situation that is opaque by design -- it is difficult to take seriously the purported impartiality of a reviewer that is both reviewing their own decision, and that stands to generate more profit by upholding that decision. There is a reason we don't have juries consisting of the best friends of a defendant.
 
-\subsection{A Dive Into Public Claims Denial Data}
+\section{Public Claims Denial Data}
+\hfill\\
 
 To understand the landscape of claims denials, contractually inappropriate claims denials, appeals, and effective consumer recourse, we need data. Unfortunately for consumers, requirements for insurers to publicly disclose claims denial data are few and far between, and the extent to which requirements that do exist are enforced and regulated is unclear. It would be invaluable for regulators to require broad, transparent claims denial information, and to strictly enforce and audit validity of the data.\\
 
@@ -425,9 +404,17 @@ Internal processes are, effectively, a means by which regulators and insurers fo
 
 \subsection{New York Health Care Claims Reports}
 
+\section{Conclusions}
+\hfill\\
+
+\section{Recommendations}
+\hfill\\
+
+\section{Reproducibility}
+\hfill\\
 
 
-\subsection{Acknowledgements}
+\subsection{Acknowledgments}
 It is a pleasure to thank the following people for their support and guidance in reviewing this manuscript:
 
 
