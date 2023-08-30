@@ -9,12 +9,12 @@
 	\usepackage[latin1]{inputenc} % Allow you to input accents, umlauts and other characters
 	\usepackage[T1]{fontenc} % Lets LaTeX print a wider array of characters
 	\usepackage{tablefootnote}
-	
+	\usepackage[most]{tcolorbox}
 	\usepackage{xcolor} % Enable coloured elements
 	\definecolor{mypurple}{HTML}{622567} %%% Purple
 	\definecolor{primaryc}{HTML}{8f5e77} %%%EssexOrange
 	\definecolor{myblue}{HTML}{007A87} %%%Seagrass
-	
+	\usepackage{footnotehyper}
 	% For technical reasons, hyperref should be loaded after all other packages
 	\usepackage[colorlinks,linkcolor=myblue,citecolor=mypurple, urlcolor=myblue]{hyperref}
 	
@@ -107,7 +107,8 @@
 
 			
 			\vspace{3em}
-			
+			\includegraphics[width = 10mm]{images/persius/favicon.png}
+			\hspace{2mm}
 			\includegraphics[width = 50mm]{images/persius/persius_f1_maroon.png}\\[8ex]
 		\end{center}
 		
@@ -215,33 +216,103 @@
 				
 		\subsection{Overview}\label{publicdata:overview}
 		To understand the landscape of claims denials, contractually inappropriate claims denials, appeals, and effective consumer recourse, we need data. Unfortunately for consumers, requirements for insurers to publicly disclose claims denial data are few and far between, and the extent to which requirements that do exist are enforced and regulated is unclear. It would be invaluable for regulators to require broad, transparent claims denial information, and to strictly enforce and audit validity of the data.
-		
 		\subsection{Datasets}\label{publicdata:datasets}
 		
-		\begin{enumerate}
-			\item Centers for Medicare and Medicaid Services (CMS) \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{Public Use Files} (PUFs)\\
+		\begin{itemize}
+			\item Federal Marketplace Public Use Files \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{Public Use Files}(PUFs) from the Centers for Medicare and Medicaid Services (CMS)\\
 			
-			Each year CMS releases a collection of transparency data related to federal marketplace insurers. Here we are interested in the \emph{transparency in coverage} \footnote{The term transparency in coverage has been overloaded, and used in different contexts by CMS and other government agencies. Our use of the term here does not refer to the \href{https://www.federalregister.gov/documents/2019/11/27/2019-25011/transparency-in-coverage}{CMS rule published in 2019} requiring health plans to publish certain rate data, which is \href{https://www.cms.gov/healthplan-price-transparency}{broadly being referenced} as the transparency in coverage rule. Instead, it refers only to the \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{public use files distributed by CMS} documenting federal marketplace denials and appeals (among other things). Note that these are also referred to by CMS as transparency in coverage files, and in fact have been in existence, and referred to in this way, far longer than the TiC rule. Obviously the two efforts are not completely unrelated, and it would be most welcome if reporting requirements in the TiC rule were expanded to incorporate reporting about denial transparency, as do these federal marketplace PUFs. See further discussion in the policy section.} (TIC) public use files. These are files compiled from self-reported insurer data specifying aggregate counts of claims submitted, claims denied, and claims appealed, among other things. This data is limited in scope, and clearly accuracy is not strictly validated based on the frequency of impossible records in the data, but it is the closest thing we have to a denial transparency requirement with broad impact. It is compiled and reported to the public in accordance with the Department of Health and Human Services (HHS) \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-K/section-155.1040}{rule 45 of the Code of Federal Regulations (CFR), part 155, subpart K} (cf \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-C/section-156.220}{CFR 156 subpart C)}.\\
+			\begin{tcolorbox}[enhanced, breakable]
+			Each year CMS releases a collection of transparency data related to federal marketplace insurers. Here we are interested in the \emph{transparency in coverage}  \begin{comment}\footnote{The term transparency in coverage has been overloaded, and used in different contexts by CMS and other government agencies. Our use of the term here does not refer to the \href{https://www.federalregister.gov/documents/2019/11/27/2019-25011/transparency-in-coverage}{CMS rule published in 2019} requiring health plans to publish certain rate data, which is \href{https://www.cms.gov/healthplan-price-transparency}{broadly being referenced} as the transparency in coverage rule. Instead, it refers only to the \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{public use files distributed by CMS} documenting federal marketplace denials and appeals (among other things). Note that these are also referred to by CMS as transparency in coverage files, and in fact have been in existence, and referred to in this way, far longer than the TiC rule. Obviously the two efforts are not completely unrelated, and it would be most welcome if reporting requirements in the TiC rule were expanded to incorporate reporting about denial transparency, as do these federal marketplace PUFs. See further discussion in the policy section.}
+			\end{comment}
+			(TIC) public use files. These are files compiled from self-reported insurer data specifying aggregate counts of claims submitted, claims denied, and claims appealed, among other things. This data is limited in scope, and clearly accuracy is not strictly validated based on the frequency of impossible records in the data, but it is the closest thing we have to a denial transparency requirement with broad impact. It is compiled and reported to the public in accordance with the Department of Health and Human Services (HHS) \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-K/section-155.1040}{rule 45 of the Code of Federal Regulations (CFR), part 155, subpart K} (cf \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-C/section-156.220}{CFR 156 subpart C)}.\\
 			
+			In this article we focus on the 2023 public use file, which details claims denial data from the 2021 plan year.
 			
+			This 2021 data corresponds to:
+			
+			\begin{itemize}
+				\item Plan year 2021.
+				\item 33 states.
+				\item 230 unique insurers.
+				\item 6,764 plans.
+				\item 8,251,703 consumers.
+			\end{itemize}
+		
+			\end{tcolorbox}
 			\item \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{New York Health Care Claim Reports}\\
 			
-			Thanks to \href{https://www.nysenate.gov/legislation/laws/ISC/345}{legislation from 2020}, New York publishes \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{health care claim reports} for insurance companies (as of plan year 2022) that contain aggregate counts of claims submitted, claims denied, and claims appealed for each NY insurer, among other things. Unfortunately, the data for insurers is not aggregated into a single file, or served in a particularly friendly format for analysis, but we perform this aggregation here and make the transformed data publicly available.\\
+			\begin{tcolorbox}[enhanced, breakable]
+			Thanks to \href{https://www.nysenate.gov/legislation/laws/ISC/345}{legislation from 2020}, New York publishes \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{health care claim reports} for insurance companies that contain aggregate counts of claims submitted, claims denied, and claims appealed for each NY insurer, among other things. \\
 			
+			This data, released quarterly as of 2022 in the form of spreadsheets for each New York insurer, details aspects of health insurance coverage for insurance plans in New York. Various details about how the data is reported are included in the frequently asked questions for the data on the \href{https://www.dfs.ny.gov/apps_and_licensing/health_care_claim_reports}{DFS homepage}. \\
 			
+			Residents of New York state can not buy individual Affordable Care Act (ACA) compliant Qualified Health Plans (QHPs) on the federal marketplace. Instead, NY maintains its own marketplace where such plans can be purchased, known as \href{https://nystateofhealth.ny.gov/}{New York State of Health}. The New York Health Care Claims Reports includes statistics relating to NY marketplace plans, in addition to plans that are not sold via the marketplace. \\
+			
+			Unfortunately, the New York state marketplace does not release detailed claims denial and appeal data in the same way such data is reported in the CMS TIC PUFs for federal marketplace QHPs, so we cannot directly reuse the same analyses across the CMS PUF data and the NY Health Care Claims Reports.\\
+			
+			We note that we do not consider in this article historical appeals data (including data predating the existence of the health care claims reports) collected and distributed by New York Department of Financial Services in \href{https://www.dfs.ny.gov/system/files/documents/2022/08/ny_consumer_guide_health_insurers_2022.pdf}{consumer reports}; unfortunately, that data does not include raw numbers describing the total population of claims or denials to which the reported appeals pertain, so it is difficult to determine highly relevant context for the appeals numbers.\\
+			
+			In this article, we analyze the health care claims report data from 2022. The 2022 data includes:
+			
+			\begin{itemize}
+				\item Plan year 2022.
+				\item 29 unique insurers.
+				\item 145,446,802 claims adjudicated, worth at least \$66,810,881,848.
+				\item 25,996,601 claims denied, worth at least \$2,265,844,512.
+				\item 177,917 claims denied for medical necessity, worth at least \$35,747,594.
+				\item 145,129 internal appeals adjudicated, worth at least \$303,942,639.
+				\item  42,375 overturned internal appeals, worth at least \$124,245,612.
+			\end{itemize}
+		
+			All denials recorded in the data are post-service claims denials, so pre-authorization denials are not included. Appeals in the data include both appeals submitted directly by consumers, and appeals submitted by providers on behalf of consumers.
+			\end{tcolorbox}
+		
 			\item \href{https://www.dfs.ny.gov/public-appeal/search}{New York External Appeal Outcome Data}\\
 			
+			\begin{tcolorbox}[enhanced, breakable]
 			External appeals of denials from New York marketplace plans, fully insured group plans, and Medicaid managed care plans are adjudicated by Independent Review Organizations. The New York Department of Financial Services manages such appeal processes, and maintains a public database of results from external appeals.\\
 			
+			The \href{https://www.dfs.ny.gov/public-appeal/search}{New York External Appeal Outcome Data} corresponds to:
+			
+			\begin{itemize}
+				\item Plan years 2019 to 2023.
+				\item 24,728 external appeals.
+				\item Individual and group health plans.
+				\item Fully insured employer plans.
+				\item IMRs associated with plans regulated by the New York State Department of Financial Services.
+				
+			\end{itemize}
+		
+			In this article we discard the subset of the dataset corresponding to claims from 2023; such claims correspond to an incomplete plan year, and they have the potential to introduce confounding inconsistencies into our analyses. We initially included them in our analyses, but found they led to easily misinterpreted results.
+		
+			\end{tcolorbox}
 			
 			\item \href{https://fortress.wa.gov/oic/consumertoolkit/Search.aspx?searchtype=indrev}{Washington External Appeal Outcome Data}\\
 			
-			External appeals of denials from Washington marketplace plans are adjudicated by Independent Review Organizations. According to \href{https://apps.leg.wa.gov/wac/default.aspx?cite=284-43-3030}{Washington Administrative Code 284-43-3030} and the \href{https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.530}{Revised Code of Washington 48.43.530}, insurers must support both internal appeal and external processes, and report resulting data to the insurance commissioner. The code above provides for external appeals to be sought as soon as an internal process is exhausted, or 30 days after internal appeal initiation has occurred, whichever is sooner. Details of the rules pertaining to external appeals are described in the \href{https://app.leg.wa.gov/rcw/default.aspx?cite=48.43.535}{Revised Code of Washington 48.43.535}.\\
+			\begin{tcolorbox}[enhanced, breakable]
+				
+			In Washington state, claims denial data is not generally made public. However, as in New York, the final adjudication status of claims which are both ultimately externally appealed and fall under the authority of the Office of the Insurance Commissioner (OIC) are recorded in a \href{publicly accessible dataset}{https://fortress.wa.gov/oic/consumertoolkit/Search.aspx?searchtype=indrev}.\\
 			
-			The Office of the Insurance Commissioner in Washington state maintains a public database of results from these external appeals.\\
+			External appeals of denials from Washington marketplace plans are adjudicated by Independent Review Organizations. According to \href{Washington Administrative Code 284-43-3030}{https://apps.leg.wa.gov/wac/default.aspx?cite=284-43-3030} and the \href{Revised Code of Washington 48.43.530}{https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.530}, insurers must support both internal and external appeal processes, and report resulting data to the insurance commissioner. The code above provides for external appeals to be sought as soon as an internal process is exhausted, or 30 days after internal appeal initiation has occurred, whichever is sooner. Details of the rules pertaining to external appeals are described in the \href{Revised Code of Washington 48.43.535}{https://app.leg.wa.gov/rcw/default.aspx?cite=48.43.535}.\\
 			
+			The OIC in Washington state maintains the aforementioned public database of results from these external appeals. This data corresponds to consumers enrolled in Washington health plans that are regulated by the Office of the Insurance Commissioner (OIC). This includes, but is not limited to, individual plans sold on the \href{Washington marketplace}{https://wahealthplanfinder.org/} (known as \emph{Washington Health Plan Finder}).\\
+			
+			The OIC external appeal database corresponds to:
+			
+			\begin{itemize}
+				\item Plan years 2016 through 2023.
+				\item 8,774 external appeals.
+				\item Individual and group health plans.
+				\item Self insured and fully insured employer plans.
+				\item IMRs associated with plans regulated by the OIC.
+			\end{itemize}
+			
+			In this article we discard the subset of the dataset corresponding to claims from 2023; such claims correspond to an incomplete plan year, and they have the potential to introduce confounding inconsistencies into our analyses. We initially included them in our analyses, but found they led to easily misinterpreted results.\\
+			\end{tcolorbox}
 			
 			\item California External Appeal Data from the \href{https://interactive.web.insurance.ca.gov/apex_extprd/f?p=192:1:2660782937251:::::}{California Department of Insurance (CDI)} and the \href{https://dmhc.ca.gov/AbouttheDMHC/DMHCReports/AnnualReports.aspx}{Department of Managed Health Care (DMHC)}\\
+			
+			\begin{tcolorbox}[enhanced, breakable]
 			
 			California releases data related to internal and external appeal outcomes in at least four places, all of which we consider:\\
 			
@@ -260,40 +331,103 @@
 				
 				\item A \href{https://data.chhs.ca.gov/dataset/independent-medical-review-imr-determinations-trend}{database of Internal Medical Review (IMR) outcomes pertaining to health maintenance organizations (HMOs)}.\\
 				
-				This data corresponds to plans regulated by the Caifornia Department of Managed Health Care (DMHC).\\
+				This data corresponds to plans regulated by the California Department of Managed Health Care (DMHC).\\
 				
 			\end{enumerate}
 			
-			External appeals (aka internal medical reviews) in California follow processes dictated by two pieces of the California Insurance Code (CIC).\\
+			External appeals in California, also known as Independent Medical Reviews (IMRs), follow processes dictated by two pieces of the California Insurance Code (CIC).\\
 			
-			\begin{enumerate}
+			\begin{itemize}
 				
 				
 				\item \href{https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=INS&division=2.&title=&part=2.&chapter=1.&article=3.5.}{Sections 10169.1 - 10169.5}, which initially became effective January 1, 2001, describe rules that apply to IMR sought for health coverage decisions purportedly related to medical necessity. There have been numerous modifications to the law since then. The current law expressly provides for the inclusion of those on Medicare and Medicare Advantage plans, however it also allows for processes to be subsumed by existing state Medicare resolution outlets. It allows IMRs to be sought as soon as an internal process is exhausted, or 30 days after internal initiation has occurred, whichever is sooner. It also allows the CDI to contract with the DMHC to administer the IMR as desired (which has come into play for managed care plans, such as HMOs, as described in the last dataset description above.)\\
 				
 				\item \href{https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=INS&sectionNum=10145.3.}{Section 10145.3}, also effective as of January 1, 2001, describes particular rules that apply to IMR sought for insurer decisions stemming from deeming treatment or services as experimental or investigational in nature.\\
 				
-			\end{enumerate}
+			\end{itemize}
+		
+			The CDI IMR database corresponds to:
+			
+			\begin{itemize}
+				\item Plan years 2011 through 2023.
+				\item 4,719 Independent Medical Reviews.
+				\item Individual and group health plans.
+				\item Self insured and fully insured employer plans.
+				\item IMRs associated with plans regulated by the California Department of Insurance.
+			\end{itemize}
+			
+			The DMHC IMR database corresponds to:
+		
+			\begin{itemize}
+				\item Plan years 2001 through 2023.
+				\item 34,615 Independent Medical Reviews..
+				\item Individual and group health plans.
+				\item Self insured and fully insured employer plans.
+				\item IMRs associated with plans regulated by the California Department of Managed Healthcare.
+			\end{itemize}
+			
+			In this article we discard the subset of both datasets corresponding to claims from 2023; such claims correspond to an incomplete plan year, and they have the potential to introduce confounding inconsistencies into our analyses. We initially included them in our analyses, but found they led to easily misinterpreted results.
+		
+			\end{tcolorbox}
 			
 			
 			\item Connecticut Denial Data From \href{https://portal.ct.gov/CID/Reports/Consumer-Report-Card-on-Health-Insurance-Carriers-in-Connecticut}{Consumer Report Cards}
 			
-			Connecticut's state Department of Insurance releases a report, the so called Consumer Report Card on Health Insurance Carriers, each year. The report includes various aggregate statistics about health insurance plans, including utilization for certain services, member satisfaction, and aggregate denial statistics.\\
+			\begin{tcolorbox}[enhanced, breakable]
 			
+			Each year Connecticut's Department of Insurance releases a report, the so called \emph{Consumer Report Card on Health Insurance Carriers}. The report includes various aggregate statistics about health insurance plans, including utilization for certain services, member satisfaction, and aggregate denial statistics.\\
 			
+			The yearly data is released as a published PDF report, and corresponds to all insurance plans sold by Connecticut issuers except those that are government sponsored; in other words, all CT health insurance enrollees other than those with government sponsored plans (e.g. Medicaid and Medicare plans) are represented. As such, the data pertains to both individual and group health insurance plans, including self insured and fully insured employer plans.\\
+			
+			In this article we focus on the 2022 report, which details claims from the 2021 plan year.\\
+			
+			The data corresponds to coverage for:
+			
+			\begin{itemize}
+				\item Plan year 2021.
+				\item 11 unique insurers.
+				\item 1,991,903 consumers.
+				\item HMO and indemnity plans.
+				\item Individual, small group and large group plans.
+				\item Self insured and fully insured plans.
+			\end{itemize}
+			
+			\end{tcolorbox}
+		
 			\item Pennsylvania Department of Insurance \href{https://repos.persius.org/public-records/data/claims_denials/pa/readme.html}{claims denial data}
 			
-			Pennsylvania utilized the federal marketplace for qualified health plans until the end of 2020, when it transitioned to using its own newly formed marketplace, known as Pennie, in accordance with the passage of PA House Bill 3. Beginning in 2021, consumers could buy qualified health plans on the Pennsylvania marketplace.\\
+			\begin{tcolorbox}[enhanced, breakable]
+			Pennsylvania utilized the federal marketplace for qualified health plans until the end of 2020, when it transitioned to using its own newly formed marketplace, known as \href{https://pennie.com/}{Pennie}, in accordance with the passage of \href{https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2019&sind=0&body=H&type=B&bn=3}{PA House Bill 3}. Beginning in 2021, consumers could buy qualified health plans on the Pennsylvania marketplace.\\
 			
-			We submitted a public records request under the Pennsylvania Right to Know Law to the Pennsylvania Insurance Department (PA DOI) asking for a comprehensive account of various aggregate statistics pertaining to claims adjudication for which we believed they were likely to have records. This dataset is the result of that request. While the data is not as comprehensive or extensive as we had hoped might be possible, it is a step forward. We are releasing the raw data we obtained, as well as parsed and preprocessed adaptations of it, to the public along with the release of this article.\\
+			We submitted a public records request under the Pennsylvania \href{https://www.insurance.pa.gov/right-to-know-law/Pages/default.aspx}{Right to Know Law} to the \href{https://www.insurance.pa.gov/Pages/default.aspx}{Pennsylvania Insurance Department} (PA DOI) asking for a comprehensive account of various aggregate statistics pertaining to claims adjudication for which we believed they were likely to have records. This dataset is the result of that request. While the data is not as comprehensive or extensive as we had hoped might be possible, it is a step forward. We are releasing the raw data we obtained, as well as parsed and preprocessed adaptations of it, to the public along with the release of this article.\\
 			
-			The dataset contains aggregate counts for claims, denials, and internal and external appeals broken down by issuer for claims corresponding to marketplace plans, plus an undisclosed additional population of plans, from plan years 2020 and 2021. In addition, the data includes claims, denials and denial rationales broken down by plan for the subset of claims corresponding specifically to marketplace plans (this subset constitutes a large majority of the dataset to begin with).\\
+			The dataset contains aggregate counts for claims, denials, and internal and external appeals broken down by issuer for claims corresponding to marketplace plans, plus an undisclosed additional population of plans, from plan years 2020 and 2021. In addition, the data includes claims, denials and denial rationales broken down by \emph{plan} for the subset of claims corresponding specifically to marketplace plans (this subset constitutes a large majority of the dataset to begin with).\\
 			
-		\end{enumerate}
+			The data obtained from the PA Department of Insurance corresponds to:
+			
+			\begin{itemize}
+				\item Plan years 2020 and 2021.
+				\item 13 unique insurers.
+				\item 599 unique plans.
+				\item At least 337,722 consumers.
+				\item 21,646,696 claims adjudicated.
+				\item 2,964,421 claims denials.
+				\item 2,751 internal appeals.
+				\item 103 external appeals.
+				\item Individual marketplace plans.
+				\item \emph{Possibly} additional group plans regulated by the PA Department of Insurance.
+			\end{itemize}
+		\end{tcolorbox}
+	
+	
+	
+		\end{itemize}
+	
 		
-		To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data.\\
+		To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data from different market segments, and the first public report to analyze claims denial data from the Pennsylvania marketplace.\\
 		
 		An overview of the data we analyze in this report is detailed in Table \ref{summarytable} below.
+		\clearpage
 		
 		\begin{table}[!ht]
 			\centering
@@ -381,23 +515,23 @@
 		
 		\subsection{Policy}
 		
-		\subsection{Disallow Requirements For Internal Appeals}
+		\subsubsection{Disallow Requirements For Internal Appeals}
 		
-		\subsection{Levy Insurer Fines For External Appeal Overturns}
+		\subsubsection{Levy Insurer Fines For External Appeal Overturns}
 		
-		\subsection{Mandate Transparent, Standardized Data Reporting For Denials and Appeals Across All Plans}
+		\subsubsection{Mandate Transparent, Standardized Data Reporting For Denials and Appeals Across All Plans}
 		
-		\subsection{Mandate Transparent, Standardized Processes and Forms for Appeals Across All Plans}
+		\subsubsection{Mandate Transparent, Standardized Processes and Forms for Appeals Across All Plans}
 		
 		\subsection{Patient Recourse}
 		
-		\subsection{Appeal}
+		\subsubsection{Appeal}
 		
-		\subsection{Contact Regulators}
+		\subsubsection{Contact Regulators}
 		
-		\subsection{Contact Our Team For Help}
+		\subsubsection{Contact Our Team For Help}
 		
-		\subsection{Share Your Stories}
+		\subsubsection{Share Your Stories}
 		
 		\chapter{Reproducibility Statement}\label{reproducibilitystatement}
 		
