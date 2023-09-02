@@ -465,7 +465,7 @@
 		
 		\subsection{Submitted Claims and Denials}\label{publicdata:claimsanddenials}
 		
-		Four of the datasets we consider here provide information sufficient to compute overall initial denial rates in particular market segments, as well as denial rates broken down across subcategories of those market segments.
+		Four of the datasets we consider here provide information sufficient to compute overall initial denial rates in particular market segments, as well as denial rates broken down across subcategories of those market segments.\\
 		
 		These datasets are:
 		
@@ -478,17 +478,185 @@
 		
 		In what follows, we attempt to provide common views of the disparate datasets to facilitate considerations about comparison when possible, but we warn the reader that direct comparisons should not assumed to be valid, as these datasets are reported according to inconsistent methodologies. In fact, we don't even have temporal overlap of the plan years reported for all of the datasets. For example, the NY Health Care Claims Reports have only been reported since plan year 2022, while the CMS TIC PUFs have been regularly published for many years, but have yet to be made public for plan year 2022.
 		
-		Despite the inconsistencies in reporting, all of the data suggests that denials are generally prevalent, regardless of how one slices the data.
+		Despite the inconsistencies in reporting, all of the data suggests that denials are generally prevalent, regardless of how one slices the data. 
+		
+		We will now walk through calculations of overall claims denial rates in each dataset that allows for such a calculation. We perform these broad, general calculations to serve as a background for all subsequent calculations, and provide context for the scale of the issues at play. After computing the overall denial rates, we will consider how denial rates break down in various ways: by denial associated denial rationale, by insurer, and by state or region, to name a few.
 		
 		\subsubsection{Overall Denial Rates}
 		
+		First we consider overall denial rates for each of the datasets.\\
+		
+		\underline{CMS Federal Marketplace PUFs}\\
+		
+			On the federal marketplace, 16\% of all claims submitted in 2021 \footnote{Note that the CMS TIC PUF data is reported and labeled two years later than the date to which it corresponds. Thus the 2021 data is labeled by CMS as the 2023 TIC PUF} were initially denied. This data is displayed in Figure \ref{federal_denial_rate}.
+			
+			\begin{figure}[h!]
+				\centering
+				\textbf{Overall Claims Denial Rate, Federal Marketplace Insurers, 2021}\par\medskip
+				\includegraphics[width=.6\columnwidth]{images/cms_puf/overall_denial_pie.png}
+				\caption{Aggregate denial rate across federal marketplace insurers in 2021. Approximately 16\% of all federal marketplace claims were initially denied in 2021, according to CMS TIC PUF data.}
+				\label{federal_denial_rate}
+			\end{figure}
+		\clearpage
+	
+		\underline{New York Health Care Claims Reports}\\
+		
+			Among New York insurers, 18\% of all claims submitted in 2022 were initially denied. This data is displayed in Figure \ref{newyorkoveralldenial}.
+			
+			\begin{figure}[h!]
+				\centering
+				\textbf{Overall Claims Denial Rate, NY, 2022}\par\medskip
+				\includegraphics[width=.6\columnwidth]{images/ny_claim_reports/overall_denial_pie.png}
+				\caption{Overall denial rate (18\%) among all NY issuers who submitted health care claims reports to the Department of Financial Services in 2022.}
+				\label{newyorkoveralldenial}
+			\end{figure}
+		
+		
+		\underline{Connecticut Consumer Report Cards}\\
+		
+		Among Connecticut insurers, 25\% of all claims submitted in 2021 were initially denied. This calculation involved throwing out seemingly spurious data reported for the indemnity plans for one insurer, Connecticare (the report indicates Connecticare had more denials of claims than actual claims received). This data is displayed in Figure \ref{ctoveralldenial}.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Overall Claims Denial Rate, CT, 2021}\par\medskip
+			\includegraphics[width=.6\columnwidth]{images/ct_claims/overall_denial_pie.png}
+			\caption{Overall claims denial rate in CT consumer report card data.}
+			\label{ctoveralldenial}
+		\end{figure}
+		
+		\underline{Pennsylvania Department of Insurance Data}\\
+		
+		Among Pennsylvania insurers represented in the PA DOI data, approximately 15\% of all claims submitted in 2020 were initially denied, while approximately 13\% of the claims submitted in 2021 were initially denied. This data is displayed in aggregate in Figure \ref{paoveralldenial}.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Overall Claims Denial Rate, PA, 2020-2021}\par\medskip
+			
+			\caption{Overall claims denial rate in the Pennsylvania Department of Insurance data in 2020 and 2021.}
+			\label{paoveralldenial}
+		\end{figure}
+		
+		
 		\subsubsection{Denials By Rationale}
+		
+		When insurers deny coverage of a claim, they must report their rationale for the denial. The rationales, and the details of how they must be reported to both the insured and regulatory agencies, vary by plan, but typically include a small set of mutually exclusive labels. In each of the datasets that provide denial counts, some metadata regarding the denial rationales is included, though the details vary by dataset.\\
+		
+		\underline{CMS Federal Marketplace PUFs}\\
+		
+		Federal marketplace plans included in the CMS TIC PUF data \emph{sometimes} report rationales for claim denials. Figure \ref{federalrationaledist} shows the categories allowed in the CMS PUF reporting methodology, and their frequency of occurrence in the subset of data which includes rationales.\\
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denials By Rationale, Federal Marketplace, 2021}\par\medskip
+			\includegraphics[width=.6\columnwidth]{images/cms_puf/denials_by_rationale.png}
+			\caption{Distribution of claims denial rationales in a subset of the TIC PUF data. Denial rationales are reported at the plan level, and we only included here those plans which reported denial rationales which either summed to the total number of denials reported, or which summed to the total number of denials reported excluding out of network denials. For some plans, neither validation method held, and we could not resolve what standard was being used to report the rationale data; that rationale data is not included. }
+			\label{federalrationaledist}
+		\end{figure}
+
+		Most denials logged in the CMS PUF data are associated with a rationale of "Other". This provides little information about the underlying nature of the denials.\\
+		
+		Effectively, this reporting scheme allows insurers to withhold reporting the actual reason for a denial to the public if they so choose, since it is not completely clear what is allowed to be reported in the ``Other" bucket, and there is no strict validation of the reported data. Whether or not insurers actually abuse the system in this way cannot be gleaned from this data alone.\\
+		
+		\underline{New York Health Care Claims Reports}\\
+		
+		The New York Health Care Claims Reports detail the rationales for all of the denials documented in the data, but allow for a different set of available options for denial rationales. These rationales, and their relative frequency of occurrence within the data, are shown in Figure \ref{nyrationaledist}.\\ 
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denials By Rationale, NY, 2022}\par\medskip
+			\caption{Distribution of denial rationales for all denials recorded in the health care claims reports submitted to the Department of Financial Services in 2022.}
+			\label{nyrationaledist}
+		\end{figure}
+	
+		Again, we see that an ambiguous "Other" category is utilized heavily in the reporting. Furthermore, while many of the rationale categories in this dataset are well-defined terms that have consistent, standard meaning across the industry (see e.g. a typical definition of \href{https://en.wikipedia.org/wiki/Step_therapy}{step therapy}), others are ambiguous.\\
+		
+		For example, the ``Not Covered or Limitation'' label here is our abbreviation of a label specified in the raw data as ``Not a covered benefit/Exceeds benefit limits (e.g., visit limits)'', which is a broad category that appears to allow for many interpretations, similar to the ``Other'' category. It would be useful to understand more explicitly exactly which subset of denials are being recorded in the ``Not Covered or Limitation'' category, as opposed to the ``Other'' category, or the ``NMN or Experimental'' category, since there is ambiguity and conceptual overlap in each of these concepts. For example, claims deemed to be not medically necessary or experimental are typically a subset of services that are explicitly considered ``not covered", according to language in insurance contracts.\\
+		
+		\underline{Connecticut Consumer Report Cards}\\
+		
+		The Connecticut consumer report cards detail rationales for every denial recorded in the data, but again use a different set of categories, and make liberal use of an "Other" category. The data is displayed in Figure \ref{ctrationaledist}.\\
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denials By Rationale, CT, 2021}\par\medskip
+			\caption{Distribution of denial rationales for all denials in the CT consumer report card data. }
+			\label{ctrationaledist}
+		\end{figure}
+		
+		\underline{Pennsylvania Department of Insurance Data}\\
+		
+		The Pennsylvania Department of Insurance data details rationales only for denials recorded at the plan level in the data (which is the subset corresponding to marketplace claims), but the story remains the same in that the set of permissible rationales in the data is distinct from each other set we've considered. The data is displayed in Figure \ref{parationaledist}.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denials By Rationale, PA, 2020-2021}\par\medskip
+			\caption{Distribution of denial rationales for all denials in the PA DOI data.}
+			\label{parationaledist}
+		\end{figure}
 		
 		\subsubsection{`Not Medically Necessary' Denial Rates}
 		
+		Each of the datasets considered provides a category of denial rationale corresponding to purported lack of medical necessity or experimental nature of a service (what we will collectively call \emph{NMN denials}).\\
+		
+		While NMN denials occur \emph{relatively} infrequently, as Figures 5, 6, 7 and 8 show, they still correspond to a large population of claims in an absolute sense; just for the tiny fraction of all insurance plans covered by the data shown above, for a single plan year, there are more than 700k such claims. Furthermore, they are an important subset of denials in the sense that:\\
+		
+		\begin{itemize}
+			\item Their contractual merit is typically subtle, because it typically involves contractual definitions that themselves reference things like clinical policy bulletins, scientific literature, medical standards, or other external data.
+			\item The consequences for such denials can be perilous for patients relying on coverage of treatments for debilitating issues that they would not otherwise be able to afford. This can be true for other rationale categories as well, depending on the categories considered, but is not the case for all categories (e.g. duplicate claims).
+		\end{itemize}
+	
+		For these reasons, we draw attention to aspects of the data pertaining specifically to NMN denials, when possible. Unfortunately, the data is often insufficient to allow much to be ascertained definitively about this subpopulation of denials.\\
+		
+		One thing we can understand definitively about the subpopulation of NMN denials in these datasets is the rate at which they occur among all claims; these rates can be deduced by reconsidering Figures \ref{federalrationaledist}, \ref{nyrationaledist}, \ref{ctrationaledist}, \ref{parationaledist} but we make the rates explicit in Table  \ref{nmndenialratetable} below.\\
+		
+		\begin{table}[!ht]
+			\centering
+			\begin{tabular}{|p{5cm}|p{3cm}|p{4cm}|p{3cm}|}
+				\hline
+				\textbf{Data Source} & \textbf{NMN Denials} & \textbf{Claims Received \newline With Rationale} & \textbf{NMN Denial \newline Rate}  \\ \hline
+				CMS TIC PUF (2021) & 520,140 & 13,157,832 & .0395 \\ \hline
+				NY Health Care Claims Reports (2022) & 177,881 & 34,168,504 & 	.0052 \\ \hline
+				Connecticut Consumer Report Card (2021) & 27,517 & 2,006,049 &  .0137 \\ \hline
+				Pennsylvania DOI Data (2020) & 104,396 & 10,451,280 &  .0099 \\ \hline
+				Pennsylvania DOI Data (2021) & 66,031 & 	9,494,221 &  	.0069 \\ \hline
+			\end{tabular}
+			\caption{NMN Denial Rates}
+			\label{nmndenialratetable}
+		\end{table}
+		
+		
+		Unsurprisingly we see that NMN denial rates are orders of magnitude smaller than overall denial rates; however, it is interesting to note that there is significant variation in the overall NMN denial rate across these datasets. One contributing factor is surely the lack of standardization in reporting methodologies, such as the variation in the set of denial rationales permissible in the reported data. It is unclear to what extent the actual denial rates relating to medical necessity would vary across these datasets if one were to correct for reporting inconsistencies. \\
+		
+		
 		\subsubsection{Denials By Insurer}
 		
+		Each of the datasets reporting denials includes breakdowns of the claims received and claims denied by insurer. It is informative to understand how the aggregate denial rates and NMN denial rates vary by insurer within each dataset.
+		
+		We note at the outset that while it is informative to understand how various distributions vary by insurer, there are many subtleties lurking behind such breakdowns, just as there were for denial rationales. For example, different insurers may have different distributions of plan network types (e.g. relative fraction of consumers on HMO, EPO, PPO, and POS plans), and as a result insurer denial differences might partially be a reflection of the differences in those plan type distributions. Or, alternatively, two insurers might have identical plan type distributions and administration practices, but have a different list of drugs for which they require prior-authorization, with one list containing some much more commonly utilized drugs. Given such subtleties which the data does not allow us to address, it is difficult to definitively understand the cause of the phenomenology we observe in differences across insurers.
+		
+		In the same vein, the distribution across insurers of denials whose rationale specifically involves the experimental nature of a treatment, rather than another medical necessity rationale, could be influenced by many things, in addition to the raw counts of claims. In particular, one would expect that wealthy and renowned hospital systems conducting cutting edge research would be more likely than others to attempt truly experimental or novel services for their patients in need, and that such properties of a hospital are correlated with other properties, such as proximity to a major city and research center. As a result, health insurance companies with networks that overlap certain geographic areas, or that include certain hospitals, might receive a distribution of claims with a relatively high share that could be interpreted as involving experimental treatments, when compared to distributions received by other insurance companies. In such a context, it would be inappropriate to make an inference about how experimental claims denial processes vary by insurer from experimental claims denial rates alone.
+		
+		As with all of the data we examine in this article, there are many subtleties that make it difficult to draw conclusions without more information. We make suggestions to address this troubling predicament in a concluding policy section.
+		
+		\underline{CMS Federal Marketplace PUFs}\\
+		
+		
+		\underline{New York Health Care Claims Reports}\\
+		
+		\underline{Connecticut Consumer Report Cards}\\
+		
+		\underline{Pennsylvania Department of Insurance Data}
+		
 		\subsubsection{Dataset Specific Considerations}
+		
+		\underline{CMS Federal Marketplace PUFs}\\
+		
+		
+		\underline{New York Health Care Claims Reports}\\
+		
+		\underline{Connecticut Consumer Report Cards}\\
+		
+		\underline{Pennsylvania Department of Insurance Data}
 		
 		
 		\subsection{Internal Appeals}\label{publicdata:internalappeals}
