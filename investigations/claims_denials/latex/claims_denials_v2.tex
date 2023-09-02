@@ -212,7 +212,7 @@
 		
 		Finally, we note that both the internal and external appeal systems have the potential to be completely biased, so we should take care to note when we are drawing conclusions from the data that assumes some impartiality in either process. We expect that of all of the data publicly available, external appeal success rates can best inform the underlying validity of (some subset of) initial denials, since at least one third party with no monetary stake in the judgment has been involved in adjudication. Internal appeal data reflects a situation that is opaque by design -- it is difficult to take seriously the purported impartiality of a reviewer that is both reviewing their own decision, and that stands to generate more profit by upholding that decision. There is a reason we don't have juries consisting of the best friends of a defendant.
 		
-		\section{Public Claims Denial Data}\label{publicdata}
+		\chapter{Public Claims Denial Data}\label{publicdata}
 				
 		\subsection{Overview}\label{publicdata:overview}
 		To understand the landscape of claims denials, contractually inappropriate claims denials, appeals, and effective consumer recourse, we need data. Unfortunately for consumers, requirements for insurers to publicly disclose claims denial data are few and far between, and the extent to which requirements that do exist are enforced and regulated is unclear. It would be invaluable for regulators to require broad, transparent claims denial information, and to strictly enforce and audit validity of the data.
@@ -291,11 +291,11 @@
 			
 			\begin{tcolorbox}[enhanced, breakable]
 				
-			In Washington state, claims denial data is not generally made public. However, as in New York, the final adjudication status of claims which are both ultimately externally appealed and fall under the authority of the Office of the Insurance Commissioner (OIC) are recorded in a \href{publicly accessible dataset}{https://fortress.wa.gov/oic/consumertoolkit/Search.aspx?searchtype=indrev}.\\
+			In Washington state, claims denial data is not generally made public. However, as in New York, the final adjudication status of claims which are both ultimately externally appealed and fall under the authority of the Office of the Insurance Commissioner (OIC) are recorded in a \href{https://fortress.wa.gov/oic/consumertoolkit/Search.aspx?searchtype=indrev}{publicly accessible dataset}.\\
 			
-			External appeals of denials from Washington marketplace plans are adjudicated by Independent Review Organizations. According to \href{Washington Administrative Code 284-43-3030}{https://apps.leg.wa.gov/wac/default.aspx?cite=284-43-3030} and the \href{Revised Code of Washington 48.43.530}{https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.530}, insurers must support both internal and external appeal processes, and report resulting data to the insurance commissioner. The code above provides for external appeals to be sought as soon as an internal process is exhausted, or 30 days after internal appeal initiation has occurred, whichever is sooner. Details of the rules pertaining to external appeals are described in the \href{Revised Code of Washington 48.43.535}{https://app.leg.wa.gov/rcw/default.aspx?cite=48.43.535}.\\
+			External appeals of denials from Washington marketplace plans are adjudicated by Independent Review Organizations. According to \href{https://apps.leg.wa.gov/wac/default.aspx?cite=284-43-3030}{Washington Administrative Code 284-43-3030} and the \href{https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.530}{Revised Code of Washington 48.43.530}, insurers must support both internal and external appeal processes, and report resulting data to the insurance commissioner. The code above provides for external appeals to be sought as soon as an internal process is exhausted, or 30 days after internal appeal initiation has occurred, whichever is sooner. Details of the rules pertaining to external appeals are described in the \href{https://app.leg.wa.gov/rcw/default.aspx?cite=48.43.535}{Revised Code of Washington 48.43.535}.\\
 			
-			The OIC in Washington state maintains the aforementioned public database of results from these external appeals. This data corresponds to consumers enrolled in Washington health plans that are regulated by the Office of the Insurance Commissioner (OIC). This includes, but is not limited to, individual plans sold on the \href{Washington marketplace}{https://wahealthplanfinder.org/} (known as \emph{Washington Health Plan Finder}).\\
+			The OIC in Washington state maintains the aforementioned public database of results from these external appeals. This data corresponds to consumers enrolled in Washington health plans that are regulated by the Office of the Insurance Commissioner (OIC). This includes, but is not limited to, individual plans sold on the \href{https://wahealthplanfinder.org/}{Washington marketplace} (known as \emph{Washington Health Plan Finder}).\\
 			
 			The OIC external appeal database corresponds to:
 			
@@ -426,26 +426,39 @@
 		
 		To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data from different market segments, and the first public report to analyze claims denial data from the Pennsylvania marketplace.\\
 		
-		An overview of the data we analyze in this report is detailed in Table \ref{summarytable} below.
-		\clearpage
+		An overview of the data we analyze in this report is detailed in Tables \ref{summarytable1} and \ref{summarytable2} below.\\
+		
 		
 		\begin{table}[!ht]
 			\centering
-			\begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{4cm}|}
+			\begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{3cm}|p{3cm}|}
 				\hline
-				\textbf{Data Source (plan years considered)} & \textbf{Market Segment} & \textbf{Num Denials} & \textbf{Denials Represented} & \textbf{Consumer Population Represented}  \\ \hline
+				\textbf{Data Source} & \textbf{Market Segment} & \textbf{Number \newline of \newline Denials} & \textbf{Denial  Levels Represented} & \textbf{Consumer Population  Represented}  \\ \hline
 				CMS TIC PUF (2021) & Federal marketplace & 48,302,001 & All & 8,251,703 \\ \hline
-				NY Health Care Claims Reports (2022) & All NY Issuers & 25,996,601 & All & Unknown, but $\geq$ 5,000,000 \tablefootnote{It is unclear which exact pool of insurance plans, and therefore consumers, this data covers. It appears the DFS has jurisdiction to regulate external appeals for all individual marketplace plans, fully insured group plans, and Medicaid managed care plans. We planned to estimate this population using the \href{https://www.dfs.ny.gov/system/files/documents/2022/08/ny_consumer_guide_health_insurers_2022.pdf}{DFS consumer report for the 2021 plan year}, but found it does not include enrollment. In fact, we couldn't even corroborate the denial numbers from the 2021 plan year from the aforementioned report, and found a significant discrepancy between the total number of external denials listed in that report, and the number that exist in the DFS database. We belive this discrepancy comes from the fact that the report excludes summary statistics for numerous categories of smaller plans, such as HMOs with less than 500 members, and commercial and EPO/PPO plans with less than 50 million in premiums.
-					
-					However, we can say that the population of consumers corresponding to plans that the DFS regulates at least includes marketplace plans, and according to New York State of Health \href{https://info.nystateofhealth.ny.gov/enrollmentdata}{enrollment data}, that population has hovered between 4.5-7 million over the years represented here.}  \\ \hline
+				NY Health Care Claims Reports (2022) & All NY Issuers & 25,996,601 & All & Unknown, but $\geq$ 5,000,000 \tablefootnote{ We planned to estimate this population using the \href{https://www.dfs.ny.gov/system/files/documents/2022/08/ny_consumer_guide_health_insurers_2022.pdf}{DFS consumer report for the 2021 plan year}, but found it does not include enrollment. However, we can say that the population of consumers corresponding to plans that the DFS regulates at least includes marketplace plans, and according to New York State of Health \href{https://info.nystateofhealth.ny.gov/enrollmentdata}{enrollment data}, that population has hovered between 4.5-7 million over the years represented here.}  \\ \hline
 				NY External Appeals Database (2019-2023) & NY marketplace, fully insured group plans, and Medicaid managed care plans & 26,036 & Externally Appealed (IMR) & Unknown, but $\geq$ 5,000,000  \\ \hline
 				WA External Appeals Database (2016-2023) & WA marketplace & 8774 & Externally Appealed (IMR) & 222,731  \\ \hline
+			\end{tabular}
+			\caption{Summary of Datasets Considered (1/2)}
+			\label{summarytable1}
+			\end{table}
+			\clearpage
+		
+			\begin{table}
+		
+		
+			\begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{3cm}|p{3cm}|}
+				\hline
+				\textbf{Data Source} & \textbf{Market Segment} & \textbf{Number \newline of \newline Denials} & \textbf{Denial  Levels Represented} & \textbf{Consumer Population  Represented}  \\ \hline
 				CA DOI External Appeals Database (2011-2023) & CA marketplace, and fully insured group plans & 4,658 & Externally Appealed (IMR) & 852,506 \tablefootnote{We use the total enrollment noted in the \href{https://www.insurance.ca.gov/0400-news/0200-studies-reports/0700-commissioner-report/}{2021 CDI report}, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly. }  \\ \hline
 				CA DMHC External Appeals Database (2001-2023) & Large group and self funded plans regulated by DMHC & 34,615 & Externally Appealed (IMR) & 23,474,332 \tablefootnote{We use the total enrollment noted in the \href{https://dmhc.ca.gov/AbouttheDMHC/DMHCReports/AnnualReports.aspx}{2021 DMHC secretary report}, since it is explicitly noted. This number is therefore relevant for the subset of the database containing IMRs from 2021, but not other years, since the consumer population in this market segment changes yearly.}  \\ \hline
 				Connecticut Consumer Report Card (2021) & All CT issuers (excluding government sponsored) & 2,708,724 & All & 1,991,903 \tablefootnote{We use the total enrollment noted in the \href{https://portal.ct.gov/CID/Reports/Consumer-Report-Card-on-Health-Insurance-Carriers-in-Connecticut}{2021 consumer report card}, since it is explicitly noted.}  \\ \hline
+				Pennsylvania Department of Insurance Data (2020, 2021) & PA marketplace plans, plus some subset of Department of Insurance regulated group plans & 2,964,421 & All & Unknown, but $\geq$ 337.722 \tablefootnote{We use the total enrollment reported for the PA marketplace in the \href{https://www.cms.gov/research-statistics-data-systems/marketplace-products/2021-marketplace-open-enrollment-period-public-use-files}{CMS 2021 Marketplace Open Enrollment Public Use File} as a lower bound, since we know this data at least includes all marketplace plan claims adjudications.} \\ \hline	
 			\end{tabular}
-			\caption{Summary of Datasets Considered}
-			\label{summarytable}
+		
+
+			\caption{Summary of Datasets Considered (2/2)}
+			\label{summarytable2}
 		\end{table}
 	
 		We note that the total number of unique consumers represented across all of the data sets we consider is unknown (see the Consumer Population Represented column above). However, what is clear is that this population is a small fraction of the total population of insured individuals in the U.S. This fact is not surprising, given that many of the datasets we consider correspond to data from highly limited market segments (e.g. individual plans sold on state marketplaces) which comprise a small fraction of all insurance plans. Having claims denial data for the entire population of the insured U.S. population would be invaluable for ensuring accountability and the ability to effectively audit the justness of adjudication processes at large; we make the case for the need for such data in our concluding policy proposals section.\\
