@@ -15,7 +15,6 @@
 	\definecolor{primaryc}{HTML}{8f5e77} %%%EssexOrange
 	\definecolor{myblue}{HTML}{007A87} %%%Seagrass
 	\usepackage{footnotehyper}
-	\usepackage{caption}
 	% For technical reasons, hyperref should be loaded after all other packages
 	\usepackage[colorlinks,linkcolor=myblue,citecolor=mypurple, urlcolor=myblue]{hyperref}
 	
@@ -853,14 +852,238 @@
 		
 		The CMS TIC PUFs provide many pieces of metadata associated with individual plans, and their corresponding aggregate claims data, that allow denials to be broken down across additional categories.
 		
-		At a high level, we can calculate the overall denial rate for each \emph{issuer} (an insurer's \href{https://www.law.cornell.edu/definitions/uscode.php?width=840&height=800&iframe=true&def_id=26-USC-392827901-289353966&term_occur=1&term_src=}{state specific entity}), by calculating the ratio of all claims denied by that issuer, to the claims received by that issuer (across all their plans). Figure 25 shows the distribution of such issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%. While we could compute such a distribution for the other datasets as well, the number of issuers involved is too small to infer much from the resulting distribution. Here, however, the distribution sheds some light on how denial rates vary by issuer.
+		At a high level, we can calculate the overall denial rate for each \emph{issuer} (an insurer's \href{https://www.law.cornell.edu/definitions/uscode.php?width=840&height=800&iframe=true&def_id=26-USC-392827901-289353966&term_occur=1&term_src=}{state specific entity}), by calculating the ratio of all claims denied by that issuer, to the claims received by that issuer (across all their plans).
 		
+		Figure \ref{federalissuerdenialdist} shows the distribution of such issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%. While we could compute such a distribution for the other datasets as well, the number of issuers involved is too small to infer much from the resulting distribution. Here, however, the distribution sheds some light on how denial rates vary by issuer.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rates, Federal Marketplace Issuers, 2021}
+			\includegraphics[width=\columnwidth]{images/cms_puf/denial_rates_all_insurers.png}
+			\caption{Distribution of claims denial rates across federal marketplace issuers in 2021. Across issuers, denial rates vary from approximately 0\% to 50\%.}
+			\label{federalissuerdenialdist}
+		\end{figure}
+	
+		\clearpage
+	
+	
+		Each plan reported in the data also has metadata associated with it. Figures \ref{federaldenialratesbyplantype} and \ref{federaldenialratesbymetallevel} contain plots that show the distribution of individual plan denial rates, as a function of two properties of plans:
+		
+		\begin{itemize}
+			\item \emph{Plan administration and network type}
+			
+				Health insurance plans utilize different \href{https://www.healthcare.gov/choose-a-plan/plan-types/}{network and administration policy types}, which dictate things like which providers are considered part of your plans preferred network, and how you must seek certain types of care and services (e.g. by obtaining referrals for specialist visits). Some common policy types include Exclusive Provider Organizations (EPOs), Health Maintenance Organizations (HMOs), Point of Service (POS), and Preferred Provider Organizations (PPOs).
+			
+			\item \emph{Metal level}
+			
+			
+				Federal marketplace plans are partitioned according to so-called \href{https://www.healthcare.gov/choose-a-plan/plans-categories/}{plan categories}, which are mostly named by metals. The categories are Catastrophic, Bronze, Bronze Expanded, Silver, Gold and Platinum. Generally, plans that fall into a more precious metal category have higher premiums, but cover a larger fraction of the cost of care when coverage kicks in. Catastrophic plans, as the name suggests, typically only provide coverage for catastrophic situations.
+		\end{itemize}
+	
+		The data show that:
+		
+		\begin{itemize}
+			\item A larger fraction of EMO and HMO plans have denial rates between 30\% to 50\% than do PPO and POS plans.
+			\item Only platinum level plans completely lack a contingent of 30\% to 50\% denial rate constituents.
+		\end{itemize}
+	
+			\begin{figure}[h!]
+				\centering
+				\textbf{Denial Rates By Plan Type, Federal Marketplace, 2021}\par\medskip
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/PPO_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/EPO_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/POS_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/HMO_dist.png}
+				\caption{Distribution of claims denial rates broken down by plan types. From left to right, top to bottom: PPO, EPO, POS and HMO plan distributions.}
+				\label{federaldenialratesbyplantype}
+			\end{figure}
+		
+			\clearpage
+		
+		
+			\begin{figure}[h!]
+				\centering
+				\textbf{Denial Rates By Metal Level, Federal Marketplace, 2021}\par\medskip
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Catastrophic_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Bronze_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Bronze Expanded_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Silver_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Gold_dist.png}
+				\includegraphics[width=.49\columnwidth]{images/cms_puf/Platinum_dist.png}
+				\caption{Distribution of claims denial rates broken down by metal level. From left to right, top to bottom: Catastophic, Bronze, Bronze Expanded, Silver, Gold and Platinum plan distributions.}
+				\label{federaldenialratesbymetallevel}
+			\end{figure}
+		
+		Figure \ref{federalbyregion} shows the average issuer level claims denial rates for each state or region represented in the CMS TIC PUF data, as well as various statistics of the data within each region. For example, we display the number of issuers represented in each state, the total number of claims represented for each state, and the issuers with the highest claims denial rates in each state.
+					
+					
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rates By Region, Federal Marketplace, 2021}
+			\includegraphics[width=\columnwidth]{images/cms_puf/federal_denial_rates.png}
+			\caption{Claims denial rates in the 2021 CMS PUF data broken down by region.}
+			\label{federalbyregion}
+		\end{figure}
+	
+		Among this federal marketplace data, Mississippi stands out for having a uniquely high aggregate denial rate, with Texas, Alabama, Alaska, Georgia, Ohio, Indiana and Michigan forming a contingent with the next highest rates.
+		
+		In many regions, a relatively small collection of issuers contribute a majority of the claims denied.
 		
 		\underline{New York Health Care Claims Reports}\\
 		
+		The New York Health Care Claims Reports provide a \emph{different} set of metadata associated with individual insurers, and their corresponding aggregate claims data, that allow denials to be considered from different lenses. The claims reports also include information relating to the monetary value of claims, which we consider in more detail below.
+		
+		The reports include information that details how claims, denials, and appeals are broken down across different provider categories. The categories specified in the data are:
+		
+		\begin{itemize}
+			\item Hospital Inpatient
+			\item Hospital Outpatient
+			\item Other Facilities Inpatient
+			\item Physicians
+			\item Other Health Care Providers
+			\item Pharmacy
+			\item Other
+		\end{itemize}
+	
+		Of note, the ``Hospital Outpatient'' category includes all claims submitted for emergency room services, and the ``Other Facilities Inpatient'' category includes all claims submitted for inpatient rehabilitation or skilled nursing facility services.
+		
+		Figure \ref{nyclaimsbyprovidercat} shows the overall claims counts occurring in the dataset for each category, while Figure \ref{nydenialsbyprovidercat} shows the overall claims denial rates in each category, aggregated over all insurers in the dataset.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Claims By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/claims_by_provider_cat.png}
+			\caption{ Claims counts broken down by provider category, aggregated across all insurers who submitted health care claims reports to the Department of Financial Services in 2022.}
+			\label{nyclaimsbyprovidercat}
+		\end{figure}
+	
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denials By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/denials_by_provider_cat.png}
+			\caption{Denial counts broken down by provider category, aggregated across all insurers who submitted health care claims reports to the Department of Financial Services in 2022.}
+			\label{nydenialsbyprovidercat}
+		\end{figure}
+	
+		\clearpage
+	
+		The relative frequency of denials across these categories is somewhat consistent with the distribution of claims received across the categories, but denial rates vary from 10\% to 30\% across the categories.
+		
+		We can also observe how NMN denials specifically are broken down by provider category. This is shown in Figure \ref{nynmndenialsbyprovidercat}.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{NMN Denials By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/nmn_denials_by_provider_cat.png}
+			\caption{Total claims denied for medical necessity or experimental nature of a treatment, for each provider category, aggregated across all insurers who submitted health care claims reports to the Department of Financial Services in 2022.}
+			\label{nynmndenialsbyprovidercat}
+		\end{figure}
+	
+	\clearpage
+	
+	
+		The New York Health Care Claims Reports are unique in that they also provide detailed breakdowns of the monetary value associated with many of the aspects of the data they report. Generally, the data reports the value of claims in various subcategories via two mechanisms:
+		
+		\begin{itemize}
+			\item \emph{Allowed Amounts}
+			
+				An \href{https://www.healthcare.gov/glossary/allowed-amount/}{allowed amount} for a service under a given plan is the maximum monetary value that the insurance plan will pay for a covered service.
+				
+			\item \emph{Billed Charges}
+			
+			A billed charge is the actual monetary value that a service provider charges a patient or insurer; this amount need not agree with the allowed amount for a plan.
+			
+		\end{itemize}
+			
+		Figure \ref{nynmnallowedbyprovidercat} shows the collective value of NMN denials in the dataset, as measured by the total allowed amounts. Allowed amounts for NY NMN denials accounted for over 35M USD in 2022.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Allowed Amounts for NMN Denials By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/nmn_allowed_amts_by_provider_cat.png}
+			\caption{Total allowed amounts for claims denied for medical necessity or experimental nature of a treatment, for each provider category, aggregated across all insurers who submitted health care claims reports to the Department of Financial Services in 2022.}
+			\label{nynmnallowedbyprovidercat}
+		\end{figure}
+	
+		
+		The distributions for both NMN denial counts and corresponding allowed amounts across provider categories look largely similar to those for all denials, with two notable exceptions.
+		
+		\begin{itemize}
+			\item There are very few Pharmacy denials for medical necessity in this data. One contributing factor for this is that the NMN category in this data does not include denials requiring the use of step therapy. While this is a separate denial category in this data, the categories are similar in that they involve a determination about purportedly medically appropriate treatments. Another contributing factor to the relative scarcity of pharmacy NMN denials is the reporting methodology: pre-authorization denials are not included in this data, which is one context in which one would expect NMN pharmacy denials to be occurring.
+			
+			\item Among NMN denials, Hospital Outpatient allowed amounts far outweigh those of Hospital Inpatient, unlike in the distribution among denials of all types.
+			
+		\end{itemize}
+	
+	
+		While there are likely many factors driving the latter result, it is worth noting that generally \href{https://www2.deloitte.com/us/en/insights/industry/health-care/outpatient-virtual-health-care-trends.html}{data suggests} that hospital revenue share from outpatient procedures has been consistently increasing, with a \href{https://www.mckinsey.com/industries/healthcare/our-insights/walking-out-of-the-hospital-the-continued-rise-of-ambulatory-care-and-how-to-take-advantage-of-it}{large share of orthopedic and minor surgeries} occurring in outpatient settings. Collectively, these trends to perform certain types of services and treatments more frequently in outpatient vs inpatient settings, coupled with the distribution of purported medical necessity of services within these disciplines, as dictated by insurers, might explain why NMN denials for outpatient services correspond to a high total allowed amount, relative to the inpatient NMN denials.
+		
+		We can also consider the proportion of denials in each provider category that correspond to each denial rationale. Figure \ref{nyrationalesbyprovidercat} shows a heatmap displaying these distributions.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rationales By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/provider_cat_vs_denial_cat.png}
+			\caption{Distribution of denial rationales for each provider category in the 2022 Department of Financial Services claims report data. The color indicates the fraction of all denials in a given provider category that were coded with a particular rationale (i.e. rows sum to 1).}
+			\label{nyrationalesbyprovidercat}
+		\end{figure}
+	
+		While it is difficult to extract detail about the distributions from Figure \ref{nyrationalesbyprovidercat} given the prevalence of ``Other'' rationale reporting, some trends are noticeable. For example, among the Pharmacy denials in the dataset that are not recorded under the "Other" category, a large proportion are coded as denials related to non-covered or limited services.
+		
+		
 		\underline{Connecticut Consumer Report Cards}\\
 		
-		\underline{Pennsylvania Department of Insurance Data}
+		The Connecticut Consumer Report Cards provide a few types of information that are not present in the other datasets. Most notably for our purposes, the reports include detailed breakdowns of how claims counts and enrollment are split across different market segments, such as plan type, plan funding type, and insurer. We display a few statistics relating to enrollment in what follows.
+		
+		All claims data in the consumer report corresponds to a certain population of consumers. Understanding that population is highly relevant, as it serves as an important denominator for considerations about the average impact of claims denials on each person. For example, one might be interested in understanding the average number of medical necessity claims denials received by an individual member of an insurance plan over the course of a year. This sort of calculation requires an understanding of not just raw claims and denial numbers, but also enrollment, associated with a plan.
+		
+		As we noted previously, the entire dataset corresponds to 1,991,903 insured people. Figure \ref{ctenrollmentbyinsurer} shows how that total enrollment is broken down across the insurers represented in the data.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Enrollment by Insurer, CT, 2021}
+			\includegraphics[width=\columnwidth]{images/ct_claims/enrollment_by_insurer.png}
+			\caption{Enrollment in CT consumer report card broken down by insurer.}
+			\label{ctenrollmentbyinsurer}
+		\end{figure}
+		\clearpage
+	
+		Figures \ref{ctenrollmentbygrouptype} and \ref{ctenrollmentbyfundingtype} respectively display how the total enrollment is split across:
+		
+		\begin{itemize}
+			\item \emph{Individual}, \emph{small group}, and \emph{large group} plans
+			
+			Individual plans are plans purchased on an individual basis, for example through the federal or a state based Affordable Care Act (ACA) marketplace. In the case at hand, this means plans bought through Connecticut's marketplace, \href{https://www.accesshealthct.com}{Access Health Connecticut}. Group plans are plans administered for a group of employees or other beneficiaries; the term \emph{small group} has technical meaning that varies by state, but typically refers to employer group health plans for employers with 50 or fewer employees.
+			
+			\item \emph{Self insured} and \emph{fully insured} plans
+			
+			\href{https://www.healthcare.gov/glossary/self-insured-plan/}{Self insured} plans are group plans in which premiums are collected by, and covered services for the insured are paid for by, an employer itself. Such plans need not take on the administrative burden of insurance coverage, and often outsource that aspect of insuring to large, well-known insurance companies (often referred to as third party administrators, or TPMs, when they are employed in this role). \href{https://www.healthcare.gov/glossary/fully-insured-job-based-plan/}{Fully insured} plans are plans purchased by an employer.
+		\end{itemize}
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Enrollment by Group Type, CT, 2021}
+			\includegraphics[width=\columnwidth]{images/ct_claims/enrollment_by_group_type.png}
+			\caption{Enrollment in CT consumer report card broken down by group type. The data are partitioned according to individual, small group, and large group plans.}
+			\label{ctenrollmentbygrouptype}
+		\end{figure}
+
+
+		\begin{figure}[h!]
+			\centering
+			\textbf{Enrollment by Funding Type, CT, 2021}
+			\includegraphics[width=\columnwidth]{images/ct_claims/enrollment_by_payer_type.png}
+			\caption{Enrollment in CT consumer report card broken down by payer type. The data are partitioned according to fully insured plans and self funded plans.}
+			\label{ctenrollmentbyfundingtype}
+		\end{figure}
+	
+		The data from Connecticut is unique in that it includes a large population of large group health plans, which together with the other data provides for a relatively comprehensive view of the total insured population in the state. It would be invaluable to have such comprehensive data for all states.
+		
 		
 		
 		\subsection{Internal Appeals}\label{publicdata:internalappeals}
