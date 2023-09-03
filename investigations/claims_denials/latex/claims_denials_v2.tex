@@ -828,19 +828,18 @@
 		\end{figure}
 		
 		
-		Figure \ref{psdenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
+		Figure \ref{padenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
 		
 		
 		\begin{figure}[h!]
 			\centering
 			\textbf{Denial Rationales By Insurer, PA, 2020-2021}\par\medskip
-
+			\includegraphics[width=\columnwidth]{images/pa_claims/insurer_vs_denial_cat.png}
 			\caption{Distribution of denial rationales for all issuers in the PA DOI data who report denial rationales. The color indicates the fraction of all denials for a given insurer that were coded with a particular rationale (i.e. rows sum to 1).}
 			\label{padenialrationalesbyinsurer}
 		\end{figure}
 		
 		\clearpage
-		
 		
 		
 		
@@ -854,7 +853,7 @@
 		
 		The CMS TIC PUFs provide many pieces of metadata associated with individual plans, and their corresponding aggregate claims data, that allow denials to be broken down across additional categories.
 		
-		At a high level, we can calculate the overall denial rate for each \emph{issuer} (an insurer's \href{https://www.law.cornell.edu/definitions/uscode.php?width=840&height=800&iframe=true&def_id=26-USC-392827901-289353966&term_occur=1&term_src=}{state specific entity)}, by calculating the ratio of all claims denied by that issuer, to the claims received by that issuer (across all their plans). Figure 25 shows the distribution of such issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%. While we could compute such a distribution for the other datasets as well, the number of issuers involved is too small to infer much from the resulting distribution. Here, however, the distribution sheds some light on how denial rates vary by issuer.
+		At a high level, we can calculate the overall denial rate for each \emph{issuer} (an insurer's \href{https://www.law.cornell.edu/definitions/uscode.php?width=840&height=800&iframe=true&def_id=26-USC-392827901-289353966&term_occur=1&term_src=}{state specific entity}), by calculating the ratio of all claims denied by that issuer, to the claims received by that issuer (across all their plans). Figure 25 shows the distribution of such issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%. While we could compute such a distribution for the other datasets as well, the number of issuers involved is too small to infer much from the resulting distribution. Here, however, the distribution sheds some light on how denial rates vary by issuer.
 		
 		
 		\underline{New York Health Care Claims Reports}\\
