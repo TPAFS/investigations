@@ -15,6 +15,7 @@
 	\definecolor{primaryc}{HTML}{8f5e77} %%%EssexOrange
 	\definecolor{myblue}{HTML}{007A87} %%%Seagrass
 	\usepackage{footnotehyper}
+	\usepackage{caption}
 	% For technical reasons, hyperref should be loaded after all other packages
 	\usepackage[colorlinks,linkcolor=myblue,citecolor=mypurple, urlcolor=myblue]{hyperref}
 	
@@ -531,7 +532,7 @@
 		\begin{figure}[h!]
 			\centering
 			\textbf{Overall Claims Denial Rate, PA, 2020-2021}\par\medskip
-			
+			\includegraphics[width=.6\columnwidth]{images/pa_claims/overall_denial_pie.png}
 			\caption{Overall claims denial rate in the Pennsylvania Department of Insurance data in 2020 and 2021.}
 			\label{paoveralldenial}
 		\end{figure}
@@ -548,12 +549,12 @@
 		\begin{figure}[h!]
 			\centering
 			\textbf{Denials By Rationale, Federal Marketplace, 2021}\par\medskip
-			\includegraphics[width=.6\columnwidth]{images/cms_puf/denials_by_rationale.png}
-			\caption{Distribution of claims denial rationales in a subset of the TIC PUF data. Denial rationales are reported at the plan level, and we only included here those plans which reported denial rationales which either summed to the total number of denials reported, or which summed to the total number of denials reported excluding out of network denials. For some plans, neither validation method held, and we could not resolve what standard was being used to report the rationale data; that rationale data is not included. }
+			\includegraphics[width=\columnwidth]{images/cms_puf/denials_by_rationale.png}
+			\caption{Distribution of claims denial rationales in a subset of the TIC PUF data. }
 			\label{federalrationaledist}
 		\end{figure}
 
-		Most denials logged in the CMS PUF data are associated with a rationale of "Other". This provides little information about the underlying nature of the denials.\\
+		Most denials logged in the CMS PUF data are associated with a rationale of ``Other''. This provides little information about the underlying nature of the denials.\\
 		
 		Effectively, this reporting scheme allows insurers to withhold reporting the actual reason for a denial to the public if they so choose, since it is not completely clear what is allowed to be reported in the ``Other" bucket, and there is no strict validation of the reported data. Whether or not insurers actually abuse the system in this way cannot be gleaned from this data alone.\\
 		
@@ -564,6 +565,7 @@
 		\begin{figure}[h!]
 			\centering
 			\textbf{Denials By Rationale, NY, 2022}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/denial_rationale_dist.png}
 			\caption{Distribution of denial rationales for all denials recorded in the health care claims reports submitted to the Department of Financial Services in 2022.}
 			\label{nyrationaledist}
 		\end{figure}
@@ -579,6 +581,7 @@
 		\begin{figure}[h!]
 			\centering
 			\textbf{Denials By Rationale, CT, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ct_claims/denials_by_rationale.png}
 			\caption{Distribution of denial rationales for all denials in the CT consumer report card data. }
 			\label{ctrationaledist}
 		\end{figure}
@@ -590,6 +593,7 @@
 		\begin{figure}[h!]
 			\centering
 			\textbf{Denials By Rationale, PA, 2020-2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/pa_claims/denial_rationale_dist_2020-2021.png}
 			\caption{Distribution of denial rationales for all denials in the PA DOI data.}
 			\label{parationaledist}
 		\end{figure}
@@ -637,19 +641,220 @@
 		In the same vein, the distribution across insurers of denials whose rationale specifically involves the experimental nature of a treatment, rather than another medical necessity rationale, could be influenced by many things, in addition to the raw counts of claims. In particular, one would expect that wealthy and renowned hospital systems conducting cutting edge research would be more likely than others to attempt truly experimental or novel services for their patients in need, and that such properties of a hospital are correlated with other properties, such as proximity to a major city and research center. As a result, health insurance companies with networks that overlap certain geographic areas, or that include certain hospitals, might receive a distribution of claims with a relatively high share that could be interpreted as involving experimental treatments, when compared to distributions received by other insurance companies. In such a context, it would be inappropriate to make an inference about how experimental claims denial processes vary by insurer from experimental claims denial rates alone.
 		
 		As with all of the data we examine in this article, there are many subtleties that make it difficult to draw conclusions without more information. We make suggestions to address this troubling predicament in a concluding policy section.
+
 		
 		\underline{CMS Federal Marketplace PUFs}\\
+		
+		Figures \ref{fedinsurerclaims}, \ref{fedinsurerdenialrates}, and \ref{fedinsurernmndenialrates} show the overall claims counts, denial rates, and NMN denial rates for the 10 issuers in the CMS TIC PUF Federal Marketplace data with the highest claims volume.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Claims Count By Insurer, Federal Marketplace, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/cms_puf/claims_by_insurer.png}
+			\caption{Claims received for the 10 issuers with the largest number of claims adjudicated in the 2021 CMS TIC PUF data.}
+			\label{fedinsurerclaims}
+		\end{figure}
+	
+		\clearpage
+	
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rate By Insurer, Federal Marketplace, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/cms_puf/denial_rate_by_insurer.png}
+			\caption{Overall claims denial rates for the 10 issuers with the largest number of claims adjudicated in the 2021 CMS TIC PUF data.}
+			\label{fedinsurerdenialrates}
+		\end{figure}
+	
+		\clearpage
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{NMN Denial Rate By Insurer, Federal Marketplace, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/cms_puf/nmn_denial_rate_by_insurer.png}
+			\caption{NMN (including experimental) denial rates for the 10 issuers with the largest number of claims adjudicated in the 2021 CMS TIC PUF data.}
+			\label{fedinsurernmndenialrates}
+		\end{figure}
+	
+		Among the largest federal marketplace issuers of 2021, as measured by claims received, Blue Cross Blue Shield of South Carolina has an NMN denial rate roughly two to three orders of magnitude larger than the others. It is unclear what drives this phenomenon.
+		
+		Figure \ref{feddenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rationales By Insurer, Federal Marketplace, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/cms_puf/insurer_vs_denial_cat.png}
+			\caption{Distribution of denial rationales for the 10 issuers with the largest number of claims adjudicated in the 2021 CMS TIC PUF data. The color indicates the fraction of all denials for a given insurer that were coded with a particular rationale (i.e. rows sum to 1). }
+			\label{feddenialrationalesbyinsurer}
+		\end{figure}
+	
+		\clearpage
+		
 		
 		
 		\underline{New York Health Care Claims Reports}\\
 		
+				Figures \ref{nyinsurerclaims}, \ref{nyinsurerdenialrates}, and \ref{nyinsurernmndenialrates} show the overall claims counts, denial rates, and NMN denial rates for the 10 issuers in the New York Health Care Claims Reports data with the highest claims volume.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Claims Count By Insurer, NY, 2022}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/claims_by_insurer.png}
+			\caption{Claims received for the 10 issuers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data.}
+			\label{nyinsurerclaims}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rate By Insurer, NY, 2022}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/denial_rate_by_insurer.png}
+			\caption{Overall claims denial rates for the 10 issuers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data.}
+			\label{nyinsurerdenialrates}
+		\end{figure}
+		
+		\clearpage
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{NMN Denial Rate By Insurer, NY, 2022}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/nmn_denial_rate_by_insurer.png}
+			\caption{NMN (including experimental) denial rates for the 10 issuers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data.}
+			\label{nyinsurernmndenialrates}
+		\end{figure}
+	
+		
+		Figure \ref{nydenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rationales By Insurer, NY, 2022}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/insurer_vs_denial_cat.png}
+			\caption{Distribution of denial rationales for the 10 issuers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data. The color indicates the fraction of all denials for a given insurer that were coded with a particular rationale (i.e. rows sum to 1).}
+			\label{nydenialrationalesbyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
+
+
+		
 		\underline{Connecticut Consumer Report Cards}\\
 		
-		\underline{Pennsylvania Department of Insurance Data}
+		
+		Figures \ref{ctinsurerclaims}, \ref{ctinsurerdenialrates}, and \ref{ctinsurernmndenialrates} show the overall claims counts, denial rates, and NMN denial rates for the 10 issuers in the Connecticut Consumer Report Card data with the highest claims volume.
+
+		\begin{figure}[h!]
+			\centering
+			\textbf{Claims Count By Insurer, CT, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ct_claims/claims_by_insurer.png}
+			\caption{Claims received for all issuers in the CT consumer report card data.}
+			\label{ctinsurerclaims}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rate By Insurer, CT, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ct_claims/denial_rate_by_insurer.png}
+			\caption{Overall claims denial rates for all issuers in the CT consumer report card data.}
+			\label{ctinsurerdenialrates}
+		\end{figure}
+		
+		\clearpage
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{NMN Denial Rate By Insurer, CT, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ct_claims/nmn_denial_rate_by_insurer.png}
+			\caption{NMN (including experimental) denial rates for all issuers in the CT consumer report card data.}
+			\label{ctinsurernmndenialrates}
+		\end{figure}
+	
+		Figure \ref{ctinsurerdenialrates} shows odd and potentially spurious data that indicates one set of issuers, 'ConnectiCare Benefits' and 'ConnectiCare', have extremely high claims denial rates above 85\%. We suspect this is a reporting error in the raw data, but we show it here because we cannot be sure of that fact. We were unable to find further information about this anomaly.
+		
+		Figure \ref{ctdenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
+
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rationales By Insurer, CT, 2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/ct_claims/insurer_vs_denial_cat.png}
+			\caption{Distribution of denial rationales for all issuers in the CT consumer report card data. The color indicates the fraction of all denials for a given insurer that were coded with a particular rationale (i.e. rows sum to 1).}
+			\label{ctdenialrationalesbyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\underline{Pennsylvania Department of Insurance Data} \\
+		
+		
+		Figures \ref{painsurerclaims}, \ref{painsurerdenialrates}, and \ref{painsurernmndenialrates} show the overall claims counts, denial rates, and NMN denial rates for the 10 issuers in the Pennsylvania Department of Insurance Data data with the highest claims volume.
+	
+
+		\begin{figure}[h!]
+			\centering
+			\textbf{Claims Count By Insurer, PA, 2020-2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/pa_claims/claims_by_insurer.png}
+			\caption{Claims received for all issuers in the PA DOI data.}
+			\label{painsurerclaims}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rate By Insurer, PA, 2020-2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/pa_claims/denial_rate_by_insurer.png}
+			\caption{Overall claims denial rates for all issuers in the PA DOI data.}
+			\label{painsurerdenialrates}
+		\end{figure}
+		
+		\clearpage
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{NMN Denial Rate By Insurer, PA, 2020-2021}\par\medskip
+			\includegraphics[width=\columnwidth]{images/pa_claims/nmn_denial_rate_by_insurer.png}
+			\caption{NMN (including experimental) denial rates for all issuers in the PA DOI data.}
+			\label{painsurernmndenialrates}
+		\end{figure}
+		
+		
+		Figure \ref{psdenialrationalesbyinsurer} shows a heatmap displaying the distribution of denial rationales among these same highest volume insurers.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial Rationales By Insurer, PA, 2020-2021}\par\medskip
+
+			\caption{Distribution of denial rationales for all issuers in the PA DOI data who report denial rationales. The color indicates the fraction of all denials for a given insurer that were coded with a particular rationale (i.e. rows sum to 1).}
+			\label{padenialrationalesbyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		
 		
 		\subsubsection{Dataset Specific Considerations}
 		
+		Since the datasets do not report claims and denial information in a standard or consistent way, there are many interesting considerations that can be made for only some of the datasets. Here we present dataset specific considerations relating to claims and denial distributions.
+		
+		
+		
 		\underline{CMS Federal Marketplace PUFs}\\
+		
+		The CMS TIC PUFs provide many pieces of metadata associated with individual plans, and their corresponding aggregate claims data, that allow denials to be broken down across additional categories.
+		
+		At a high level, we can calculate the overall denial rate for each \emph{issuer} (an insurer's \href{https://www.law.cornell.edu/definitions/uscode.php?width=840&height=800&iframe=true&def_id=26-USC-392827901-289353966&term_occur=1&term_src=}{state specific entity)}, by calculating the ratio of all claims denied by that issuer, to the claims received by that issuer (across all their plans). Figure 25 shows the distribution of such issuer denial rates across issuers represented in the 2021 CMS TIC PUF data. The distribution is bimodal, with a large majority of issuers comprising a contingency with aggregate denial rates between 0\% to 30\%, and a small contingency of issuers maintaining aggregate denial rates between 35\% to 50\%. While we could compute such a distribution for the other datasets as well, the number of issuers involved is too small to infer much from the resulting distribution. Here, however, the distribution sheds some light on how denial rates vary by issuer.
 		
 		
 		\underline{New York Health Care Claims Reports}\\
