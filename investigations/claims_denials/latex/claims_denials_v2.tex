@@ -1445,13 +1445,64 @@
 		
 		\chapter{Conclusions}\label{conclusions}
 		
+		We now take a step back to synthesize our analyses, and consider some additional large scale implications.
+		
 		\subsection{Bias and Lack of Evaluation in Internal Appeal Processes}
+		
+		The data suggests that insurers do not evaluate internal appeals in a fair and unbiased way. In each dataset considered here, we see that denied claims that are upheld after internal appeal reviews, and then subsequently reviewed in an external review by an unbiased third party, are overturned at high rates. For example, in the 2021 federal marketplace data nearly 50\% of the 1,760 denied claims that were externally appealed were overturned by third party reviewers with no financial incentive in the determination. This same pattern of high rates of disagreement between internal and external reviewers for the population of externally appealed claims is evident across all data we've studied in this article. This phenomenon suggests that internal appeal reviews may be biased towards outcomes favorable to insurers, as we now explain.
+		
+		If the internal appeal process and external appeal processes were unbiased, competently administered and employed consistent standards, we'd expect a large degree of consistency between insurer determinations and third party determinations among the population of claims reviewed by both parties. A measure of agreement of this sort is referred to as an \href{https://en.wikipedia.org/wiki/Inter-rater_reliability}{inter-rater reliability} measure, or inter-annotator agreement, and is a useful and commonly employed means of determining consistency or quality of determinations or ratings provided by different individuals.
+		
+		The degree of disagreement between internal and external reviewers in appeals data is relatively high in all of the data we've seen, given the significance of the consequences for patients when determinations are adjudicated incorrectly. What constitutes a \emph{relatively high} level of disagreement is of course subjective; however, across all of the datasets we've seen external appeal overturn rates of approximately 15\% to 60\%, and furthermore, appeal overturn rates tend to remain in these ranges even when we consider individual insurers, or individual review agents.
+		
+		For sake of analogy, in critical matters of auditing quality, society at large would never settle for such a level of inter-rater agreement, particularly when one rater has a profit motive to rate a particular way. For example, we posit no would one would fly on a plane if airlines were allowed to audit their own safety features ``internally", but every time they were audited by external agencies, parts that the airlines found to be operational were found by independent safety inspectors to be faulty 15-60\% of the time, consistently, and across all airlines, no matter which external safety agency was performing the inspections. That is the level of disagreement we have witnessed throughout these analyses, and that we are conservatively deeming \emph{just} relatively high here.
+		
+		The data suggests that essentially no insurer's internal reviews are administering standards and adjudication in a way that is consistent with the average external review agent's processes, and essentially no external review organization is administering adjudication in a way that is consistent with the average internal review agent's processes. While these facts do not necessarily prove any particular cause for the phenomenon, the simplest and most compelling explanation is that the internal review processes are biased towards favorable insurer outcomes.
+		
+		Finally, we note that \emph{regardless} of the cause of the consistently high levels of disagreement between internal and external reviews of externally appealed claims denials, the high levels of disagreement should be compelling motivation for regulators and lawmakers to carefully and consistently monitor and evaluate the outcomes of internal and external reviews in a transparent way. Even the task of trying to perform this evaluation comprehensively oneself is incredibly difficult, if not impossible, given the lack of publicly available data, and in an ideal world consumers and patients could rely on evaluation and monitoring being performed on their behalf, and for their protection, by regulators in a \emph{transparent} way. It is important that discrepancies such as those we see in external appeal review inconsistencies are better understood; regardless of the cause, understanding them will improve outcomes and efficiencies in our systems. 
 		
 		\subsection{Monetary Value of Appeals}
 		
+		Consider again the disparity between the fraction of denials being appealed and the fraction of those appeals being internally overturned; we've seen such a disparity in every dataset containing internal appeals information that we've considered. One takeaway from this result is that it is in the best interest of consumers, as individuals, to appeal denials more frequently. However, if such a change were to occur on a large scale systematically, it would have implications for our healthcare systems at large in addition to improving health outcomes for individuals.
+		
+		To illustrate, let's consider what would happen if more federal marketplace insurance plan denials were appealed. For example, if one could scale currently observed internal appeal overturn rates (41.32\%) to 1\% of all denied claims on the federal marketplace with an average value per claim of \$300, it would result in approximately 200k extra overturned claims and 58 million USD of value returned to consumers.
+		
+		This calculation does not account for appeals of denials that occur outside of the federal marketplaces, nor does it take into account the fact that the federal marketplace data we studied is incomplete (which means we are under counting the potential for denials that could be overturned), nor does it take into account external appeals which constitute a process that data suggests would lead to more overturns.
+		
+		The takeaway is that consumers should be appealing contractually inappropriate denials whenever possible, and we need organizations, regulators, and individuals to support consumers and aid them in scaling the rate at which they are following through with such appeals. The monetary value alone is significant to consumers, and there are many important additional implications for their health.
+		
 		\subsection{Need for Data Standardization, Validation and Enhancement}
 		
+		In this article we've considered various data sources that help shed light on the state of coverage denials and appeals outcomes across plans in the federal marketplace, some state marketplaces, and various subgroups of plans unavailable in these markets. While it is a useful start to have access (thanks largely to the laws and regulations cited in the introduction) to the data we've analyzed, the level of access we have to such crucial data in general across the population is frankly in a pitiful state. Furthermore, although we have attempted to present the data in a centralized fashion, as if it were all reported via common standards, formats and methodologies, the data is in fact ad hoc, with details varying across datasets, resulting in difficulties and subtleties in comparing data across sources.
+		
+		We summarize the issues we've encountered by breaking them down into three categories.
+		
+		\begin{itemize}
+			\item \underline{Standardization}
+			
+			We have seen that the claims denial data reported by the federal marketplace and various state agencies is reported in different and inconsistent ways. For example, the federal marketplace data released in the CMS PUFs contains internal and external appeal data, while the NY health care claims reports do not include external appeal data. Similarly, the WA external appeal database includes a different amount of detail for each appeal case than does the NY external appeal database. The lack of consistency and standardization across datasets results in a landscape of data that is difficult to analyze, compare and monitor.
+			
+			While we have made an attempt to standardize aspects of our presentation of data from different sources, this involved significant effort due to the lack of standardization across sources, as can be seen in the accompanying raw open source analyses we share below.
+			
+			\item \underline{Validation}
+			
+			In various analyses presented in this article, and many additional calculations that occurred in our open source analyses of the raw data, we encountered what appear to be spurious or erroneous values in the raw data. For example, we saw in our analysis of the 2022 CT consumer report card that one insurer purportedly denied more claims in a plan year than they even received. Similarly, we saw in numerous datasets that the sum of counts for the exhaustive list of denial rationales provided for the dataset did not sum up to the count of all denials, nor did it consistently sum to a value larger than the total number of denials (which one would expect if claims could be labeled with more than one denial rationale), or a value smaller than the total number of denials (which one would expect if not all denials needed to have a rationale). While there may well be some consistent, logical explanations for each of the seemingly spurious situations occurring in the data, such explanations are critical and completely necessary for drawing conclusions from the data in an accurate way.
+			
+			Validating the data before it is made public, according to clearly defined, \emph{programmatically} automated, rules, would allow consumers, researchers, regulators and policy makers to build trust in the data and take it at face value.
+			
+			\item \underline{Enhancement}
+			
+			In addition to the need for standardization and validation of the data elements that are already common among the datasets we've presented here, the landscape of data also makes clear that there is a serious need for \emph{more} data.
+			
+			The public data we've been able to access thus far includes relatively complete data from federal marketplace plans, as well as limited data from a handful of state marketplaces, and relatively complete data from one state. Ideally, standardized and validated denial data for \emph{all} insurance plans in the U.S., including all state marketplace plans, and all employer sponsored plans, would be made available to the public to allow for meaningful understanding of the entire ecosystem, and systemic patterns.
+			
+			In addition to enhancing the breadth of insurance plan markets covered by public denial data, there is also a need to enhance the depth and detail included in data elements for each plan or insurer recorded in the data. For example, only some of the datasets we've considered included a breakdown of denials by rationale, and of those, many recorded the fraction of denials with each rationale type, but then neglected to retain information about the rationale breakdown when reporting internal and external appeals. This means, for example, that it is impossible with such datasets to calculate how often NMN denials specifically are being appealed, or how often NMN denials are being overturned via external appeal, etc. There are a huge number of important questions of this sort that simply cannot be addressed given the detail with which the data is reported across these sources. Because the data is not reported in enough detail to answer such questions, such questions cannot be addressed, monitored or even regulated by until more data is required from insurers.
+			
+		\end{itemize}
+		
 		\subsection{Need for Standardization and Streamlining of Appeals Processes}
+		
+		In every dataset considered here, we have seen that appeal rates are low, while appeal overturn rates are orders of magnitude larger. We need to empower consumers and their providers to successfully and accessibly appeal denials in all cases where the denials are contractually inappropriate. To do this efficiently at scale, across different insurance market segments, it would be immensely useful to move toward a common, standardized and streamlined appeal process, whose details are not as dependent on state or market segment of the insured as current processes are.
 		
 		\chapter{Recommendations}\label{recommendations}
 		
