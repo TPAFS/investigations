@@ -17,6 +17,9 @@
 	\usepackage{footnotehyper}
 	% For technical reasons, hyperref should be loaded after all other packages
 	\usepackage[colorlinks,linkcolor=myblue,citecolor=mypurple, urlcolor=myblue]{hyperref}
+	\usepackage{caption}
+	\usepackage{subcaption}
+	
 	
 	\renewcommand{\baselinestretch}{1.5} % 1.5 line spacing
 	
@@ -888,32 +891,92 @@
 			\item Only platinum level plans completely lack a contingent of 30\% to 50\% denial rate constituents.
 		\end{itemize}
 	
-			\begin{figure}[h!]
-				\centering
-				\textbf{Denial Rates By Plan Type, Federal Marketplace, 2021}\par\medskip
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/PPO_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/EPO_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/POS_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/HMO_dist.png}
-				\caption{Distribution of claims denial rates broken down by plan types. From left to right, top to bottom: PPO, EPO, POS and HMO plan distributions.}
-				\label{federaldenialratesbyplantype}
+		
+				\begin{figure}
+					\textbf{Denial Rates By Plan Type, Federal Marketplace, 2021}
+					\vspace{3em}
+					\centering
+					\begin{subfigure}[t]{0.49\textwidth}
+						\centering
+						\textbf{PPO}
+						\includegraphics[width=\textwidth]{images/cms_puf/PPO_dist.png}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}[t]{0.49\textwidth}
+						\centering
+						\textbf{EPO}
+						\includegraphics[width=\textwidth]{images/cms_puf/EPO_dist.png}
+					\end{subfigure}
+					\hfill
+					\vspace{1em}
+					\begin{subfigure}[t]{0.49\textwidth}
+						\centering
+						\textbf{POS}
+						\includegraphics[width=\textwidth]{images/cms_puf/POS_dist.png}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}[t]{0.49\textwidth}
+						\centering
+						\textbf{HMO}
+						\includegraphics[width=\textwidth]{images/cms_puf/HMO_dist.png}
+					\end{subfigure}
+				
+					\caption{Distribution of claims denial rates broken down by plan types.}
+					\label{federaldenialratesbyplantype}
 			\end{figure}
 		
 			\clearpage
-		
-		
-			\begin{figure}[h!]
+			
+			
+			\begin{figure}
+				\textbf{Denial Rates By Metal Level, Federal Marketplace, 2021}
+				\vspace{3em}
 				\centering
-				\textbf{Denial Rates By Metal Level, Federal Marketplace, 2021}\par\medskip
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Catastrophic_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Bronze_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Bronze Expanded_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Silver_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Gold_dist.png}
-				\includegraphics[width=.49\columnwidth]{images/cms_puf/Platinum_dist.png}
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Catastrophic}
+					\includegraphics[width=\textwidth]{images/cms_puf/Catastrophic_dist.png}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Bronze}
+					\includegraphics[width=\textwidth]{images/cms_puf/Bronze_dist.png}
+				\end{subfigure}
+				\hfill
+				\vspace{1em}
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Bronze Expanded}
+					\includegraphics[width=\textwidth]{images/cms_puf/Bronze Expanded_dist.png}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Silver}
+					\includegraphics[width=\textwidth]{images/cms_puf/Silver_dist.png}
+				\end{subfigure}
+				\hfill
+				\vspace{1em}
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Gold}
+					\includegraphics[width=\textwidth]{images/cms_puf/Gold_dist.png}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[t]{0.49\textwidth}
+					\centering
+					\textbf{Platinum}
+					\includegraphics[width=\textwidth]{images/cms_puf/Platinum_dist.png}
+				\end{subfigure}
+
+				
 				\caption{Distribution of claims denial rates broken down by metal level. From left to right, top to bottom: Catastophic, Bronze, Bronze Expanded, Silver, Gold and Platinum plan distributions.}
 				\label{federaldenialratesbymetallevel}
 			\end{figure}
+		
+		
+		\clearpage
 		
 		Figure \ref{federalbyregion} shows the average issuer level claims denial rates for each state or region represented in the CMS TIC PUF data, as well as various statistics of the data within each region. For example, we display the number of issuers represented in each state, the total number of claims represented for each state, and the issuers with the highest claims denial rates in each state.
 					
@@ -1088,12 +1151,283 @@
 		
 		\subsection{Internal Appeals}\label{publicdata:internalappeals}
 		
+		Next we consider the occurrence of internal appeals in the data. The same datasets that provide information sufficient to compute raw claims denial rates provide information about internal appeals. We again consider these datasets:
+		
+		\begin{itemize}
+			\item CMS TIC PUFs.
+			\item New York Health Care Claims Reports.
+			\item Connecticut Consumer Report Cards.
+			\item Pennsylvania Department of Insurance Data.
+		\end{itemize}
+	
+		Despite the inconsistencies in reporting across the datasets, the data is striking in that it consistently makes clear that while appeals of all forms are extremely rare among consumers, internal appeal overturn rates are high. We note that this disparity between the fraction of denials being internally appealed and the fraction of those appeals being internally overturned could be rooted in various phenomena \footnote{For example, it could be the case that the distribution of cases being internally appealed are those that are particularly egregious, or obviously inappropriate, denials, and that the expected appeal success rate would drop drastically if one were to appeal every denial with the adjudication processes remaining fixed. }.
+		
 		
 		\subsubsection{Overall Internal Appeal Rates}
 		
+		\underline{CMS Federal Marketplace PUFs}
+		
+		The CMS PUFs report the number of internal appeals submitted for denied claims only at the issuer level (so there is not enough information to determine the internal appeal rate for a particular plan).
+		
+		Analyzing this data is more subtle than it ought to be, because not all issuers in the dataset that report their denial counts report their internal appeals counts, and not all issuers that report their internal appeal counts report their external appeal counts. As a result, simply calculating the ratio of the number of internal appeals reported in the data to the number of denials recorded in the data would only give a lower bound on the internal appeal rate. To address this, we report internal appeal rates by restricting attention to those plans that report both denials and internal appeals.
+		
+		Among 2021 federal marketplace plans, the average initial appeal rate is about .2\%, while the internal appeal overturn rate among this same population of internally appealed claims is about 41\%. This data is shown in Figure \ref{federalinternalappealpie}.
+		
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\textbf{Overall Internal Appeal Rate, Federal Marketplace, 2021}
+			\includegraphics[width=\textwidth]{images/cms_puf/internal_appeal_rates_all_insurers.png}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\textbf{Overall Internal Appeal Overturn Rate, Federal Marketplace, 2021}
+			\includegraphics[width=\textwidth]{images/cms_puf/internal_appeal_success_rates_all_insurers.png}
+		\end{subfigure}
+		\caption{Internal appeal rates and appeal overturn rates among federal marketplace issuers in 2021. Only 1/5 of a percent of the approximately 48 million initially denied claims are appealed, but of those that are, 41 percent get overturned on a first level internal review.}
+		\label{federalinternalappealpie}
+	\end{figure}
+	
+		\clearpage
+	
+		\underline{New York Health Care Claims Reports}
+		
+		The New York Health Care Claims Reports document the number of internal appeals submitted for each insurer in the data. Figure \ref{nyinternalappealpie} shows the fraction of all initially denied claims that are internally appealed by consumers, and the fraction of those that are overturned on initial appeal. The initial appeal rate is about .6\%, while the internal appeal overturn rate among these claims is about 29\%.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Rate, NY, 2022}
+				\includegraphics[width=\textwidth]{images/ny_claim_reports/internal_appeal_pie.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Overturn Rate, NY, 2022}
+				\includegraphics[width=\textwidth]{images/ny_claim_reports/internal_appeal_overturns_pie.png}
+			\end{subfigure}
+			\caption{Internal appeal rates and appeal overturn rates among insurers who submitted health care claims reports to the Department of Financial Services in 2022. Only 1/2 of a percent of the approximately 25 million initially denied claims are appealed, but of those that are, 29 percent get overturned on a first level internal review.}
+			\label{nyinternalappealpie}
+		\end{figure}
+	
+		\underline{Connecticut Consumer Report Cards}
+		
+		The Connecticut Consumer Report Cards document the number of internal appeals submitted for each insurer in the data. Figure \ref{ctinternalappealpie} shows the fraction of all initially denied claims that are internally appealed by consumers, and the fraction of those that are overturned on initial appeal. The initial appeal rate is about .4\%, while the internal appeal overturn rate among these claims is about 60\%.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Rate, CT, 2021}
+				\includegraphics[width=\textwidth]{images/ct_claims/internal_appeal_rates_all_insurers.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Overturn Rate, CT, 2021}
+				\includegraphics[width=\textwidth]{images/ct_claims/internal_appeal_success_rates_all_insurers.png}
+			\end{subfigure}
+			\caption{Overall internal appeal rates in the CT consumer report card data. Only .4 percent of the approximately 2 million initially denied claims are appealed, but of those that are, 60 percent get overturned on a first level internal review.}
+			\label{ctinternalappealpie}
+		\end{figure}
+		
+		
+		\underline{Pennsylvania Department of Insurance Data}
+		
+		
+		Figure \ref{painternalappealpie} shows the fraction of all initially denied claims that are internally appealed by consumers, and the fraction of those that are overturned on initial appeal in the 2020 and 2021 PA DOI data. The initial appeal rate is about .1\%, while the internal appeal overturn rate among these claims is about 59\%.
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Rate, PA, 2020-2021}
+				\includegraphics[width=\textwidth]{images/pa_claims/internal_appeal_pie.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{Overall Internal Appeal Overturn Rate, PA, 2020-2021}
+				\includegraphics[width=\textwidth]{images/pa_claims/internal_appeal_overturns_pie.png}
+			\end{subfigure}
+			\caption{Overall internal appeal rates in the PA DOI data. Only .1 percent of the approximately 3 million initially denied claims are appealed, but of those that are, 59 percent get overturned on a first level internal review.}
+			\label{painternalappealpie}
+		\end{figure}
+	
+	\clearpage
+		
+				
+		
 		\subsubsection{Internal Appeals By Insurer}
 		
+		As we noted above, each of the datasets provides enough information to compute appeal rates and appeal overturn rates on an individual insurer basis. In what follows we share some such calculations.
+		
+		\underline{CMS Federal Marketplace PUFs}
+		
+		Figures \ref{federalinternalappealratebyinsurer} and \ref{federalinternalappealoverturnratebyinsurer} show the internal appeal rates and internal appeal overturn rates for the 10 insurers with the largest volume of claims adjudicated in the 2021 CMS PUF data.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Rate By Insurer, Federal Marketplace, 2021}
+			\includegraphics[width=.8\columnwidth]{images/cms_puf/internal_appeal_rate_by_insurer.png}
+			\caption{Internal appeal rates for the 10 insurers with the largest number of claims adjudicated in the 2021 federal marketplace data.}
+			\label{federalinternalappealratebyinsurer}
+		\end{figure}
+	
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Overturn Rate By Insurer, Federal Marketplace, 2021}
+			\includegraphics[width=.8\columnwidth]{images/cms_puf/internal_appeal_overturn_rate_by_insurer.png}
+			\caption{Internal appeal overturn rates for the 10 issuers with the largest number of claims adjudicated in the 2021 federal marketplace data.}
+			\label{federalinternalappealoverturnratebyinsurer}
+		\end{figure}
+	
+		\clearpage
+		
+		\underline{New York Health Care Claims Reports}
+		
+		Figures \ref{nyinternalappealratebyinsurer} and \ref{nyinternalappealoverturnratebyinsurer} show the internal appeal rates and internal appeal overturn rates for the 10 insurers with the largest volume of claims adjudicated in the NY claims report data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Rate By Insurer, NY, 2022}
+			\includegraphics[width=.8\columnwidth]{images/ny_claim_reports/appeal_rate_by_insurer.png}
+			\caption{ Internal appeal rates for the 10 insurers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data.}
+			\label{nyinternalappealratebyinsurer}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Overturn Rate By Insurer, NY, 2022}
+			\includegraphics[width=.8\columnwidth]{images/ny_claim_reports/internal_appeal_overturn_rate_by_insurer.png}
+			\caption{Internal appeal overturn rates for the 10 insurers with the largest number of claims adjudicated in the 2022 Department of Financial Services claims report data.}
+			\label{nyinternalappealoverturnratebyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\underline{Connecticut Consumer Report Cards}
+
+		Figures \ref{ctinternalappealratebyinsurer} and \ref{ctinternalappealoverturnratebyinsurer} show the internal appeal rates and internal appeal overturn rates for all insurers in the Connecticut consumer report card data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Rate By Insurer, CT, 2021}
+			\includegraphics[width=.8\columnwidth]{images/ct_claims/appeal_rate_by_insurer.png}
+			\caption{Internal appeal rates for insurers in the 2022 Connecticut Consumer Report Card Data.}
+			\label{ctinternalappealratebyinsurer}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Overturn Rate By Insurer, CT, 2021}
+			\includegraphics[width=.8\columnwidth]{images/ct_claims/internal_appeal_overturn_rate_by_insurer.png}
+			\caption{Internal appeal overturn rates for issuers in the 2022 Connecticut Consumer Report Card Data.}
+			\label{ctinternalappealoverturnratebyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
+		
+		\underline{Pennsylvania Department of Insurance Data}
+
+		Figures \ref{painternalappealratebyinsurer} and \ref{painternalappealoverturnratebyinsurer} show the internal appeal rates and internal appeal overturn rates for all insurers in the Pennsylvania Department of Insurance data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Rate By Insurer, PA, 2020-2021}
+			\includegraphics[width=.8\columnwidth]{images/pa_claims/appeal_rate_by_insurer.png}
+			\caption{Internal appeal rates for 10 insurers with the most claims in the PA DOI data.}
+			\label{painternalappealratebyinsurer}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Internal Appeal Overturn Rate By Insurer, PA, 2020-2021}
+			\includegraphics[width=.8\columnwidth]{images/pa_claims/internal_appeal_overturn_rate_by_insurer.png}
+			\caption{Internal appeal overturn rates for 10 insurers with the most claims in the PA DOI data.}
+			\label{painternalappealoverturnratebyinsurer}
+		\end{figure}
+		
+		\clearpage
+		
 		\subsubsection{Dataset Specific Considerations}
+		
+		The considerations above exhaust most of the analysis on internal appeals that can be done in a common way across the datasets reporting internal appeal counts. In what follows, we consider a few additional aspects of the data reported in only \emph{some} of the datasets.
+		
+		\underline{New York Health Care Claims Reports}
+		
+		The data recorded in the New York Health Care Claims Reports allow us to investigate how internal appeal rates and internal appeal overturn rates vary by provider category. Figure \ref{nyappealratesbyprovidercat} shows the overall claims denial rates, internal appeal rates, and internal appeal overturn rates for each of these categories, aggregated over all insurers in the dataset.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Denial and Appeal Rates By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/denial_and_appeal_rates_by_provider_cat.png}
+			\caption{Denial, internal appeal, and internal appeal overturn rates across provider categories in the 2022 New York Health Care Claims Reports.}
+			\label{nyappealratesbyprovidercat}
+		\end{figure}
+	
+		While all provider categories have relatively high internal appeal overturn rates, initial denial rates and internal appeal rates vary widely across the categories. It is noteworthy that while claims for inpatient hospital visits occupy a small fraction of the total claims covered in the dataset (compare Figure \ref{nyclaimsbyprovidercat}), denial rates for those claims are high at 24\%, and internal appeal rates are two to six times larger than those occurring among the other categories. Despite this increased appeal rate, appeal overturn rates remain high at 27\%.
+		
+		This empirical phenomenon is informed by considering the underlying costs associated with the claims in each of these provider categories. The cost data, displayed in Figure \ref{nyappealsallowedamts}, shows that the sum of the \emph{allowed amounts} for internally appealed `Inpatient Hospital' claims is greater than the sum for any other category. Moreover, consumers collectively recouped roughly 60\% of the entire monetary value of these appealed `Inpatient Hospital' claims, despite having an appeal overturn rate of only 27\%.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Allowed Amounts for Internally Appealed Claims By Provider Category, NY, 2022}
+			\includegraphics[width=\columnwidth]{images/ny_claim_reports/allowed_amts_by_provider_category_stacked.png}
+			\caption{Reported total allowed amounts for internally appealed claims, and appeal overturns, broken down by provider category in the 2022 New York Health Care Claims Reports.}
+			\label{nyappealsallowedamts}
+		\end{figure}
+	
+		To summarize, consumer behavior in successfully appealing Hospital Inpatient denials led to the overturn of a very \emph{lucrative} portion of the internally appealed denials in the dataset; this is a fact that is not visible when solely considering denial or appeal rates, but it is consistent with the intuition that the most expensive contractually inappropriate denials are the ones most likely to be appealed by consumers or their providers.
+		
+		Another contributing factor that may be driving this phenomenon is that hospitals often have significant resources provisioned to address contractually inappropriate denials. Hospitals routinely have departments dedicated to insurance claims resolution, and pay full time staff to navigate claims submission and appeals pertaining to a wide variety of issues. It is natural to expect that professionals with ample experience navigating appeals, working for organizations whose revenue and patients depend on successful claims resolution, would both appeal more frequently than would individual consumers, and fare better in their appeal overturn rates.
+		
+		\underline{Connecticut Consumer Report Cards}
+		
+		The data recorded in the Connecticut Consumer Report Cards allows one to consider internal appeal rates and internal appeal overturn rates broken down by the rationale provided for the initial denial. This is an incredibly useful lens through which to view the data, and one which is unfortunately unsupported by most of the datasets.
+		
+		Figures \ref{ctinternalappealratebydenialrationale} and \ref{ctinternalappealoverturnratebydenialrationale} show the internal appeal rates and internal appeal overturn rates for each denial rationale in the dataset.
+		
+		
+			\begin{figure}[h!]
+				\centering
+				\textbf{Internal Appeal Rate By Denial Rationale, CT, 2021}
+				\includegraphics[width=\columnwidth]{images/ct_claims/internal_appeals_by_rationale.png}
+				\caption{ Internal appeal rate among the population of claims corresponding to each denial rationale in the 2022 Connecticut Consumer Report Card.}
+				\label{ctinternalappealratebydenialrationale}
+			\end{figure}
+
+	
+	
+			\begin{figure}[h!]
+				\centering
+				\textbf{Internal Appeal Overturn Rate By Denial Rationale, CT, 2021}
+				\includegraphics[width=\columnwidth]{images/ct_claims/internal_appeal_overturns_by_rationale.png}
+				\caption{Internal appeal overturn rate among the population of claims corresponding to each denial rationale in the 2022 Connecticut Consumer Report Card.}
+				\label{ctinternalappealoverturnratebydenialrationale}
+			\end{figure}
+		
+		In this dataset, the internal appeal rate for NMN denials is between 10 to 50 times larger than the appeal rates in all other categories. On the other hand, internal appeal \emph{overturn} rates for internally appealed NMN denials are among the lowest of all categories.
+		
+		
+		We note that the high rate of internal appeals for denials whose rationales involve medical necessity, or the purported experimental nature of a treatment or service, has an intuitive potential cause. Medical necessity of particular services or care is not typically made explicit in insurance contracts; instead, broad definitions, which themselves reference literature and other documents, dictate a purported standard by which medical necessity will be determined. Given these definitions are often ambiguous and ill-defined in nature, it makes good sense that cases involving them would be more subtle, and be more likely to be appealed, than clear cut cases.
+		
+		
+		For example, if a contract explicitly states something is not covered, or a claim is inappropriately submitted and then denied for a member whose coverage had lapsed at the date of service, there is not much ground on which to make an appeal. This same logic explains why the internal appeal overturn rate is 100\% for internally appealed claims which were denied purportedly because they were duplicates; whether or not a claim is a duplicate is a clear cut matter of accounting, so any substantiated appeal of a claim denied for being purportedly duplicate is likely to be sound.
 		
 		\subsection{External Appeals}\label{publicdata:externalappeals}
 		
