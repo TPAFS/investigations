@@ -55,7 +55,7 @@
 		\fancyhead{} % get rid of headers
 		\renewcommand{\headrulewidth}{0pt} % and the line
 	}
-	
+
 	% Fancy  numbers
 	\titleformat{\chapter}[display]
 	{\normalfont\bfseries\color{primaryc}}
@@ -1431,15 +1431,474 @@
 		
 		\subsection{External Appeals}\label{publicdata:externalappeals}
 		
+		We now turn to external appeals. The datasets that provide information relating to external appeals are:
+		
+		\begin{itemize}
+			\item CMS TIC PUFs.
+			\item California CDI external appeal database.
+			\item California DMHC external appeal database.
+			\item New York external appeal database.
+			\item Washington external appeal database.
+			\item Pennsylvania Department of Insurance data.
+		\end{itemize}
+	
+		Each of these datasets reports metadata relating to external or independent review of denied claims in a different way. Despite the variations in how the data is reported, the independent sources display at least one consistent result: the population of claims denials which are upheld on internal appeal and then externally appealed are overturned by external review boards at high rates. This is a key fact to take away from these datasets.
+		
+		
+		This result suggests that internal review processes may not be sufficient for fair or equitable adjudication. If the populations of internal and external reviewers were all perfectly impartial, and shared consistent, \emph{repeatable} processes for making their determinations, one would expect near perfect agreement between determinations made by the two bodies for the same pool of denied claims.
+		
+		Instead, we see \emph{staggering disagreement} in each dataset about which of the \emph{externally} appealed claims merit overturn. The disagreement cannot conclusively be attributed to faulty or biased internal appeal processes, but it suggests that either internal appeal adjudication is faulty, external appeal adjudication is faulty, or appeal adjudication is too complex to expect a high degree of consistency between any two reviewers, at least for the population of externally appealed claims. The latter explanation appears unlikely given the relatively consistent external overturn rates across all of the different data sources we exhibit, and across many different independent, third party review organizations.
+		
+		We note explicitly that it is possible that if one were to submit all internally appealed claims to third party external review organizations, one would find that \emph{among the population of internally appealed claims} there would be a high degree of agreement between internal and external reviewers on appropriate determination outcomes. It is of course impossible to surmise what this hypothetical level of agreement would be if the audit were to occur.
+		
+		However, note that even if this \emph{hypothetical} test were to result in overwhelming agreement between internal and external reviewers when considering the population of internally appealed claims, such a result would not negate the problematic nature of the \emph{actual} level of disagreement between internal and external reviewers when considering externally appealed claims denials alone. There is no reason to believe that the population of internally and externally appealed claims are drawn from similar distributions, and as the data clearly shows, the population of internally appealed claims is orders of magnitude larger.
+		
+		It appears that internal processes may effectively be hoops through which consumers must jump before they are afforded unbiased consideration of their appeals. In fact, historically, most consumers that have navigated their way through an internal appeal process and lost do not (or cannot) proceed with an independent external review, as we will see in the data below.
+		
 		\subsubsection{Overall External Appeal Rates}
+		
+		We begin be examining the overall external appeal \emph{overturn} rate in each of the datasets.
+		
+		The CMS PUF TIC files and PA Department of Insurance data are unique among the external appeals data in that they also allow us to calculate the overall external appeal rates themselves. We calculate this as the total number of external appeals in the dataset divided by the \emph{corresponding} \footnote{Here the word corresponding plays an important role; in some of the datasets, such as the CMS PUFs, not all plans that include internal appeal statistics provide external appeal statistics. As as a result, simply dividing the total number of external appeals by the total number of upheld internal appeals in the dataset would not provide a true measure of an external appeal rate. The denominator would be inaccurately inflated.} total number of upheld internal appeals in the dataset.
+		
+		All of the other datasets with external appeals data provide information related to submitted external appeals, but do not indicate the corresponding population of upheld internal appeals to which the external appeals correspond. For this reason, we cannot provide an accurate overall external appeal rate in these cases, and instead restrict attention to the overall external appeal overturn rate.
+		
+		\underline{CMS Federal Marketplace PUFs}
+		
+		In Figure \ref{federalexternalappealpie}, we display the overall external appeal rate and external appeal overturn rate from the CMS TIC PUF data.
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Rate, Federal Marketplace, 2021}
+				\includegraphics[width=\textwidth]{images/cms_puf/external_appeal_rates_all_insurers.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate, Federal Marketplace, 2021}
+				\includegraphics[width=\textwidth]{images/cms_puf/external_appeal_success_rates.png}
+			\end{subfigure}
+			\caption{Overall external appeal rate and overall appeal overturn rate among federal marketplace issuers that reported the data in 2021. Not all issuers and plans reported external appeal data in the CMS PUF. Among the issuers reporting external appeal data, only 5 percent of the approximately 34 thousand denials upheld on internal appeal are externally appealed, but of those, nearly 49 percent get overturned when reviewed by an independent external agency.}
+			\label{federalexternalappealpie}
+		\end{figure}
+		
+		
+		Of the 1,760 claims represented in this data that were denied, internally appealed and upheld as denials, and then finally externally appealed, a staggering 49\% were deemed by external reviewers to merit overturn. However, 95\% of the consumers who had their internal appeals of claims denials upheld on internal review did not proceed with the external review process.
+		
+		\underline{California CDI External Appeal Database}
+		
+		Figure \ref{cacdiexternalappealpie} shows the overall external appeal overturn rate over the time period covered by the CDI external appeal dataset, excluding data from 2023.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate, CA CDI Administered, 2011-2022}
+			\includegraphics[width=.4\textwidth]{images/ca_doi_external_appeals/external_appeal_success_rates.png}
+			\caption{External appeal overturn rates among California insurers from 2011 to 2022. Roughly 50 percent of denials that are externally appealed get completely overturned when reviewed by an independent external agency.}
+			\label{cacdiexternalappealpie}
+		\end{figure}
+	
+	
+		\underline{California DMHC External Appeal Database}
+
+		Figure \ref{cadmhcexternalappealpie} shows the overall external appeal overturn rate over the time period covered by the CDI external appeal dataset, excluding data from 2023.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate, CA DMHC Administered, 2001-2022}
+			\includegraphics[width=.4\textwidth]{images/ca_dmhc_external_appeals/external_appeal_success_rates.png}
+			\caption{External appeal overturn rates among California issuers from 2001 to 2022. Roughly 49 percent of denials that are externally appealed get completely overturned when reviewed by an independent external agency.}
+			\label{cadmhcexternalappealpie}
+		\end{figure}
+	
+		We again see roughly 50\% disagreement between external reviewers and prior internal review determinations among the population of internally upheld and externally appealed claims denials.
+		
+		\underline{New York External Appeal Database}
+		
+		Figure \ref{nyexternalappealpie} shows the overall external appeal overturn rate over the time span covered by the New York external appeal dataset, excluding data from 2023.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate, NY, 2022}
+			\includegraphics[width=.4\textwidth]{images/nys_external/external_appeal_success_rates.png}
+			\caption{External appeal overturn rates among New York issuers from 2019 to 2022. Roughly 43 percent of denials that are externally appealed get completely overturned when reviewed by an independent external agency.}
+			\label{nyexternalappealpie}
+		\end{figure}
+		
+		In this case, 43\% of internally upheld and externally appealed claims denials are deemed to merit overturn by external reviewers.
+		
+		We note that while one could attempt to create an estimate for the external appeal rate in NY by combining the upheld internal appeal counts from the health care claims reports, or other sources, with the external appeal counts in this dataset, there is insufficient publicly available information to ensure the underlying population of claims in the two datasets is the same. As a result, even the rough accuracy of such an estimate would be unclear.
+		
+		\underline{Washington External Appeal Database}
+		
+		Figure \ref{waexternalappealpie} shows the overall external appeal overturn rate over the time period covered by the Washington external appeal dataset, excluding data from 2023.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate, WA, 2016-2022}
+			\includegraphics[width=.4\textwidth]{images/wa_external_appeals/external_appeal_success_rates.png}
+			\caption{External appeal overturn rates among OIC regulated Washington health plans from 2016 to 2022. Roughly 25 percent of denials that are externally appealed get completely overturned when reviewed by an independent external agency.}
+			\label{waexternalappealpie}
+		\end{figure}
+	
+		At 25\%, the Washington data shows a substantially lower fraction of internally upheld and externally appealed claims denials that are deemed to merit overturn by external reviewers, as compared to the other datasets. This could be influenced by numerous factors, but one possible explanation is that internal appeal review processes are more consistent with external appeal review processes than they are in other states.
+		
+		\underline{Pennsylvania Department of Insurance Data}
+		
+		In Figure \ref{paexternalappealpie}, we display the overall external appeal rate and external appeal overturn rate from the Pennsylvania Department of Insurance data. At 25\%, the external appeal overturn rate is consistent with that in Washington, and substantially lower than the rate in the other datasets. However, note that the sample size is extremely small in the PA data; only 102 external appeals are recorded in the data.
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Rate, PA, 2020-2021}
+				\includegraphics[width=\textwidth]{images/pa_claims/overall_external_appeal_rate_pie.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate, PA, 2020-2021}
+				\includegraphics[width=\textwidth]{images/pa_claims/external_appeal_success_rates.png}
+			\end{subfigure}
+			\caption{Overall external appeal rate and overall appeal overturn rate among issuers represented in the 2020 and 2021 PA DOI data. In this data only 10 percent of approximately one thousand denials upheld on internal appeal were externally appealed, but of those, 25 percent get overturned when reviewed by an independent external agency.}
+			\label{paexternalappealpie}
+		\end{figure}
+		
+		In the Pennsylvania DOI data, approximately 90\% of the consumers who had their internal appeals of claims denials upheld on internal review did not proceed with the external review process.
+		
 		
 		\subsubsection{External Appeals By Denial Rationale}
 		
+		Under federal regulations, claims denials that are upheld after an internal review are only eligible for external appeal by consumers in certain contexts (see \cite{pollitz2021}) for more information), such as denials whose rationale involves a purported lack of medical necessity. As a result, the distribution of denial rationales for claims that make it to the external appeal process varies drastically from the distribution of rationales among all denials, or even among internally appealed denials.
+		
+		Despite this, the datasets with external appeals that we consider that allow for the denial rationale distribution to be calculated show distinct distributions of denial rationales. In this section, we display these variations. Just as we saw that the allowable claims denial rationales varied by dataset, we see here that even the allowable denial rationales eligible for external appeals are not standardized across these datasets.
+		
+		
+		\underline{California CDI External Appeal Database}
+		
+		In the California CDI external appeal database, 66\% of external appeals correspond to denials whose rationale was medical necessity. Figure \ref{cacdieexternalappealsbyrationale} shows the distribution of rationales provided in this data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Denial Rationale, CA CDI Administered, 2011-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_doi_external_appeals/external_appeals_by_denial_reason.png}
+			\caption{Distribution of rationales for denials in the CDI IMR database.}
+			\label{cacdieexternalappealsbyrationale}
+		\end{figure}
+	
+		\underline{California DMHC External Appeal Database}
+	
+		In the California DMHC external appeal database, 71\% of external appeals correspond to denials whose rationale was medical necessity. Figure \ref{cadmhceexternalappealsbyrationale} shows the distribution of rationales provided in this data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Denial Rationale, CA DMHC Administered, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_dmhc_external_appeals/external_appeals_by_denial_reason.png}
+			\caption{Distribution of rationales for denials in the DMHC IMR database.}
+			\label{cadmhceexternalappealsbyrationale}
+		\end{figure}
+	
+	
+		\underline{New York External Appeal Database}
+
+		In the New York external appeal database, 92\% of external appeals correspond to denials whose rationale was medical necessity. Figure \ref{nyexternalappealsbyrationale} shows the full distribution of rationales provided in this data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Denial Rationale, NY, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/external_appeals_by_denial_reason.png}
+			\caption{Distribution of rationales for denials in the NYS external appeal database.}
+			\label{nyexternalappealsbyrationale}
+		\end{figure}
+	
+	
+		\underline{Washington External Appeal Database}
+
+		In the Washington external appeal database, 43\% of external appeals correspond to denials whose rationale was medical necessity. Figure \ref{waexternalappealsbyrationale} shows the distribution of rationales provided in this data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Denial Rationale, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/external_appeals_by_denial_reason.png}
+			\caption{Distribution of rationales for initial denials among Washington external appeals.}
+			\label{waexternalappealsbyrationale}
+		\end{figure}
+		
 		\subsubsection{External Appeal Overturn Rates Over Time}
 		
-		\subsubsection{External Appeals Overturn Rates By Insurer}
+		All of the datasets we've considered here include external appeals that have been tracked over many years. The graphs below show how the external appeal overturn rates, and frequency with which external appeals have been submitted, have varied over the years. Because we've focused our attention on the 2023 CMS TIC PUF in this article, rather than an aggregate of all CMS TIC PUFs, we omit such a graph for that dataset.
+		
+		All of the datasets show an increase in external appeal overturn rates over the last four years.
+		
+		\underline{California CDI External Appeal Database}
+		
+		In aggregate across the determinations made between 2011 and 2022, the complete overturn rate for external appeals logged in the CA CDI database was roughly 50\%; Figure \ref{cacdiexternalappealsovertime} shows that this rate varied considerably across these years.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate Over Time, CA, CDI Administered}
+				\includegraphics[width=\textwidth]{images/ca_doi_external_appeals/external_appeal_overturn_rates_by_year.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeals and Overturns Over Time, CA, CDI Administered}
+				\includegraphics[width=\textwidth]{images/ca_doi_external_appeals/external_appeals_by_year.png}
+			\end{subfigure}
+			\caption{Overturn rates and raw counts of external appeals among California CDI regulated issuers from 2011 to 2022, broken down by year.}
+			\label{cacdiexternalappealsovertime}
+		\end{figure}
+		
+		
+		\underline{California DMHC External Appeal Database}
+		
+		In aggregate across the determinations made between 2001 and 2022, the complete overturn rate for external appeals logged in the CA DMHC database was roughly 49\%; however Figure \ref{cadmhcexternalappealsovertime} shows that this rate also varied considerably across these years.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate Over Time, CA, DMHC Administered}
+				\includegraphics[width=\textwidth]{images/ca_dmhc_external_appeals/external_appeal_overturn_rates_by_year.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeals and Overturns Over Time, CA, DMHC Administered}
+				\includegraphics[width=\textwidth]{images/ca_dmhc_external_appeals/external_appeals_by_year.png}
+			\end{subfigure}
+			\caption{Overturn rates and raw counts of external appeals among California DMHC regulated issuers from 2001 to 2022, broken down by year.}
+			\label{cadmhcexternalappealsovertime}
+		\end{figure}
+	
+	
+		\underline{New York External Appeal Database}
+
+		In aggregate across the determinations made between 2019 and 2022, the complete overturn rate for external appeals logged in the NY database was roughly 43\%; Figure \ref{nyexternalappealsovertime} shows how this rate varied across those years.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate Over Time, NY}
+				\includegraphics[width=\textwidth]{images/nys_external/external_appeal_overturn_rates_by_year.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeals and Overturns Over Time, NY}
+				\includegraphics[width=\textwidth]{images/nys_external/external_appeals_by_year.png}
+			\end{subfigure}
+			\caption{Overturn rates and raw counts of external appeals among New York issuers from 2019 to 2022, broken down by year.}
+			\label{nyexternalappealsovertime}
+		\end{figure}
+	
+		\underline{Washington External Appeal Database}
+
+		In aggregate across the determinations made between 2016 and 2022, the complete overturn rate for external appeals logged in the Washington external appeal database was roughly 25\%; Figure \ref{waexternalappealsovertime} shows how this rate varied across those years.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeal Overturn Rate Over Time, WA}
+				\includegraphics[width=\textwidth]{images/wa_external_appeals/external_appeal_overturn_rates_by_year.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.49\textwidth}
+				\centering
+				\textbf{External Appeals and Overturns Over Time, WA}
+				\includegraphics[width=\textwidth]{images/wa_external_appeals/external_appeals_by_year.png}
+			\end{subfigure}
+			\caption{Overturn rates and raw counts of external appeals among Washington health plans from 2016 to 2022, broken down by year.}
+			\label{waexternalappealsovertime}
+		\end{figure}
+	
+		In the Washington external appeal data, we can further segment the yearly external appeal overturn rates according to the rationales provided for the underlying denials. The result, displayed in Figure \ref{waexternalappealsovertimebydenialrationale}, shows that the overturn rate for the 'Contractual Coverage Dispute' category is much lower than the others. This is consistent with the hypothesis we formulated earlier regarding the subtlety inherent in medical necessity and experimental denial determinations that is not present in many other denial rationale categories.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rates By Denial Rationale, WA}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/external_appeal_overturn_rates_by_denial_rationale_by_year.png}
+			\caption{External appeal overturn rates by year, broken down by purported rationale for the denial provided by the insurer. Overturn rates for contractually disputed services are much lower than those for denials corresponding to purported lack of medical necessity or purportedly experimental or investigational services.}
+			\label{waexternalappealsovertimebydenialrationale}
+		\end{figure}
+		
+				
+		
+		\subsubsection{External Appeal Overturn Rates By Insurer}
+		
+		Three of the datasets with external appeals data provide enough information to compute external appeal overturn rates broken down by insurer. In what follows we share some of these breakdowns.
+		
+		In each dataset, the overturn rate for external appeals varied considerably across different insurers, with overturn rates among the 10 insurers that received the most external appeals in each dataset varying by at least 14\%. This suggests that either the average validity of externally appealed denials is varying by insurer, or that review of external appeals is being performed in an inconsistent way across insurers. Note, however, that the average validity of externally appealed denials could vary across insurers for numerous reasons (e.g. the average validity of initial denials could be varying by insurer, or the internal appeal adjudication processes could be varying by insurer, etc).
+		
+		\underline{CMS Federal Marketplace PUFs}
+		
+		Figure \ref{federalexternalbyinsurer} shows the external appeal counts for the 10 insurers that received the most external appeals in the 2021 CMS federal marketplace data. Two insurers accounted for a significant share of the external appeals received.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Insurer, Federal Marketplace, 2021}
+			\includegraphics[width=.8\textwidth]{images/cms_puf/external_appeals_top_insurers.png}
+			\caption{External appeals among federal marketplace insurance plans from 2021, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{federalexternalbyinsurer}
+		\end{figure}
+	
+		In figure \ref{federalexternaloverturnsbyinsurer}, we show the external appeal overturn rates for these same insurers. A majority of these top 10 insurers have external appeal overturn rates between 30\% and 40\%, but there are three outliers with overturn rates above 50\%.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rates By Insurer, Federal Marketplace, 2021}
+			\includegraphics[width=.8\textwidth]{images/cms_puf/overturn_rates_by_insurer.png}
+			\caption{External appeal overturn rates among federal marketplace insurance plans, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{federalexternaloverturnsbyinsurer}
+		\end{figure}
+	
+	
+		\underline{New York External Appeal Database}
+
+		Figure \ref{nyexternalbyinsurer} shows the external appeal counts for the 10 insurers that received the most external appeals in the New York external appeal database.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Insurer, NY, 2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/external_appeals_top_insurers.png}
+			\caption{External appeals among New York insurance plans from 2019 to 2022, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{nyexternalbyinsurer}
+		\end{figure}
+		
+		Figure \ref{nyexternaloverturnsbyinsurer} shows the external appeal overturn rates for these same insurers. A majority of these top 10 insurers again have external appeal overturn rates between 30\% and 40\%, but there there are numerous outliers with higher overturn rates.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rates By Insurer, NY, 2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/overturn_rates_by_insurer.png}
+			\caption{External appeal overturn rates among New York insurance plans from 2019 to 2022, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{nyexternaloverturnsbyinsurer}
+		\end{figure}
+	
+	
+		\underline{Washington External Appeal Database}
+
+		Figure \ref{waexternalbyinsurer} shows the external appeal counts for the 10 insurers that received the most external appeals in the Washington external appeal database.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Insurer, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/external_appeals_by_insurer.png}
+			\caption{External appeals among Washington insurers from 2016 to 2022, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{waexternalbyinsurer}
+		\end{figure}
+		
+		Figure \ref{waexternaloverturnsbyinsurer} shows the external appeal overturn rates for these same insurers. External appeal overturn rates in the Washington data are markedly lower than those in the other datasets. All of the external appeal overturn rates among these top 10 insurers fall between 15% and 30%.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rates By Insurer, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/overturn_rates_by_insurer.png}
+			\caption{External appeal overturn rates among Washington insurers from 2016 to 2022, broken down by insurer. Only the 10 insurers with the most external appeals received in the dataset are shown here.}
+			\label{waexternaloverturnsbyinsurer}
+		\end{figure}
 		
 		\subsubsection{External Appeal Overturn Rates By Independent Review Organization}
+		
+		In this section we examine how external appeal submissions and external appeal overturn rates vary based on the review organizations assigned to review the appeals. Among the datasets we consider, only the New York external appeal database and the Washington external appeal database detail the review organizations associated with each review.
+		
+		\underline{New York External Appeal Database}
+		
+		In the New York external appeal database, a total of 4 independent review organizations were involved in adjudication.
+		
+		Those organizations are:
+		
+		\begin{itemize}
+			\item \href{https://www.imedecs.com/}{IMEDECS}
+			\item \href{https://ipro.org/}{IPRO}
+			\item \href{https://www.kepro.com/}{KEPRO} (doing business as IMEDECS)
+			\item \href{https://www.mcmcllc.com/}{MCMC}
+		\end{itemize}
+	
+		Figure \ref{nyexternalappealsbyreviewagent} shows the number of external appeals in the NY DFS external appeal database that were adjudicated by each of these organizations.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Review Agent, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/external_appeals_by_agent.png}
+			\caption{Counts of the external appeals adjudicated by each of the NY state review organizations.}
+			\label{nyexternalappealsbyreviewagent}
+		\end{figure}
+	
+		Figure \ref{nyexternalappealoverturnratebyreviewagent} shows the average external appeal overturn rate for these organizations over the time period covered by the data.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate By Review Agent, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/external_appeal_overturn_rates_by_agent.png}
+			\caption{Average external appeal overturn rates for each of the NY external review organizations.}
+			\label{nyexternalappealoverturnratebyreviewagent}
+		\end{figure}
+		
+		It is informative in this case to understand how the complete overturn rates for each of the review organizations appearing in this data has evolved over the years; this evolution is shown in figure \ref{nyexternalappealoverturnratebyreviewagentovertime}. It is interesting to note that although all organizations received a similar distribution of denial rationales (this can be verified in the data, but is not shown here), the complete overturn rates vary by organization in a way that has been relatively consistent over the years (e.g. IPRO has consistently maintained the highest complete overturn rate).
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rates By Review Agent, NY}
+			\includegraphics[width=.8\textwidth]{images/nys_external/external_appeal_overturn_rates_by_review_org.png}
+			\caption{Complete overturn rates for external appeals received by each of the independent review organizations in the New York external appeal database.}
+			\label{nyexternalappealoverturnratebyreviewagentovertime}
+		\end{figure}
+	
+		It would be useful to understand why the average overturn rate varies consistently between these organizations \footnote{There are many possible explanations, and it is impossible from this data alone to determine the cause. For example, it could be that given the same large pool of external denials one review organization would consistently have a much lower overturn rate than the others (this explanation would be problematic, and worthy of investigation to protect consumers). Alternatively, it could be that the different organizations would agree on a large fraction of adjudication decisions if they were given the same pool of denials, and the cause of the discrepancy instead has to do with which population of cases are getting distributed to each organization (this would not necessarily be problematic, though might merit explanation).}, and what (if any) protocols exist to ensure that reviewers across organizations are following consistent standards.
+		
+		We were also unable to find information detailing the process by which external review agencies are granted contract renewals, or monitored and evaluated by the state of New York to ensure they are evaluating external appeals consistently and appropriately, but this seems like information which would be useful to disclose prominently to gain the trust of consumers.
+		
+		It would also be helpful if external appeal data (including metadata reflecting the relevant review organizations) were included in the Health Care Claim Reports, which we analyzed previously, to allow consumers, researchers and policy makers to audit the nature of NY external appeal processes with more context, such as knowledge of the pool of internal appeals to which they correspond, and more fine grained detail.
+		
+		\underline{Washington External Appeal Database}
+		
+		In the Washington external appeal database, a total of 19 independent review organizations were involved in adjudication.
+		
+		Figure \ref{waexternalappealsbyreviewagent} shows the number of external appeals in the WA external appeal database that were adjudicated by the 10 organizations that administered the most appeal reviews.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeals By Review Agent, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/external_appeals_by_agent.png}
+			\caption{Counts of the external appeals adjudicated by each of the WA external review organizations from 2016-2022, for those review organizations that received at least 500 adjudication requests.}
+			\label{waexternalappealsbyreviewagent}
+		\end{figure}
+	
+		Figure \ref{waexternalappealoverturnratebyreviewagent} shows the average external appeal overturn rate for these organizations over the time period covered by the data.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{External Appeal Overturn Rate By Review Agent, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/external_appeal_overturn_rates_by_agent.png}
+			\caption{Average external appeal overturn rates for each of the WA external review organizations from 2016-2022, for those review organizations that received at least 500 adjudication requests.}
+			\label{waexternalappealoverturnratebyreviewagent}
+		\end{figure}
+	
+		The average external appeal overturn rate varies drastically across these organizations. It is unclear from the data we have what causes this discrepancy, though what is clear (when one compares the yearly breakdown of overturn rates for each review organization) is that this variance cannot be solely attributed to yearly variations in the overturn rates for each constituent review organization. Regardless of the explanation, such large variation in overturn rates for potentially crucial medical claims denials merits explanation, and monitoring and evaluation, to ensure accountability and prevention of inappropriate practices, and build consumer trust.
+		
+		For example, it would be interesting and useful for the public to gain access, from an official and reputable source, to the implemented policy that determines exactly how external appeal requests are routed on a case by case basis to the review agencies in Washington. It is possible that review organizations do not receive a random subset of external appeals, but rather get routed appeals based on undisclosed factors that lead to this overturn variation (e.g. one external review agency specializes in adjudicating appeals pertaining to emergency services, etc.).
 		
 		\subsubsection{External Appeal Overturn Rates By Underlying Medical Characteristics}
 		
@@ -1539,7 +1998,7 @@
 			
 			\item In requiring such data to be reported, lawmakers and regulators ought to require insurers to report the data to centralized agencies, and additionally require those centralized agencies to host publicly accessible copies of that data. Merely requiring insurers to report the data in a public way directly is insufficient, because it would make the task of compiling the data, enforcing standardization, and even enforcing compliance with posting, unwieldy and unrealistic.
 			
-			\item Regulators and lawmakers also ought to \emph{validate} the data insurers are providing, and impose penalities for data which is faulty or misrepresented. If there is no requirement or mechanism to enforce actual validity of the data, requiring the data to be reported would be much less meaningful. At a minimum, basic checks should be validated, such as total claims submitted being larger than claims denied, and other comparisons whose failure would indicate nonsensical data. In all of the data we've analyzed here, we've done such basic validation checks manually, and often had to \emph{throw out portions of the data which failed the basic checks}.
+			\item Regulators and lawmakers also ought to \emph{validate} the data insurers are providing, and impose penalties for data which is faulty or misrepresented. If there is no requirement or mechanism to enforce actual validity of the data, requiring the data to be reported would be much less meaningful. At a minimum, basic checks should be validated, such as total claims submitted being larger than claims denied, and other comparisons whose failure would indicate nonsensical data. In all of the data we've analyzed here, we've done such basic validation checks manually, and often had to \emph{throw out portions of the data which failed the basic checks}.
 		\end{itemize}
 		
 		\subsubsection{Mandate Transparent, Standardized Processes and Forms for Appeals Across All Plans}
