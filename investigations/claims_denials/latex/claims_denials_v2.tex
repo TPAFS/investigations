@@ -1902,6 +1902,245 @@
 		
 		\subsubsection{External Appeal Overturn Rates By Underlying Medical Characteristics}
 		
+		The final lens through which we examine the external appeals in these datasets involves how the external appeals, and the overturn rates, vary according to the underlying medical details of the claim. One way to study this variation is to consider codes or other descriptors associated with the underlying diagnoses, treatments or services related to a claims denial. All of the external appeal datasets we consider here except for the CMS TIC PUFs provide information of this sort in varying degrees.
+		
+		We note that although such information is provided in numerous datasets, the way in which the information is provided is inconsistent, which makes attempts at direct comparisons tenuous. Nonetheless, we consider how the data breaks down along these dimensions in what follows.
+		
+		\underline{California CDI External Appeal Database}
+		
+		The California CDI external appeal database provides breakdowns of external appeals by both diagnosis and service categories; in both cases, externally appealed claim records are labeled with a plain text description of the diagnosis or service or treatment, but no associated diagnosis or procedure codes are included in the data. In addition, many of the plain text descriptions are generic and ambiguous in nature, as we see in the figures below.
+		
+		Figure \ref{cacdiexternalappealsbydiagnosis} shows the most common diagnoses among the external appeals data, while Figure \ref{cacdiexternalappealsbyservice} shows the most common services, and Figure \ref{cacdiexternalappealsbydiagservice} shows the most common diagnosis-service pairs.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnoses, CA, CDI Administered, 2011-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_doi_external_appeals/top_externally_appealed_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnoses appearing in the CDI IMR database.}
+			\label{cacdiexternalappealsbydiagnosis}
+		\end{figure}
+	
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Services, CA, CDI Administered, 2011-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_doi_external_appeals/top_externally_appealed_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common services appearing in the CDI IMR database.}
+			\label{cacdiexternalappealsbyservice}
+		\end{figure}
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnosis Service Pairs, CA, CDI Administered, 2011-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_doi_external_appeals/top_appealed_diag_services.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the CDI IMR database.}
+			\label{cacdiexternalappealsbydiagservice}
+		\end{figure}
+	
+		Figure \ref{cacdinmnexternalappealdiagservice} shows the most common diagnosis-service pairs among the denials corresponding to medical necessity in the dataset.
+
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnosis Service Pairs Among Externally Appealed `Not Medical Necessity' Denials, CA, CDI Administered, 2011-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_doi_external_appeals/top_nmn_appeal_diag_service.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the CDI IMR database.}
+			\label{cacdinmnexternalappealdiagservice}
+		\end{figure}
+	
+		\underline{California DMHC External Appeal Database}
+		
+		The California DMHC external appeal database provides breakdowns of external appeals by both diagnosis and service categories in a way that is similar to how such data is provided in the CA CDI external appeal dataset; no precise diagnosis or procedural codes are provided, rather plain text descriptions indicate the fields. The plain text descriptors appear to be distinct even from those appearing in the CDI dataset, despite both datasets corresponding to data from the same state.
+		
+		Figure \ref{cadmhcexternalappealsbydiagnosis} shows the most common diagnoses among the external appeals data, while Figure \ref{cadmhcexternalappealsbyservice} shows the most common services, and Figure \ref{cadmhcexternalappealsbydiagservice} shows the most common diagnosis-service pairs.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnoses, CA, DMHC Administered, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_dmhc_external_appeals/top_externally_appealed_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnoses appearing in the DMHC IMR database.}
+			\label{cadmhcexternalappealsbydiagnosis}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Services, CA, DMHC Administered, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_dmhc_external_appeals/top_externally_appealed_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common services appearing in the DMHC IMR database.}
+			\label{cadmhcexternalappealsbyservice}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnosis Service Pairs, CA, DMHC Administered, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_dmhc_external_appeals/top_appealed_diag_services.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the DMHC IMR database.}
+			\label{cadmhcexternalappealsbydiagservice}
+		\end{figure}
+		
+		
+		Figure \ref{cadmhcnmnexternalappealdiagservice} shows the most common diagnosis-service pairs among the denials corresponding to medical necessity in the dataset.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnosis Service Pairs Among Externally Appealed `Not Medical Necessity' Denials, CA,DMHC Administered, 2001-2022}
+			\includegraphics[width=.8\textwidth]{images/ca_dmhc_external_appeals/top_nmn_appeal_diag_service.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the DMHC IMR database among denials whose rationale involves medical necessity.}
+			\label{cadmhcnmnexternalappealdiagservice}
+		\end{figure}
+	
+		\underline{New York External Appeal Database}
+		
+		The New York external appeal database provides breakdowns of external appeals by both diagnosis and service categories in a way that is similar to how such data is provided in the CA CDI and DMHC external appeal datasets; no precise diagnosis or procedural codes are provided, rather plain text descriptions indicate the fields. The plain text descriptors appear to be distinct from those used in both the CA CDI and CA DMHC external appeal databases.
+		
+		Figure \ref{nyexternalappealsbydiagnosis} shows most common diagnoses among the external appeals data, while Figure \ref{nyexternalappealsbyservice} shows the most common services, and Figure \ref{nyexternalappealsbydiagservice} shows the most common diagnosis-service pairs.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnoses, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/top_externally_appealed_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnoses appearing in the NY external appeal database.}
+			\label{nyexternalappealsbydiagnosis}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Services, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/top_externally_appealed_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common services appearing in the NY external appeal database.}
+			\label{nyexternalappealsbyservice}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnosis Service Pairs, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/top_externally_appealed_diag_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the NY external appeal database.}
+			\label{nyexternalappealsbydiagservice}
+		\end{figure}
+	
+		Figure \ref{nynmnexternalappealdiagservice} shows the most common diagnosis-service pairs among the denials corresponding to medical necessity in the dataset.
+
+
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnosis Service Pairs Among Externally Appealed `Not Medical Necessity' Denials, NY, 2019-2022}
+			\includegraphics[width=.8\textwidth]{images/nys_external/top_nmn_appeal_diag_service.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the NY external appeal database among denials whose rationale involves medical necessity.}
+			\label{nynmnexternalappealdiagservice}
+		\end{figure}
+	
+		\underline{Washington External Appeal Database}
+		
+		Finally, we consider the breakdown of diagnosis and service descriptors in the Washington external appeal database. Among the datasets we consider, this database appears to provide the most fine grained and well-specified breakdown of diagnosis and service descriptions. This detail is provided for each external appeal recorded both via plain text descriptors, but also by corresponding codes determined by standardized diagnosis and procedure specifiers.
+		
+		\begin{itemize}
+			\item For diagnoses, the dataset reports \href{https://en.wikipedia.org/wiki/ICD-10-CM}{International Classification of Diseases Clinical Modification} codes (specifically ICD-10-CM codes), along with corresponding plain text descriptions. These are standardized codes commonly used to encode diseases, disorders, symptoms, and injuries. See \href{https://www.cdc.gov/nchs/icd/icd-10-cm.htm}{CDC guidance} for a more detailed background.
+			
+			\item For services, the dataset reports \href{https://en.wikipedia.org/wiki/Healthcare_Common_Procedure_Coding_System}{Healthcare Common Procedure Coding System (HCPCS)} codes along with corresponding plain text descriptions. These are standardized codes commonly used to encode procedures, supplies, products and services across U.S. healthcare. See \href{https://www.cms.gov/medicare/fraud-and-abuse/physicianselfreferral/list_of_codes}{CMS guidance} for a more detailed background.
+		\end{itemize}
+	
+		The use of common, standardized coding schemes means that direct comparisons of externally appealed denials broken down by these properties \emph{across datasets} would be feasible, if other datasets moved toward reporting by the same standard. This line of reasoning is one that we consider in more detail in the policy recommendations section below.
+		
+		Figure \ref{waexternalappealsbydiagnosis} shows the counts of the top ten diagnosis codes among the external appeals in this data, while Figure \ref{waexternalappealsbyservice} shows the most common services, and Figure \ref{waexternalappealsbydiagservice} shows the most common diagnosis-service pairs.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnoses, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_externally_appealed_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to each of the top 10 diagnosis codes appearing in the WA external appeal database.}
+			\label{waexternalappealsbydiagnosis}
+		\end{figure}
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Services, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_externally_appealed_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common services appearing in the WA external appeal database.}
+			\label{waexternalappealsbyservice}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Externally Appealed Diagnosis Service Pairs, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_externally_appealed_diag_treatments.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the WA external appeal database.}
+			\label{waexternalappealsbydiagservice}
+		\end{figure}
+	
+		Figure \ref{wanmnexternalappealdiagservice} shows the most common diagnosis-service pairs among the denials corresponding to medical necessity in the dataset.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnosis Service Pairs Among Externally Appealed `Not Medical Necessity' Denials, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_nmn_appeal_diag_service.png}
+			\caption{Counts of the external appeals corresponding to the 10 most common diagnosis-service pairs appearing in the WA external appeal database among denials whose rationale involves medical necessity.}
+			\label{wanmnexternalappealdiagservice}
+		\end{figure}
+	
+		Because the Washington external appeal data has the most specificity and least ambiguity in diagnosis and service breakdowns, it is useful to note how those labels are distributed in more detail.
+		
+		For example, it is informative to consider the distribution of diagnosis codes that are occurring in each subtype of denial rationale, rather than doing so only for denials related to medical necessity. Unsurprisingly, diagnoses vary in their relative frequency across each class of denial rationale. For example, cases being deemed not medically necessary are most often being externally appealed when the underlying diagnosis involved is Psoriasis, while among experimental denials the most commonly externally appealed diagnosis is GERD, and among contractual disputes it is screening for malignant neoplasm.
+		
+		Figures \ref{wanmnexternalappealsbydiagnosis}, \ref{waexpexternalappealsbydiagnosis}, and 96 respectively show the same breakdown of the top 10 diagnoses, but when restricting attention to appeals corresponding to each of the three categories of denial rationales.
+		
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnoses Among Externally Appealed `Not Medically Necessary' Denials, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_nmn_appeal_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to each of the top 10 diagnosis codes among external appeals of denials whose rationale involves medical necessity, as found in the Washington external appeal data.}
+			\label{wanmnexternalappealsbydiagnosis}
+		\end{figure}
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnoses Among Externally Appealed `Experimental' Denials, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_experimental_appeal_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to each of the top 10 diagnosis codes among external appeals of denials whose rationale involves the experimental or investigational nature of a treatment or service, as found in the Washington external appeal data.}
+			\label{waexpexternalappealsbydiagnosis}
+		\end{figure}
+	
+		\begin{figure}[h!]
+			\centering
+			\textbf{Top 10 Diagnoses Among Externally Appealed `Contractual' Denials, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/top_contractual_appeal_diagnoses.png}
+			\caption{Counts of the external appeals corresponding to each of the top 10 diagnosis codes among external appeals of denials whose rationale involves a contractual coverage dispute, as found in the Washington external appeal data.}
+			\label{wacontractualexternalappealsbydiagnosis}
+		\end{figure}
+	
+		Figures \ref{wanmnexternalappealsbydiagnosisinsurer}, \ref{waexpexternalappealsbydiagnosisinsurer}, and \ref{wacontractualexternalappealsbydiagnosisinsurer} show this same data for the three denial rationale categories, but breaking the appeal frequency data down further by insurer.
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Diagnoses for External Appeals of `Not Medically Necessary' Denials By Insurer, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/nmn_diagnosis_by_insurer.png}
+			\caption{External appeal frequencies broken down by diagnosis codes and insurer, for denials whose rationale involves medical necessity. Here we show only the 20 diagnoses most prevalent across the dataset. The color of a box in a column indicates the fraction of all externally appealed denials for a given insurer that were associated with a particular diagnosis code (i.e. columns would sum to 1, if all diagnoses in the dataset were included in the plot).}
+			\label{wanmnexternalappealsbydiagnosisinsurer}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Diagnoses for External Appeals of `Experimental' Denials By Insurer, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/experimental_diagnosis_by_insurer.png}
+			\caption{External appeal frequencies broken down by diagnosis codes and insurer, for denials whose rationale involves the experimental or investigational nature of a service or treatment. Here we show only the 20 diagnoses most prevalent across the dataset. The color of a box in a column indicates the fraction of all externally appealed denials for a given insurer that were associated with a particular diagnosis code (i.e. columns would sum to 1, if all diagnoses in the dataset were included in the plot).}
+			\label{waexpexternalappealsbydiagnosisinsurer}
+		\end{figure}
+		
+		\begin{figure}[h!]
+			\centering
+			\textbf{Diagnoses for External Appeals of `Contractual' Denials By Insurer, WA, 2016-2022}
+			\includegraphics[width=.8\textwidth]{images/wa_external_appeals/contractual_diagnosis_by_insurer.png}
+			\caption{External appeal frequencies broken down by diagnosis codes and insurer, for denials whose rationale involves a contractual coverage dispute. Here we show only the 20 diagnoses most prevalent across the dataset. The color of a box in a column indicates the fraction of all externally appealed denials for a given insurer that were associated with a particular diagnosis code (i.e. columns would sum to 1, if all diagnoses in the dataset were included in the plot).}
+			\label{wacontractualexternalappealsbydiagnosisinsurer}
+		\end{figure}
+		
+		
+		While it is difficult to draw conclusions about what is causing the phenomenology observed in Figures 94 through 99 based solely on the available data, the data raises many questions. The relative frequency of denial and appeal outcomes across insurers and medical diagnoses and services rendered is of critical importance to those with chronic, debilitating, or dire medical conditions. It is important that insurer behaviors of the sort reflected in the plots above are better understood, monitored and regulated so that fair and just adjudication practices can be ensured for consumers.
+		
 		\chapter{Conclusions}\label{conclusions}
 		
 		We now take a step back to synthesize our analyses, and consider some additional large scale implications.
