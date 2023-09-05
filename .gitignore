@@ -10,6 +10,8 @@ __pycache__/
 
 # Visualization Artifacts
 *.png
+# Track those used for latex rendering
+!**/latex/**/*.png
 
 # Latex artifacts
 *.aux
