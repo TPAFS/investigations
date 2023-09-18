@@ -101,9 +101,12 @@
 			
 			{\small \today }
 			\vfill
-			Claims denials in U.S. health insurance pose a serious problem for patients navigating their care. In this report we present and analyze data that sheds light on the occurrence and prevalence of claims denials, propose policies to improve patient outcomes, and highlight existing avenues for consumer recourse. Our analyses show that claims denials correspond to a highly valuable population
-			of claims, and that even modest improvements to appeal access and outcomes
-			have the potential to return billions of dollars to consumers.
+			Claims denials in U.S. health insurance pose a serious problem for patients navigating their care. 
+			In this report we present and analyze data that sheds light on the occurrence and prevalence of claims 
+			denials in commercial health insurance, propose policies to improve patient outcomes, and highlight 
+			existing avenues for consumer recourse. Our analyses show that commercial claims denials correspond 
+			to a highly valuable population of claims, and that even modest improvements to appeal access, utilization 
+			and outcomes have the potential to return billions of dollars to consumers.
 			\vfill
 			
 
@@ -135,18 +138,37 @@
 		
 		Claims are a fundamental and atomic unit of U.S. health insurance: every time an insured consumer attempts to use their health insurance to cover a portion of a bill, a claim is submitted to their insurer on their behalf. The claim records details about the care received and its cost necessary for an insurer to make a payment determination. The primary role of health insurers is to receive and adjudicate these claims based on the contracts they sell, and ultimately pay for some portion of them, on behalf of those who purchased the contracts (typically employers or individuals).
 		
-		When insurers adjudicate a claim to determine whether they will pay for it, they review the contracts that govern the coverage which has been purchased on behalf of the insured. The permissible content in these contracts is often restricted by various laws and regulations, and the contracts may also refer to external sources (e.g. ``clinical policy bulletins'', or ``scientific literature'') that are explicitly cited as things that will be used to inform coverage determinations. We will say a coverage decision or denial is contractually inappropriate if the decision is inconsistent with the insurance contract governing a policy, or the laws and regulations that apply to that policy.
+		When insurers adjudicate a claim to determine whether they will pay for it,
+		they review the contracts that govern the coverage which has been purchased on
+		behalf of the insured. The permissible content in these contracts is often
+		restricted by laws and regulations, and the contracts may also
+		refer to external sources (e.g. ``clinical policy bulletins``,
+		or ``scientific literature``) which will be used to inform coverage determinations. 
+		We will say a coverage decision is \emph{contractually inappropriate}
+		if the decision is inconsistent with the contract governing
+		a policy, or the laws and regulations that apply to that policy.
 		
-		We note that there are many coverage decisions that one might deem morally or medically inappropriate that would not be considered contractually inappropriate. For example, it would be morally troubling for corporations to sell policies that opaquely exclude the coverage of commonly used, scientifically proven, but expensive treatments for those facing dire medical situations, and then to enforce those exclusions no matter the extenuating or dire circumstances. However, such behavior is, unfortunately, not necessarily contractually inappropriate or illegal, depending on the contract in question.
+		There are many coverage decisions that one might deem morally
+		or medically inappropriate that would not be considered contractually
+		inappropriate. For example, it would be morally troubling for corporations 
+		to sell policies that exclude the coverage of 
+		expensive treatments for those facing dire medical situations in such a way 
+		that the relevant contract clauses conflate actual scientific consensus 
+		with consensus according to a for-profit corporation?s own non-expert reading of 
+		their hand picked literature selection. However, 
+		such behavior is not necessarily contractually inappropriate.
+
 		
-		The prevalence of contractually inappropriate claims denials, and lack of recourse for consumers even in these cases, have been serious problems for a long time. There are organizations that regularly publish reports analyzing the limited publicly available claims denial data \cite{pollitz2021} that point to this prevalence (e.g. when comparing appeal rates to appeal overturn rates), and the subject has been discussed in policy research, legal research \cite{fox2022} and popular journalism \cite{konrad2010} for a long time.
+		Contractually inappropriate claims denials, and the lack of
+		adequate recourse for consumers even in these cases, have been serious problems for a long time. There are organizations that regularly publish reports  analyzing the limited publicly available claims denial data \cite{pollitz2021}, and the subject has been discussed in policy research, legal research \cite{fox2022} and popular journalism \cite{konrad2010} for a long time.
 		
-		Recently, there have been numerous investigations and articles that have brought to light for the general public just how damaging some of the inappropriate practices taking place really are \cite{armstrong2023a} \cite{armstrong2023b}, and illuminated the scarcity of publicly available data \cite{fields2023}. Finally, there are those most seriously affected; many patients with dire, serious, or chronic medical needs (and their friends and families) have long known about the lack of recourse they enjoy, and the frequency with which contractually inappropriate denials occur just in seeking their own care -- they have been on the front lines for decades, suffering the consequences of an inadequately regulated industry.
+		Recently, there have been numerous investigations and articles that have brought to light for the general public just how damaging some of the inappropriate practices taking place really are \cite{armstrong2023a} \cite{armstrong2023b}, and illuminated the scarcity of publicly available data \cite{fields2023}.
+		
+		Finally, there are those most seriously affected; many patients with dire, serious, or chronic medical needs (and their friends and families) have long known about the lack of recourse they enjoy, and the frequency with which contractually inappropriate denials occur just in seeking their own care -- they have been on the front lines for decades, suffering the consequences of an inadequately regulated industry.
 		
 		In this work, we set out to illuminate the extent and prevalence of claims denials,
 		and the crucial monetary role they play in our systems. To do so, we analyze publicly
-		available claims denial and appeal data, in more depth than such data has previously been
-		studied. We seek to do this analysis in a careful, transparent,
+		available claims denial and appeal data. We seek to do this analysis in a transparent,
 		and reproducible way, to ensure that our work can be extended and used by others
 		seeking to improve patient outcomes, justice, and accountability. We discuss this more
 		explicitly in the \hyperref[reproducibilitystatement]{transparency statement} below. It is our hope
@@ -162,31 +184,25 @@
 		many conflicting voices and viewpoints in the space.
 		
 		
-		To this end, we provide transparent, open source access to all analyses and data used to
-		generate this document. The interested reader may probe \emph{any} aspect of our end to end 
-		analyses of raw data provided by government institutions by investigating the following resources:
+		To this end, we provide transparent, open source access to all analyses and data used to generate this document. The interested reader may probe any aspect of our end to end analyses of raw data provided by government institutions by investigating the following resources:
 		
 		\begin{itemize}
 			\item All figures appearing in this report were
 			generated via the code housed
 			\href{https://github.com/TPAFS/investigations/tree/initial_denial_investigation/investigations/claims_denials}{here}.
 			
-			\item Data we obtained via public records, not available elsewhere on the internet at the time of writing, is hosted \href{https://github.com/TPAFS/public-records}{here}.
-			
-			\item A \emph{static} copy of this entire article, including the source used to generate it,
-			is housed \href{https://github.com/TPAFS/investigations/tree/main/investigations/claims_denials/latex}{here}.
+			\item Data we obtained via public records is hosted \href{https://github.com/TPAFS/public-records}{here}.
 			
 		\end{itemize}
 		
-		If you believe there are errors in this report, analytical or otherwise, we want to hear about it.
-		Feel free to \href{https://github.com/TPAFS/investigations/issues}{open an issue}
-		in our public analyses, or send us a message at \href{info@persius.org}{info@persius.org}.
 		
-		The entire purpose of being completely transparent about our end to end processes is to achieve rigorous 
+		If you believe there are errors in this report, analytical or otherwise, we would appreciate your correspondence. Our goal is to achieve rigorous 
 		results that can be audited by anyone, and that constitute trustworthy evidence that improves in quality over
-		time.  We hope to build trust with you, our readers,
-		by being explicitly cognizant of the fact that we are liable to make analysis mistakes, and empowering and imploring
-		you to shine a light on any such mistakes, for our collective benefit. We thank you for your support in this effort.
+		time. We hope to build trust with you by providing such open access to our end to end workflow.
+		
+		To correspond about our analyses, please \href{https://github.com/TPAFS/investigations/issues}{open an issue}
+		in our public repository, or send us a message at \href{info@persius.org}{info@persius.org}.
+
 		
 		\chapter{Acknowledgments}
 		
@@ -218,23 +234,40 @@
 			\text{Denial Rate} = \dfrac{\text{Claims Denied}}{\text{Claims Received}}
 		\end{equation*}
 		\hfill\\
-		In fact, this is not a uniquely defined notion, because the numerator and denominator can be defined in various ways. For example, one could compute this ratio for all claims submitted to a particular insurer over the course of a year, or for all of the claims submitted for a particular plan over a month, or even for all claims submitted from just one individual to a given plan over the course of a year \footnote{Trying to estimate this last number when choosing an insurer is particularly important for individuals with serious health needs who would be unable to afford the care they need if it were to get denied by their insurer.}. We will calculate denial rates that fit this form from a few different lenses in what follows.
+		This is not a uniquely defined notion, because the numerator and denominator can be defined in various ways. For example, one could compute this ratio for all claims submitted to a particular insurer over the course of a year, or for all of the claims submitted for a particular plan over a month, or even for all claims submitted from just one individual to a given plan over the course of a year \footnote{Trying to estimate this last number when choosing an insurer is particularly important for individuals with serious health needs who would be unable to afford the care they need if it were to get denied by their insurer.}. We will calculate denial rates that fit this form from a few different lenses in what follows.
 		
 		It is worth noting that:
 		
 		\begin{enumerate}
 			\item \emph{Among the claims that are appropriate}, low denial rate is always a good thing for patients. \footnote{Of course not all claims are actually appropriate. For example, sometimes two duplicate claims are submitted for the same care (administratively inappropriate), and approving such claims would in no way help patients. }.
-			\item High denial rates can be caused by numerous things, and do not always indicate \emph{contractually inappropriate} insurer practices.
+			\item High denial rates can be caused by numerous things, and do not necessarily indicate inappropriate insurer practices.
 		\end{enumerate}
 		
 		
 		\subsection{Appeals}
 		
-		When insurers deny claims, patients are often entitled to an appeals process (e.g. those with federal marketplace plans \href{https://www.healthcare.gov/appeal-insurance-company-decision/appeals/}{are afforded such recourse}, as are all others with so-called \emph{non-grandfathered} qualified health plans; see \cite{pollitz2021} for more background).
+		When insurers deny claims, patients are often entitled to an appeals
+		process. For example, those with federal marketplace plans \href{https://www.healthcare.gov/appeal-insurance-company-decision/appeals/}{are afforded such recourse},
+		as are all others with so-called \emph{non-grandfathered} commercial qualified health plans
+		(see \cite{pollitz2021} for more background); Medicare allows for
+		its own distinct \href{https://www.medicare.gov/claims-appeals/how-do-i-file-an-appeal}{processes} for appealing denied claims; and Medicaid programs support their own distinct processes (see e.g. \href{https://www.kff.org/wp-content/uploads/2013/01/8287.pdf}{this}).
 		
-		The details of these processes vary based on details of ones insurance plan, but typically they allow patients to initially file an internal appeal of the denial, which is adjudicated by the insurer themselves. If the internal appeal process (which in some plans requires two attempts at an internal appeal) results in the insurer upholding their denial, patients are then often able to file an external appeal. This means they can submit an appeal of the decision to a (purportedly unbiased \footnote{While we do not have evidence to suggest these organizations make determinations in ways biased towards favorable insurer outcomes, we maintain a healthy dose of skepticism about the independence of their decisions, given the landscape of perverse incentives plaguing the entire space. For example, it is unclear to what extent employees migrate between insurance companies and external review agencies. We invite regulators and lawmakers to publish more data publicly supporting the independence and unbiased nature of such agencies. Lack of public consumer access to detailed denial data, including e.g. determination patterns and methodologies among different review agencies, inspires distrust in a system alread plagued by injustices.}) third party, who is responsible for weighing on the decision; insurers are then legally obligated to uphold the final determinations of these third parties. The third parties, and processes by which external appeals are submitted to them and reviewed by them, vary by plan and by state.
+		The details of these processes vary based on the details of one's insurance plan and relevant regulations,
+		but typically they allow patients to initially file an \emph{internal appeal} of the denial,
+		which is adjudicated by the insurer itself. This is the case, for example, in commercial insurance plans,
+		which are the primary focus of this article given the data we analyze.
 		
-		In understanding the landscape of claims denials, it is useful to understand the frequency of occurrence, and distribution of outcomes, of these appeal processes.
+		If the internal appeal process (which in some plans requires an insured to make \emph{two} attempts at an internal appeal)
+		results in the insurer upholding their denial, patients
+		are then sometimes able to file an \emph{external appeal}. This means they can submit an
+		appeal of the decision to a independent third party that is
+		responsible for judging the merits of the determination; the final determinations of these third parties are typically binding.
+		The third parties, and processes by which external appeals are submitted to them and reviewed by them,
+		vary according to the details of the type of plan involved.
+		
+		In understanding the landscape of claims denials, it is useful to understand
+		the frequency of occurrence, and distribution of outcomes, of these internal appeal processes.
+		
 		
 		\subsubsection{Initial Appeal Rates}
 		
@@ -257,33 +290,72 @@
 		
 		\subsubsection{External Appeal Rates}
 		
-		We define the \emph{external appeal rate} to be the fraction of internally appealed and subsequently upheld denials which are then additionally externally appealed by consumers.
+		We define the \emph{external appeal rate} to be the fraction of denials eligible for external appeal (this consists mostly of internally appealed and subsequently upheld denials)
+		which are actually externally appealed by consumers.
 		
 		\begin{equation*}
-			\text{External Appeal Rate} = \dfrac{\text{Claims Appealed Externally}}{\text{Claims Internally Appealed and Upheld}}
+			\text{External Appeal Rate} = \dfrac{\text{Claims Appealed Externally}}{\text{Claims Eligible for External Appeal}}
 		\end{equation*}
 		\hfill\\
 		
 		
-		Of those denials that are externally appealed, we denote the fraction that are overturned by a third party as the \emph{external appeal success rate}.
+		Of those denials that are externally appealed, we denote the fraction that are overturned by a third party as the \emph{external appeal overturn rate}.
 		
 		\begin{equation*}
-			\text{External Appeal Success Rate} = \dfrac{\text{Claims Overturned Externally}}{\text{Claims Appealed Externally}}
+			\text{External Appeal Overturn Rate} = \dfrac{\text{Claims Overturned Externally}}{\text{Claims Appealed Externally}}
 		\end{equation*}
 		\hfill\\
 		
+		
+		\begin{comment}
 		
 		\subsubsection{Expected Appeal Phenomenology}
 		
-		We expect initial appeal success rates to be lower than external appeal success rates, assuming the same population of claims were reviewed \footnote{Note that in practice, one can't compare external and internal appeal success rates directly for the same pool of claims denials. Those appeals that make it to an external review have typically already been through an internal review that was upheld, so the distribution of externally reviewed claims almost never includes e.g. denial cases that an insurer agrees are contractually inappropriate. Presumably, all such cases where an insurer agrees to overturn their initial decision would also be overturned by third parties, if the third parties ever saw them.}. We hold this expectation for two reasons. One is that insurers have a monetary incentive to uphold denials, while third parties do not. The other is that insurers make the initial determinations about what claims to deny, so they obviously have some alignment with the initial denial rationale to begin with. On the other hand, external reviewers may view claims from completely different lenses than that with which an insurer initially viewed them, leading to a higher likelihood of a different conclusion about contractual validity.
+		We note here a few hypotheses about appeal phenomenology. These hypotheses are \emph{not verifiable} given the data we have, so are pure conjecture.
 		
-		Finally, we note that both the internal and external appeal systems have the potential to be completely biased, so we should take care to note when we are drawing conclusions from the data that assumes some impartiality in either process. We expect that of all of the data publicly available, external appeal success rates can best inform the underlying validity of (some subset of) initial denials, since at least one third party with no monetary stake in the judgment has been involved in adjudication. Internal appeal data reflects a situation that presents serious risk for bias by virtue of its design -- it is difficult to take seriously the purported impartiality of a reviewer that is both reviewing their own decision, and that stands to generate more profit by upholding that decision. There is a reason we don't have juries consisting of the best friends of a defendant.
+		We expect internal appeal overturn rates would be lower than
+		external appeal overturn rates, if the same population of claims
+		were reviewed (which, of course, never happens given the systems in place) \footnote{Note that in practice, one can't compare external and internal appeal success rates directly for the same pool of claims denials. Those appeals that make it to an external review have typically already been through an internal review that was upheld, so the distribution of externally reviewed claims almost never includes e.g. denial cases that an insurer agrees are contractually inappropriate. Presumably, all such cases where an insurer agrees to overturn their initial decision would also be overturned by third parties, if the third parties ever saw them.}. We hold this 
+		expectation for two reasons. 
+		
+		One reason is that insurers have a monetary incentive to uphold denials,
+		while third parties do not. We are not claiming that insurers necessarily act on this incentive,
+		merely that the incentive exists. However, note that insurers could act on such an incentive
+		in unintentional ways. For example, if a particular type of contractually inappropriate denial
+		that were occurring were profitable, insurers would be disincentivized from altering the offending process,
+		and could consequently be less likely to have developed systems to help alert them to such mistakes.
+		
+		The other reason is that insurer representatives
+		make the initial determinations about what claims to deny, so other representatives of the
+		same insurer have at least some common alignment with regards to adjudication determinations. On the other hand,
+		external reviewers may view claims from completely different lenses than that with which
+		an insurer initially viewed them, leading to a higher likelihood of a different
+		conclusion about contractual validity.
+		
+		Finally, we note that both the internal and external appeal systems have the potential to be biased, so
+		we should take care to note when we are drawing conclusions from the data that assumes some impartiality in either process.
+		We expect that of all of the data publicly available, external appeal overturn rates can best inform the
+		underlying validity of (some subset of) initial denials, since at least one third party
+		with no monetary stake in the judgment has been involved in adjudication. Internal appeal data
+		reflects a situation that presents serious risk for bias by virtue of its design -- it is difficult to
+		take seriously the purported impartiality of a reviewer that is both reviewing their own decision,
+		and that stands to generate more profit by upholding that decision, without having public access
+		to rigorous audit and compliance data. There is a reason we don't have juries consisting of the best friends of a defendant.
+		
+		\end{comment}
+		
 		
 		\chapter{Public Claims Denial Data}\label{publicdata}
 				
 		\subsection{Overview}\label{publicdata:overview}
-		To understand the landscape of claims denials, contractually inappropriate claims denials, appeals, and effective consumer recourse, we need data. Unfortunately for consumers, requirements for insurers to publicly disclose claims denial data are few and far between, and the extent to which requirements that do exist are enforced and regulated is unclear. It would be invaluable for regulators to require broad, transparent claims denial information, and to strictly enforce and audit validity of the data.
+		To understand the landscape of claims denials, contractually inappropriate claims denials,
+		appeals, and effective consumer recourse, we need data. Unfortunately, requirements for commercial insurers to 
+		publicly disclose claims denial
+		data are few and far between, and the extent to which requirements that do
+		exist are enforced and regulated is unclear. However, some publicly available data does exist.
 		\subsection{Datasets}\label{publicdata:datasets}
+		
+		We make use of the following publicly available data:
 		
 		\begin{itemize}
 			\item Federal Marketplace Public Use Files \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{Public Use Files}(PUFs) from the Centers for Medicare and Medicaid Services (CMS)\\
@@ -291,7 +363,7 @@
 			\begin{tcolorbox}[enhanced, breakable]
 			Each year CMS releases a collection of transparency data related to federal marketplace insurers. Here we are interested in the \emph{transparency in coverage}  \begin{comment}\footnote{The term transparency in coverage has been overloaded, and used in different contexts by CMS and other government agencies. Our use of the term here does not refer to the \href{https://www.federalregister.gov/documents/2019/11/27/2019-25011/transparency-in-coverage}{CMS rule published in 2019} requiring health plans to publish certain rate data, which is \href{https://www.cms.gov/healthplan-price-transparency}{broadly being referenced} as the transparency in coverage rule. Instead, it refers only to the \href{https://www.cms.gov/cciio/resources/data-resources/marketplace-puf}{public use files distributed by CMS} documenting federal marketplace denials and appeals (among other things). Note that these are also referred to by CMS as transparency in coverage files, and in fact have been in existence, and referred to in this way, far longer than the TiC rule. Obviously the two efforts are not completely unrelated, and it would be most welcome if reporting requirements in the TiC rule were expanded to incorporate reporting about denial transparency, as do these federal marketplace PUFs. See further discussion in the policy section.}
 			\end{comment}
-			(TIC) public use files. These are files compiled from self-reported insurer data specifying aggregate counts of claims submitted, claims denied, and claims appealed, among other things. This data is limited in scope, and clearly accuracy is not strictly validated based on the frequency of impossible records in the data, but it is the closest thing we have to a denial transparency requirement with broad impact. It is compiled and reported to the public in accordance with the Department of Health and Human Services (HHS) \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-K/section-155.1040}{rule 45 of the Code of Federal Regulations (CFR), part 155, subpart K} (cf \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-C/section-156.220}{CFR 156 subpart C)}.
+			(TIC) public use files. These are files compiled from self-reported insurer data specifying aggregate counts of claims submitted, claims denied, and claims appealed, among other things. This data is limited in scope, but it is the closest thing we have to a denial transparency survey among commercial plans with broad (geographical) scope. It is compiled and reported to the public in accordance with the Department of Health and Human Services (HHS) \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-155/subpart-K/section-155.1040}{rule 45 of the Code of Federal Regulations (CFR), part 155, subpart K} (cf \href{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-C/section-156.220}{CFR 156 subpart C)}.
 			
 			In this article we focus on the 2023 public use file, which details claims denial data from the 2021 plan year.
 			
@@ -309,15 +381,18 @@
 			\item \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{New York Health Care Claim Reports}\\
 			
 			\begin{tcolorbox}[enhanced, breakable]
-			Thanks to \href{https://www.nysenate.gov/legislation/laws/ISC/345}{legislation from 2020}, New York publishes \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{health care claim reports} for insurance companies that contain aggregate counts of claims submitted, claims denied, and claims appealed for each NY insurer, among other things. 
+			Thanks to \href{https://www.nysenate.gov/legislation/laws/ISC/345}{legislation from 2020}, New York publishes \href{https://www.dfs.ny.gov/reports_and_publications/health_care_claim_reports}{health care claim reports} for insurance companies that contain aggregate counts of claims submitted, claims denied, and claims appealed for each commercial NY insurer, among other things.
 			
 			This data, released quarterly as of 2022 in the form of spreadsheets for each New York insurer, details aspects of health insurance coverage for insurance plans in New York. Various details about how the data is reported are included in the frequently asked questions for the data on the \href{https://www.dfs.ny.gov/apps_and_licensing/health_care_claim_reports}{DFS homepage}. 
 			
 			Residents of New York state can not buy individual Affordable Care Act (ACA) compliant Qualified Health Plans (QHPs) on the federal marketplace. Instead, NY maintains its own marketplace where such plans can be purchased, known as \href{https://nystateofhealth.ny.gov/}{New York State of Health}. The New York Health Care Claims Reports includes statistics relating to NY marketplace plans, in addition to plans that are not sold via the marketplace. 
 			
+			
+			\begin{comment}
 			Unfortunately, the New York state marketplace does not release detailed claims denial and appeal data in the same way such data is reported in the CMS TIC PUFs for federal marketplace QHPs, so we cannot directly reuse the same analyses across the CMS PUF data and the NY Health Care Claims Reports.
 			
 			We note that we do not consider in this article historical appeals data (including data predating the existence of the health care claims reports) collected and distributed by New York Department of Financial Services in \href{https://www.dfs.ny.gov/system/files/documents/2022/08/ny_consumer_guide_health_insurers_2022.pdf}{consumer reports}; unfortunately, that data does not include raw numbers describing the total population of claims or denials to which the reported appeals pertain, so it is difficult to determine highly relevant context for the appeals numbers.
+			\end{comment}
 			
 			In this article, we analyze the health care claims report data from 2022. The 2022 data includes:
 			
@@ -337,8 +412,9 @@
 			\item \href{https://www.dfs.ny.gov/public-appeal/search}{New York External Appeal Outcome Data}\\
 			
 			\begin{tcolorbox}[enhanced, breakable]
-			External appeals of denials from New York marketplace plans, fully insured group plans, and Medicaid managed care plans are adjudicated by Independent Review Organizations. The New York Department of Financial Services manages such appeal processes, and maintains a public database of results from external appeals.
-			
+			External appeals of denials from New York marketplace plans, fully insured group plans, and Medicaid managed care plans are adjudicated by Independent Review Organizations. The New York Department of Financial Services maintains a public database of results
+			from such external appeals.
+
 			The \href{https://www.dfs.ny.gov/public-appeal/search}{New York External Appeal Outcome Data} corresponds to:
 			
 			\begin{itemize}
@@ -466,7 +542,7 @@
 			\begin{tcolorbox}[enhanced, breakable]
 			Pennsylvania utilized the federal marketplace for qualified health plans until the end of 2020, when it transitioned to using its own newly formed marketplace, known as \href{https://pennie.com/}{Pennie}, in accordance with the passage of \href{https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2019&sind=0&body=H&type=B&bn=3}{PA House Bill 3}. Beginning in 2021, consumers could buy qualified health plans on the Pennsylvania marketplace.
 			
-			We submitted a public records request under the Pennsylvania \href{https://www.insurance.pa.gov/right-to-know-law/Pages/default.aspx}{Right to Know Law} to the \href{https://www.insurance.pa.gov/Pages/default.aspx}{Pennsylvania Insurance Department} (PA DOI) asking for a comprehensive account of various aggregate statistics pertaining to claims adjudication for which we believed they were likely to have records. This dataset is the result of that request. While the data is not as comprehensive or extensive as we had hoped might be possible, it is a step forward. We are releasing the raw data we obtained, as well as parsed and preprocessed adaptations of it, to the public along with the release of this article.
+			We submitted a public records request under the Pennsylvania \href{https://www.insurance.pa.gov/right-to-know-law/Pages/default.aspx}{Right to Know Law} to the \href{https://www.insurance.pa.gov/Pages/default.aspx}{Pennsylvania Insurance Department} (PA DOI) asking for a comprehensive analysis of various aggregate statistics pertaining to claims adjudication for which we believed they were likely to have records. This dataset is the result of that request. While the data is not as comprehensive or extensive as we had hoped might be possible, it is a step forward. We are releasing the raw data we obtained, as well as parsed and preprocessed adaptations of it, to the public along with the release of this article.
 			
 			The dataset contains aggregate counts for claims, denials, and internal and external appeals broken down by issuer for claims corresponding to marketplace plans, plus an undisclosed additional population of plans, from plan years 2020 and 2021. In addition, the data includes claims, denials and denial rationales broken down by \emph{plan} for the subset of claims corresponding specifically to marketplace plans (this subset constitutes a large majority of the dataset to begin with).
 			
@@ -491,7 +567,14 @@
 		\end{itemize}
 	
 		
-		To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources containing claims denial data from different market segments, and the first public report to analyze claims denial data from the Pennsylvania marketplace.
+		To our knowledge, this is the first report that compiles aggregate results across a wide array of disparate sources
+		containing claims denial data from different market segments, and the first public report to analyze claims denial
+		data from the Pennsylvania marketplace. The varied nature of the data makes it difficult to make direct comparisons
+		across datasets, but we believe it is still informative to witness the extent to which certain phenomenology occurs
+		consistently across these datasets, despite the varied contexts and regulatory settings in which the data is produced.
+		
+		Although we collect and analyze data from many sources, the data is far from complete, even among any fixed market segment such as
+		federal and state ACA exchanges.
 		
 		An overview of the data we analyze in this report is detailed in Tables \ref{summarytable1} and \ref{summarytable2} below.
 		
@@ -1631,11 +1714,11 @@
 		
 		Instead, we see \emph{staggering disagreement} in each dataset about which of the \emph{externally} appealed claims merit overturn. The disagreement cannot conclusively be attributed to faulty or biased internal appeal processes, but it suggests that either internal appeal adjudication is faulty, external appeal adjudication is faulty, or appeal adjudication is too complex to expect a high degree of consistency between any two reviewers, at least for the population of externally appealed claims. The latter explanation appears unlikely given the relatively consistent external overturn rates across all of the different data sources we exhibit, and across many different independent, third party review organizations.
 		
-		We note explicitly that it is possible that if one were to submit all internally appealed claims to third party external review organizations, one would find that \emph{among the population of internally appealed claims} there would be a high degree of agreement between internal and external reviewers on appropriate determination outcomes. It is of course impossible to surmise what this hypothetical level of agreement would be if the audit were to occur.
+		It is possible that if one were to submit all internally appealed claims to third party external review organizations, one would find that \emph{among the population of internally appealed claims} there would be a high degree of agreement between internal and external reviewers on appropriate determination outcomes. It is of course impossible to surmise what this hypothetical level of agreement would be if the audit were to occur.
 		
 		However, note that even if this \emph{hypothetical} test were to result in overwhelming agreement between internal and external reviewers when considering the population of internally appealed claims, such a result would not negate the problematic nature of the \emph{actual} level of disagreement between internal and external reviewers when considering externally appealed claims denials alone. There is no reason to believe that the population of internally and externally appealed claims are drawn from similar distributions, and as the data clearly shows, the population of internally appealed claims is orders of magnitude larger.
 		
-		It appears that internal processes may effectively be hoops through which consumers must jump before they are afforded unbiased consideration of their appeals. In fact, historically, most consumers that have navigated their way through an internal appeal process and lost do not (or cannot) proceed with an independent external review, as we will see in the data below.
+		It appears that internal processes may effectively be hoops through which consumers must jump before they are afforded unbiased consideration of their appeals. Historically, most consumers that have navigated their way through an internal appeal process and lost do not (or cannot) proceed with an independent external review, as we will see in the data below.
 		
 		\subsubsection{Overall External Appeal Rates}
 		
@@ -2152,7 +2235,7 @@
 		
 		The final lens through which we examine the external appeals in these datasets involves how the external appeals, and the overturn rates, vary according to the underlying medical details of the claim. One way to study this variation is to consider codes or other descriptors associated with the underlying diagnoses, treatments or services related to a claims denial. All of the external appeal datasets we consider here except for the CMS TIC PUFs provide information of this sort in varying degrees.
 		
-		We note that although such information is provided in numerous datasets, the way in which the information is provided is inconsistent, which makes attempts at direct comparisons tenuous. Nonetheless, we consider how the data breaks down along these dimensions in what follows.
+		Although such information is provided in numerous datasets, the way in which the information is provided is inconsistent, which makes attempts at direct comparisons tenuous. Nonetheless, we consider how the data breaks down along these dimensions in what follows.
 		
 		\underline{California CDI External Appeal Database}
 		
@@ -2464,33 +2547,72 @@
 		
 		We now take a step back to synthesize our analyses, and consider some additional large scale implications.
 		
-		\subsection{Bias and Lack of Evaluation in Internal Appeal Processes}
+		\subsection{Lack of Evaluation of Commercial Internal Appeal Processes}
 		
-		The data suggests that insurers may not evaluate internal appeals in a fair and unbiased way. In each dataset considered here, we see that denied claims that are upheld after internal appeal reviews, and then subsequently reviewed in an external review by an unbiased third party, are overturned at high rates. For example, in the 2021 federal marketplace data nearly 50\% of the 1,760 denied claims that were externally appealed were overturned by third party reviewers with no financial incentive in the determination. This same pattern of high rates of disagreement between internal and external reviewers for the population of externally appealed claims is evident across all data we've studied in this article. This phenomenon suggests that internal appeal reviews may be biased towards outcomes favorable to insurers, as we now explain.
+		The data suggests that internal appeals processes in commercial health insurance are problematic.
+		In each dataset considered here, we see that denied claims that are upheld after internal appeal reviews, 
+		and then subsequently reviewed in an external review by an independent third party, are overturned at high rates.
+		For example, in the 2021 federal marketplace data nearly 50\% of the 1,760 denied claims that were externally appealed 
+		were overturned by third party reviewers with no financial incentive in the determination. This same pattern of high 
+		rates of disagreement between internal and external reviewers for the population of externally appealed claims is evident 
+		across all data we've studied in this article. This phenomenon suggests to us that internal appeal reviews among commercial health
+		plans need to be audited and evaluated with more scrutiny, as we now explain.
 		
-		If the internal appeal process and external appeal processes were unbiased, competently administered, and employed consistent standards, we'd expect a large degree of consistency between insurer determinations and third party determinations among the population of claims reviewed by both parties. A measure of agreement of this sort is referred to as an \href{https://en.wikipedia.org/wiki/Inter-rater_reliability}{inter-rater reliability} (IRR) measure, or inter-annotator agreement, and is a useful and commonly employed means of determining consistency or quality of determinations or ratings provided by different individuals.
+		If the internal appeal process and external appeal processes were unbiased, appropriately administered, and employed consistent standards, we'd expect a large degree of consistency between insurer determinations and third party determinations
+		among the population of claims reviewed by both parties. A measure of agreement of this sort is referred to as an \href{https://en.wikipedia.org/wiki/Inter-rater_reliability}{inter-rater reliability} (IRR) measure,
+		or inter-annotator agreement, and is a useful and commonly employed means of determining consistency or quality of determinations or ratings provided
+		by different individuals.
 		
 		The degree of disagreement between internal and external reviewers in appeals data is relatively high in all of the data we've seen, given the significance of the consequences for patients when determinations are adjudicated incorrectly. What constitutes a \emph{relatively high} level of disagreement is of course subjective; however, across all of the datasets we've seen external appeal overturn rates of approximately 15\% to 60\%, and furthermore, appeal overturn rates tend to remain in these ranges even when we consider individual insurers, or individual review agents.
 		
-		For sake of analogy, in critical matters of auditing quality, society at large would never settle for such a level of inter-rater agreement, particularly when one rater has a profit motive to rate a particular way. For example, we posit no would one would fly on a plane if airlines were allowed to audit their own safety features ``internally'', but every time they were audited by external agencies, parts that the airlines found to be operational were found by independent safety inspectors to be faulty 15-60\% of the time, consistently, and across all airlines, no matter which external safety agency were performing the inspections. That is the level of disagreement we have witnessed throughout these analyses, and that we are conservatively deeming \emph{just} relatively high here.
+		In other critical matters
+		of auditing quality, society at large would never settle for such a level of inter-rater agreement, particularly when one rater has a monetary incentive to rate a particular way.
+		For example, we posit no would one would fly on a plane if airlines were allowed sole discretion to audit their
+		own safety features ``internally`` upon receiving safety complaints, but every time they were audited by external agencies, parts that the airlines found to be operational were found by independent safety inspectors
+		to be faulty 15-60\% of the time, consistently, and across all airlines, no matter which external safety agency were performing the inspections.
+		That is the level of disagreement we have witnessed throughout these analyses.
 		
-		The data suggests that essentially no insurer's internal reviews are administering standards and adjudication in a way that is consistent with the average external review agent's processes, and essentially no external review organization is administering adjudication in a way that is consistent with the average internal review agent's processes. While these facts do not necessarily prove any particular cause for the phenomenon, the simplest and most compelling explanation is that the internal review processes are biased towards favorable insurer outcomes.
 		
-		Finally, we note that \emph{regardless} of the cause of the consistently high levels of disagreement between internal and external reviews of externally appealed claims denials, the high levels of disagreement should be compelling motivation for regulators and lawmakers to carefully and consistently monitor and evaluate the outcomes of internal and external reviews in a transparent way. Even the task of trying to perform this evaluation comprehensively oneself is incredibly difficult, if not impossible, given the lack of publicly available data, and in an ideal world consumers and patients could rely on evaluation and monitoring being performed on their behalf, and for their protection, by regulators in a \emph{transparent} way. It is important that discrepancies such as those we see in external appeal review inconsistencies are better understood; regardless of the cause, understanding them will improve outcomes and efficiencies in our systems. 
+		\emph{Regardless of the cause} of the consistently high levels of disagreement between internal and external reviews of externally 
+		appealed claims denials, the high levels of disagreement should be compelling motivation for regulators and lawmakers to carefully and consistently monitor and evaluate the
+		outcomes of internal and external reviews in a transparent way among commercial insurers. Even the task of trying to perform this evaluation comprehensively oneself is incredibly difficult, if not impossible,
+		given the lack of publicly available data. In an ideal world consumers and patients could rely on evaluation and monitoring being performed on their behalf, and for their protection,
+		by regulators, but short of this data must at least be accessible so that watchdogs and advocates can shine a light on potentially problematic practices. 
+		It is important that discrepancies such as those we see in external appeal review inconsistencies are better understood; regardless of the cause, understanding them will
+		improve outcomes and efficiencies in our systems.
 		
 		\subsection{Monetary Value of Appeals}
 		
-		Consider again the disparity between the fraction of denials being appealed and the fraction of those appeals being internally overturned; we've seen such a disparity in every dataset containing internal appeals information that we've considered. One takeaway from this result is that it is in the best interest of consumers, as individuals, to appeal denials more frequently. However, if such a change were to occur on a large scale systematically, it would have implications for our healthcare systems at large in addition to improving health outcomes for individuals.
+		Consider again the disparity between the fraction of denials being appealed and the fraction of those appeals being internally overturned; we've seen such a disparity in every dataset containing internal appeals information that we've considered. One takeaway from this result is that it is in the best interest of consumers, as individuals, 
+		to appeal potentially inappropriate denials more frequently.  However, if such a change were to occur on a large scale systematically, 
+		it would have implications for our healthcare systems at large in addition to improving health
+		outcomes for individuals.
 		
-		To illustrate, let's consider what would happen if more federal marketplace insurance plan denials were appealed. For example, if one could scale currently observed internal appeal overturn rates (41.32\%) to 1\% of all denied claims on the federal marketplace with an average value per claim of \$300, it would result in approximately 200k extra overturned claims and 58 million USD of value returned to consumers.
+		To illustrate, let's consider what would happen if more federal marketplace insurance plan denials were appealed. For example, if one could scale currently observed internal appeal overturn rates (41.32\%) to 1\% of all denied claims on the federal marketplace with an average value per claim of \$300, it would result in approximately 200k extra overturned claims and 60 million USD of value returned to consumers.
 		
-		This calculation does not account for appeals of denials that occur outside of the federal marketplaces, nor does it take into account the fact that the federal marketplace data we studied is incomplete (which means we are under counting the potential for denials that could be overturned), nor does it take into account external appeals which constitute a process that data suggests would lead to more overturns.
+		
+		This calculation does not include all of the insurance denials that occur outside of the federal marketplaces, or those that were not reported in
+		this incomplete data, nor does it take into account the fact that external appeals might be a less biased process 
+		that data suggests would lead to even more overturns.
 		
 		The takeaway is that consumers should be appealing contractually inappropriate denials whenever possible, and we need organizations, regulators, and individuals to support consumers and aid them in scaling the rate at which they are following through with such appeals. The monetary value alone is significant to consumers, and there are many important additional implications for their health.
 		
 		\subsection{Need for Data Standardization, Validation and Enhancement}
 		
-		In this article we've considered various data sources that help shed light on the state of coverage denials and appeals outcomes across plans in the federal marketplace, some state marketplaces, and various subgroups of plans unavailable in these markets. While it is a useful start to have access (thanks largely to the laws and regulations cited in the introduction) to the data we've analyzed, the level of access we have to such crucial data in general across the population is frankly in a pitiful state. Furthermore, although we have attempted to present the data in a centralized fashion, as if it were all reported via common standards, formats and methodologies, the data is in fact ad hoc, with details varying across datasets, resulting in difficulties and subtleties in comparing data across sources.
+		In this article we've considered various data sources that help shed light on the 
+		state of coverage denials and appeals outcomes across plans in the federal marketplace, 
+		some state marketplaces, and various subgroups of plans unavailable in these markets. While 
+		it is a useful start to have access to the data we've analyzed, the level of access we have 
+		to such crucial data in general across the insured population is poor. 
+		
+		Furthermore, although we have attempted to present the data in a standardized fashion to help understand broad, nonspecific 
+		trends occurring across states and market segments (e.g. the ubiquitous nature of high denial rates), 
+		the data is in fact not standardized and is inconsistent, with data details, reporting methodologies, and governing rules 
+		varying across datasets, resulting in difficulties and subtleties in addressing even basic questions
+		which ought to be addressable. For example even the highly limited task of presenting a complete account 
+		of denial and appeal outcomes (as measured by e.g. denial, internal and external appeal rates) in each 
+		ACA exchange (federal and all state exchanges included) appears intractable given the varied reporting standards and 
+		limited publicly available data.
 		
 		We summarize the issues we've encountered by breaking them down into three categories.
 		
@@ -2499,27 +2621,53 @@
 			
 			We have seen that the claims denial data reported by the federal marketplace and various state agencies is reported in different and inconsistent ways. For example, the federal marketplace data released in the CMS PUFs contains internal and external appeal data, while the NY health care claims reports do not include external appeal data. Similarly, the WA external appeal database includes a different amount of detail for each appeal case than does the NY external appeal database. The lack of consistency and standardization across datasets results in a landscape of data that is difficult to analyze, compare and monitor.
 			
-			While we have made an attempt to standardize aspects of our presentation of data from different sources, this involved significant effort due to the lack of standardization across sources, as can be seen in the accompanying raw open source analyses we share below.
+			While we have made an attempt to standardize aspects of our presentation of data from different sources, this involved significant effort due to the lack of standardization across sources, as can be seen in the accompanying raw open source analyses.
 			
 			\item \underline{Validation}
 			
-			In various analyses presented in this article, and many additional calculations that occurred in our open source analyses of the raw data, we encountered what appear to be spurious or erroneous values in the raw data. For example, we saw in our analysis of the 2022 CT consumer report card that one insurer purportedly denied more claims in a plan year than they even received. Similarly, we saw in numerous datasets that the sum of counts for the exhaustive list of denial rationales provided for the dataset did not sum up to the count of all denials, nor did it consistently sum to a value larger than the total number of denials (which one would expect if claims could be labeled with more than one denial rationale), or a value smaller than the total number of denials (which one would expect if not all denials needed to have a rationale). While there may well be some consistent, logical explanations for each of the seemingly spurious situations occurring in the data, such explanations are critical and completely necessary for drawing conclusions from the data in an accurate way.
+			  In various analyses presented in this article, and many additional calculations that occurred in our open
+			source analyses of the raw data, we encountered what appear to be spurious or erroneous values in the raw data. For
+			example, we saw in our analysis of the 2022 CT consumer report card that one insurer
+			purportedly denied more claims in a plan year than they even received. Similarly, we saw in numerous
+			datasets that the sum of counts for the exhaustive list of denial rationales provided for the dataset
+			did not sum up to the count of all denials, nor did it consistently sum to a value larger than the total
+			number of denials (which one would expect if claims could be labeled with one or more denial rationale),
+			or a value smaller than the total number of denials (which one would expect if not all denials needed to
+			have a rationale).
 			
-			Validating the data before it is made public, according to clearly defined, \emph{programmatically} automated, rules, would allow consumers, researchers, regulators and policy makers to build trust in the data and take it at face value.
+			 While there may well be some consistent, logical explanations for each of the seemingly spurious 
+			situations occurring in the data that we missed, such explanations were not obvious to us, and are critical and completely 
+			necessary for drawing conclusions from the data in an accurate way. Understanding such subtleties across 
+			the landscape of all existing data appears (to us, anyway) to be a monumental and difficult task.
+			
+			
+			Validating the data before it is made public, according to clearly defined, \emph{programmatically automated},
+			rules, would allow consumers, researchers, regulators and policy makers to build trust in the
+			data and take it at face value.
 			
 			\item \underline{Enhancement}
 			
 			In addition to the need for standardization and validation of the data elements that are already common among the datasets we've presented here, the landscape of data also makes clear that there is a serious need for \emph{more} data.
 			
-			The public data we've been able to access thus far includes relatively complete data from federal marketplace plans, as well as limited data from a handful of state marketplaces, and relatively complete data from one state. Ideally, standardized and validated denial data for \emph{all} insurance plans in the U.S., including all state marketplace plans, and all employer sponsored plans, would be made available to the public to allow for meaningful understanding of the entire ecosystem, and systemic patterns.
+			  The public data we've been able to access thus far includes relatively complete data from federal marketplace
+			plans, as well as limited data from a handful of state marketplaces, and relatively complete data from one
+			state. Ideally, standardized and validated denial data for \emph{all} insurance plans in the U.S., including all state marketplace plans, 
+			all commercial plans including self-funded employer plans, and all Medicare, Medicare Advantage, and Medicaid plans, would be made available to the public to allow 
+			for meaningful understanding of the entire ecosystem, and systemic patterns.
 			
-			In addition to enhancing the breadth of insurance plan markets covered by public denial data, there is also a need to enhance the depth and detail included in data elements for each plan or insurer recorded in the data. For example, only some of the datasets we've considered included a breakdown of denials by rationale, and of those, many recorded the fraction of denials with each rationale type, but then neglected to retain information about the rationale breakdown when reporting internal and external appeals. This means, for example, that it is impossible with such datasets to calculate how often NMN denials specifically are being appealed, or how often NMN denials are being overturned via external appeal, etc. There are a huge number of important questions of this sort that simply cannot be addressed given the detail with which the data is reported across these sources. Because the data is not reported in enough detail to answer such questions, such questions cannot be addressed, monitored or even regulated by until more data is required from insurers.
+			
+			In addition to enhancing the breadth of insurance plan markets covered by public denial data, there is also a need to enhance the depth and detail included in data elements for each plan or insurer recorded in the data. For example, only some of the datasets we've considered included a breakdown of denials by rationale, and of those, many recorded the fraction of denials with each rationale type, but then neglected to retain information about the rationale breakdown when reporting internal and external appeals. This means, for example, that it is impossible with such datasets to calculate how often NMN denials specifically are being appealed, or how often NMN denials are being overturned via external appeal, etc. There are a huge number of important questions of this sort that simply cannot
+			be addressed given the detail with which the data is reported across these sources. Because the data is not reported 
+			in enough detail to answer such questions, such questions cannot be addressed or monitored by members of the public 
+			or organizations that help advocate for consumer protection.
 			
 		\end{itemize}
 		
 		\subsection{Need for Standardization and Streamlining of Appeals Processes}
 		
-		In every dataset considered here, we have seen that appeal rates are low, while appeal overturn rates are orders of magnitude larger. We need to empower consumers and their providers to successfully and accessibly appeal denials in all cases where the denials are contractually inappropriate. To do this efficiently at scale, across different insurance market segments, it would be immensely useful to move toward a common, standardized and streamlined appeal process, whose details are not as dependent on state or market segment of the insured as current processes are.
+		In every dataset considered here, we have seen that appeal rates are low, while appeal overturn rates are orders of magnitude larger. We need to empower consumers and their providers to successfully and accessibly appeal denials in all cases where the denials are contractually inappropriate. To do this efficiently at scale, across different insurance market segments, it
+		would be immensely useful to move toward a common, standardized and streamlined appeal process, whose details are not 
+		as dependent on the specific plan, plan type, state, or market segment of the insured as current processes are.
 		
 		\chapter{Recommendations}\label{recommendations}
 		
@@ -2529,75 +2677,222 @@
 		
 		In this section we propose policy recommendations for lawmakers and regulators seeking to improve the situations that patients experience when facing contractually inappropriate coverage denials.
 		
-		\subsubsection{Disallow Requirements For Internal Appeals}
+		\subsubsection{Require Qualification for Internal Appeal Adjudication}
 		
+		In many commercial contexts, consumers seeking recourse for what they view to be inappropriate denials are required 
+		to submit and wait for determinations in internal appeals before proceeding with external appeals. This can have
+		dire medical consequences for those who are inappropriately forced to wait \footnote{While some may claim that existing \href{https://www.healthcare.gov/marketplace-appeals/expedited-appeal/}{expedited processes} for urgent internal (and simultaneous external) appeals solve this problem, this is a faulty argument. Even expedited internal processes add days 
+			to the total time taken to get an appeal resolved, and pose administrative burdens to patients seeking care, and their providers. The administrative 
+			burdens (i.e. the work it requires from a patient in coordination with their provider to prepare and submit an internal appeal) take time that is often 
+			left unconsidered when estimating the total expected delay that will be caused by review of the internal appeal itself; in other words, even if a patient 
+			is able to submit an internal and external appeal simultaneously in an urgent situation, they will need to spend extra time preparing and submitting the 
+			internal portion of the appeal than they would if such steps were not required, which is liable to cause delays in their care. Even a delay of a few days,
+			which is the minimum expected delay in expedited cases, unrealistically assuming there is zero time contribution necessary to coordinate with a physician 
+			and prepare the appeal, can lead to serious outcomes for those in dire medical situations.}. We contend that insurers have no 
+		place judging the legality and medical validity of their own behaviors, unless they can prove, with data, that 
+		they are in fact retaining impartiality despite the clear monetary incentive at play.
 		
-		
-		In most contexts, consumers seeking recourse for what they view to be inappropriate denials are required to submit and wait for determinations in internal appeals before proceeding with external appeals. This can have dire medical consequences for those who are inappropriately forced to wait \footnote{We note explicitly that while some may claim that existing \href{https://www.healthcare.gov/marketplace-appeals/expedited-appeal/}{expedited processes} for urgent internal (and simultaneous external) appeals solve this problem, this is a faulty argument. Even expedited internal processes add numerous days to the total time taken to get an appeal resolved, and if the internal process is biased (which it appears to be, as we explained above), this is a completely unjust delay that does exactly one thing: increase the likelihood that insurers save more money due to appeals that get dropped due to the barriers associated with submitting. Even a delay of a few days, which is the minimum expected delay in expedited cases, can lead to serious outcomes for those in dire medical situations.}. We contend that insurers have no place judging the legality and medical validity of their own behaviors. We suggest regulators provide consumers with direct, immediate access to unbiased external
-		appeals processes.
-		
-		 At the least, insurers should have to qualify, based on evaluation of their historical
-		appeal adjudication outcomes, to be involved in judging the merit of their customers appeals. One possibility for implementing such a policy would be to utilize an IRR measure as a stopgap for inappropriate internal appeal practices. For example, insurers might qualify to administer their own internal appeal process if their historical adjudication determinations maintain an IRR consistency measure greater than a set threshold, and otherwise would be forced to allow their consumers to directly submit appeals to external or federally administered processes. Such an IRR evaluation could
-		be accomplished either by restricting attention to externally appealed, but internally upheld, denials,
-		though a more faithful representation of all internal appeals could be accessed by randomly auditing
+		Insurers should have to qualify, based on \emph{public and transparent} evaluation of their historical
+		appeal adjudication outcomes, to be involved in judging the merit of their customers' appeals. One possibility for 
+		implementing such a policy would be to utilize an IRR measure as a stopgap for inappropriate internal appeal 
+		practices. For example, insurers might qualify to administer their own internal appeal process if their historical 
+		adjudication determinations maintain an IRR consistency measure with independent review audits that is greater than 
+		a set threshold, and otherwise would be forced to allow their consumers to directly submit appeals via externally 
+		administered processes. Such an IRR evaluation could
+		be accomplished by randomly auditing
 		a sample of internal appeals each year and having them re-reviewed by external agencies.
 		
-		One clear argument against completely eliminating internal appeals is that it might, in principal, raise costs to our system, and as a result be infeasible to implement: a more direct line to external appeals would likely lead to more external appeals, perhaps even an inappropriately large amount, if the system were abused by consumers, and someone will have to administer and pay for the external appeal agencies. We contend that this cost is \emph{already} borne by consumers, in the sense that internal appeals can be abused in the same way, and cost money to administer that is surely passed down to consumers in the form of increases to their premiums. Our proposal is to simply remove insurers from being involved in these processes directly; if insurers maintain that they do perform internal appeal adjudication appropriately, via processes consistent with best-practices, then they surely would be willing to admit that the processes are costly, and require ample time from trained medical experts, so their removal from the process would save them lots of money that they could pass down to consumers in the form of reduced premiums.
+		One clear argument against eliminating internal appeals for some insurers is that it might, in principal, raise costs to our system, and as a result
+		be infeasible to implement: a more direct line to external appeals would likely lead to more external appeals,
+		perhaps even an inappropriately large amount, if the system were abused by consumers, and \emph{someone} will have to administer and
+		pay for the external appeals to be adjudicated. We contend that this cost is \emph{already} borne by consumers, in the sense that internal appeals
+		can be abused in the same way, and cost money to administer that is presumably passed down to consumers in the form of increases to their
+		premiums. 
 		
-		One might suggest that insurers can administer these processes much more efficiently than external review agencies, since they have privileged access to their own patient data, and medical review networks; while that is possible in principle, an explanation more consistent with existing evidence would be that they can perform internal reviews efficiently because they do so in ways designed to maximize profit, rather than fairness or accuracy. For example, it might be the case that they use automated appeal review processes similar to those some insurers have been found to use in their initial denial practices \cite{armstrong2023a}, with reviewers merely rubber-stamping the adjudication determinations.
+		Our proposal is to simply remove insurers who cannot pass more strict quality audits from being involved in these processes directly; 
+		if such insurers maintain that they perform internal appeal adjudication appropriately, via processes consistent with best-practices, then their
+		internal processes are likely to be costly, and require ample time from trained medical experts, so an insurers removal from the process would save them 
+		money that they could pass down to consumers in the form of reduced premiums, or pass up to the external process administrators.
+		In short, if appeals are currently adjudicated appropriately, the money to continue adjudicating appropriately is already being spent;
+		it is a matter of who is getting paid to do that work, and by whom. If appeals are \emph{not} currently being adjudicated appropriately,
+		then in fact insurers might be adjudicating with less money than can reasonably be spent to accomplish adjudication \emph{appropriately}.
+		If that is the case, it will collectively cost more money, but the alternative is surely more problematic.
 		
-		Until insurers can furnish external appeal outcome data that displays their ability to evaluate claim validity in the same way unbiased third parties with no profit incentive can, it seems clear that they have no place presiding as judges over their disputes with their customers, nor over their disputes with medical experts. 
+		One might suggest that insurers can administer these appeal processes much more efficiently than external review agencies, since they have privileged
+		access to their own patient data, medical review networks, and efficient business structures, so they should be left to tend to the processes 
+		without interference or further regulation to save us all money; while that is possible, it it by no means clear that the ability to adjudicate more \emph{efficiently} 
+		corresponds to an ability to adjudicate more \emph{justly} or \emph{appropriately} while maintaining that efficiency, which, one would hope, is the goal. If insurers were forced to
+		qualify for the ability to review internal appeals, such qualification audits might shed light on whether the claim that
+		insurers can adjudicate appeals with the highest efficiency, while maintaining appropriate adjudication outcomes, is in fact true.
+		If it is, that would be beneficial for insurers and patients alike, and public access to the audit data would build
+		trust among consumers both in accountability, and in well-performing insurers themselves. Such a policy would
+		allow the best actors in the space to be rewarded by consumers for their commitment to fair practices.
 		
-		\subsubsection{Levy Insurer Fines For External Appeal Overturns}
+		Unless insurers can furnish data that displays their ability to evaluate claim validity in the same way third parties with no profit incentive can, 
+		we believe it is inappropriate to have them preside over their disputes with their customers, and the medical experts representing their customers. 
+		
+		
+		\subsubsection{Levy Insurer Fines For Commercial External Appeal Overturns}
 		
 		\begin{itemize}
-			\item Consumers pay when they their care is not covered, they sometimes pay for the privilege of submitting an external appeal that they subsequently lose (for example, New York allows insurers to \href{https://www.dfs.ny.gov/complaints/file_external_appeal}{charge consumers} for the right to externally appeal a decision, if the insured loses their appeal), and when they jump through enough hoops to get an unbiased appeal review and win back coverage, they still pay -- even in this best case denial scenario, they've paid their premium, potentially paid out of pocket or delayed their care while appealing, and certainly paid in the form of time spent rectifying the situation. While they may recoup their coverage, their best case scenario when faced with contractually inappropriate denials is paying this lesser of two costs. In some cases, patients who understand this predicament correctly conclude that it will cost them less to just pay out of pocket, or forego care, for a contractually inappropriate denial rather than paying the time-cost of attempting to win an appeal.
 			
-			\item On the other hand, insurers are incentivized to inappropriately deny; in their worst case, they pay what they owe according to their contract. For plans governed by \href{https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/erisa}{ERISA}, insurers don't even face the risk of being sued for damages; ERISA provides them the safety to act in bad faith via denial practices and face a palatable worst case. Lawmakers need to make it actually cost insurers to deny inappropriately. The cost to consumers is their health, their money, and their time; their worst case scenario involves dire medical consequences, including death. Make the stakes for insurers administering contractually inappropriate denials appropriately serious, by levying heavy fines for external appeal overturns, and you will miraculously see insurers adjudicating their own claims in the same way that unbiased third parties do. Regardless of intention, \emph{conceptually} insurers are not making mistakes when they deny in contractually inappropriate ways; they are making the monetarily sound choice given the legal context in which they are being regulated. At the very least, states like New York that allow consumers to be charged for inappropriately submitting an external appeal, as measured by an external review board, ought to allow insurers to be charged, to the direct benefit of the consumer, for inappropriately denying an appeal, as measured by that same external review board. Anything short of this is inequitable.
+			\item  Patients pay when their care is not covered, they sometimes pay retroactively for accessing an external appeal process that they subsequently lose (for example, New
+			York allows commercial insurers to \href{https://www.dfs.ny.gov/complaints/file_external_appeal}{charge consumers} for the right to externally appeal a decision, if the insured
+			ultimately loses their external appeal),
+			and if and when they jump through enough hoops to get an independent appeal review and win back coverage, they still pay --  even in the \emph{best case} denial overturn scenario, they've paid their premium,
+			potentially paid out of pocket or delayed their care while appealing, and certainly paid in the form of time spent rectifying the situation. While they
+			may recoup their coverage, their best case scenario when faced with contractually inappropriate denials is paying this lesser of two costs.
+			In some cases, patients who understand this predicament correctly conclude that it will cost them less to just pay out of pocket, or forego care,
+			for a contractually inappropriate denial than it would to pay the monetary and temporal cost of attempting to win an appeal.
+			
+			\item On the other hand, insurers are monetarily incentivized to inappropriately deny (whether or not they act based on this incentive); in their worst case, they pay what 
+			they owe according to their contracts plus the administrative burden of adjudicating appeals. The numbers we?ve studied show that the frequency and monetary value 
+			of appealed denials, compared to the frequency and monetary values of denials themselves, are such that these worst case appeals scenarios could sensibly comprise an accepted piece 
+			of an overall profitable process, if there are enough inappropriate denials that go uncontested.
+			
+			For plans to which \href{https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/erisa}{ERISA} applies, insurers
+			don't even face the risk of being sued for damages; ERISA provides them relative safety to act in bad faith via denial practices
+			and face a palatable worst case, if they so choose.
+			
+			Lawmakers need to make it actually cost insurers to deny inappropriately. The cost to consumers
+			is their health, their money, and their time; their worst case scenario involves dire medical consequences, including death. 
+			
+			Make the stakes for insurers administering contractually inappropriate denials appropriately serious, by levying heavy fines 
+			for external appeal overturns, and we might see insurers begin adjudicating their own claims with high IRR consistency with third parties.
+			At the least, we will remove a troubling perverse incentive for inappropriate denials, which will strengthen
+			consumer trust in industry practices.
+			
+			Regardless of intention, monetarily insurers are not making mistakes when they deny in contractually inappropriate ways; they are 
+			making the monetarily sound choice given the legal context in which they are being regulated. At the very least, in cases where consumers 
+			can be charged for submitting an external appeal which ends up being upheld, regulators ought to allow insurers to be charged a fee in 
+			addition to coverage, to the direct benefit of the consumer, for inappropriately denying an appeal as measured by that same external review board.
+			
+			Just as insurers may recoup a small portion of their administrative costs for administering an appeal when the insured
+			was submitting a faulty appeal, consumers should be able to recoup part of \emph{their} administrative costs (e.g. hours on hold,
+			in the middle of their work day) for orchestrating an appeal for a faulty denial.
+		
 		\end{itemize}
 		
 		\subsubsection{Mandate Transparent, Standardized Data Reporting For Denials and Appeals Across All Plans}
 		
 		\begin{itemize}
-			\item Lawmakers and regulators should make denial data and appeals data for all plans in the U.S. available, accessible, and transparent in a \emph{standardized} format. They should do so in a way that is agnostic to details about where and how the plan is purchased: e.g. whether the plan happens to be sponsored by an employer, be governed by ERISA, or be sold on the PA marketplace. They should also do so in such a way that the data elements reported are standardized across marketplaces and plan types, and in such a way that those data elements are sufficient to understand intricacies and behaviors that inform whether consumers need more protection from inappropriate insurer practices. For example, claims counts, denial counts, internal appeals counts, and external appeals counts for a given plan ought to all be reported in a single place, because each element of data is relevant to and informs the others, and some are meaningless without appropriate context. As we've seen above, currently reported data is reported in fragmented and non-standard ways which renders it unnecessarily complicated and opaque.
 			
-			\item The data elements required ought to be carefully formulated. For example, we saw in the Federal marketplace data and the New York Health Care Claims Reports data that insurers are asked to include the breakdown of denial rationales along with the denial counts, and that in each case a huge majority of the denial rationales were placed in the so-called ``Other'' category. This provides very little information about the true underlying rationale for a majority of the denials in the dataset. Given this result, regulators and lawmakers ought to change the allowable categories that insurers report to be a larger, but still \emph{mutually exclusive and completely exhaustive} collection of categories including ``Other'', such that true rationales for a majority of the data are reported, with ``Other'' serving as a backup catch-all necessary for only a small subset of the data. The prevalence of ``Other'' in the reporting indicates an issue with either the breakdown being presented to insurers, or enforcement of accurate reporting, and in either case issues like this need to be addressed to make this data actionable. As another example, in the NY health care claims reports we saw that the numbers of denials for medical necessity were reported for each insurer. This is an important subset of claims denials to understand well, so it is fortunate that such denials are specified. However, the same reports do not indicate which subset of appeals correspond to each subcategory of initial denial, so one cannot, for example, use the data to understand what the internal appeal rate is for NMN denials specifically. Transparency of such metrics is crucial for meaningful change and monitoring.
+			\item Lawmakers and regulators should make denial data and appeals data for all commercial plans in the U.S. available,
+			accessible, and transparent in a standardized format. They should do so in a way that is agnostic, to the extent possible,
+			to details about where and how the plan is purchased. For example, whether a plan 
+			happens to be sponsored by an employer, be governed by ERISA, or be sold on the PA marketplace, it would 
+			not be insurmountable to report denial rates and appeal rates via standardized, general data templates 
+			that could accommodate the differences in governing regulations, and underlying data details. This is a 
+			tractable, if nontrivial, data schema problem.
 			
-			\item In requiring such data to be reported, lawmakers and regulators ought to require insurers to report the data to centralized agencies, and additionally require those centralized agencies to host publicly accessible copies of that data. Merely requiring insurers to report the data in a public way directly is insufficient, because it would make the task of compiling the data, enforcing standardization, and even enforcing compliance with posting, unwieldy and unrealistic.
+			They should also do so in such a way that the data elements reported are standardized across marketplaces 
+			and plan types, and in such a way that those data elements are sufficient to understand intricacies and behaviors 
+			that inform whether consumers need more protection from inappropriate insurer practices. For example, claims counts, 
+			denial counts, internal appeals counts, and external appeals counts for a given plan ought to all be reported in a single place, 
+			because each element of data is relevant to and informs the others, and some are meaningless without appropriate context. As we've 
+			seen above, currently reported data is reported in fragmented and non-standard ways which renders it unnecessarily complicated and opaque.
 			
-			\item Regulators and lawmakers also ought to \emph{validate} the data insurers are providing, and impose penalties for data which is faulty or misrepresented. If there is no requirement or mechanism to enforce actual validity of the data, requiring the data to be reported would be much less meaningful. At a minimum, basic checks should be validated, such as total claims submitted being larger than claims denied, and other comparisons whose failure would indicate nonsensical data. In all of the data we've analyzed here, we've done such basic validation checks manually, and often had to \emph{throw out portions of the data which failed the basic checks}.
+			\item The data elements required ought to be carefully formulated, and routinely evaluated for efficacy. For example, we saw in the Federal marketplace data and the New York Health 
+			Care Claims Reports data that insurers are asked to include the breakdown of denial rationales along with the denial counts, and that in each 
+			case a huge majority of the denial rationales were placed in the so-called ``Other'' category. This provides very little information about the true 
+			underlying rationale for a majority of the denials in the dataset.
+			
+			Given this result, regulators and lawmakers ought  investigate the underlying cause for such pervasive use of the "Other" categories. 
+			Understanding the cause will help inform an appropriate solution. If the cause is truly that most denials are denied
+			for reasons that can not be characterized with existing rationale options, the solution is simple: change the allowable categories
+			with which insurers can report
+			to be a larger, but still mutually exclusive and completely exhaustive collection of categories including ``Other'',
+			such that true rationales for a majority of the data are reported, with "Other" serving as a backup catch-all necessary
+			for only a small subset of the data.
+			
+			The prevalence of ``Other'' in the reporting indicates an issue with either the breakdown being
+			presented to insurers, or enforcement of accurate reporting, and in either case issues like this need to be addressed to make
+			this data actionable.
+			
+			As another example, in the NY health care claims reports we saw that the numbers of denials
+			for medical necessity were reported for each insurer. This is an important subset of claims denials to understand
+			well, so it is fortunate that such denials are specified. However, the same reports do not indicate which subset of
+			appeals correspond to each subcategory of initial denial, so one cannot, for example, use the data to understand
+			what the internal appeal rate is for NMN denials specifically. Transparency of such metrics is crucial for meaningful
+			change and monitoring.
+			
+			\item In requiring such data to be reported, lawmakers and regulators ought to require insurers to report the data to centralized 
+			agencies, and additionally require those centralized agencies to host publicly accessible copies of that data. Merely requiring 
+			insurers to report the data in a public way directly is insufficient, because it would make the task of compiling the data, enforcing 
+			standardization, and even enforcing compliance with posting, unwieldy and unnecessarily complicated. This type of issue has been made clear in the hospital 
+			price transparency and transparency in pricing regulation efforts.
+			
+			\item Regulators and lawmakers also ought to validate the data insurers are providing, and impose penalties for data
+			which is faulty or misrepresented. If there is no requirement or mechanism to enforce actual validity of the data,
+			requiring the data to be reported would be much less meaningful. At a minimum, basic checks should be validated, such as
+			total claims submitted being larger than claims denied, and other comparisons whose failure would indicate nonsensical data. In all
+			of the data we've analyzed here, we've done such basic validation checks manually, and often had to throw out portions of the
+			data which failed the basic checks.
+		
+			
 		\end{itemize}
 		
-		\subsubsection{Mandate Transparent, Standardized Processes and Forms for Appeals Across All Plans}
+		\subsubsection{Mandate Transparent, Standardized Processes and Forms for Appeals Across All Commercial Plans}
 		
 		\begin{itemize}
-			\item Appeals processes are opaque and difficult to navigate for consumers, due largely to the fact that the processes vary by region, insurance market, and plan. While there are many resources that help guide patients through the process of submitting such appeals, the resources tend to be too generic to pertain precisely to the situations patients face. In reality, the details of appeals processes depend heavily on the details of ones plan, and even basic information such as the forms that must be filled out, the supporting documentation that must accompany an external appeal, and the existence or lack of a fee associated with an external appeal process is made opaque until one receives direct correspondence about the process from their insurer, or looks up bespoke rules pertaining to their situation (e.g. New York DFS regulated external appeals processes). This leads to an opaque landscape of processes, that is difficult for consumers, regulators and lawmakers to monitor, evaluate and regulate.
+			\item Commercial appeals processes are opaque and difficult to navigate for consumers, due largely to the fact that 
+			the processes vary by region, insurance market, and plan. While there are many resources that help guide 
+			patients through the process of submitting such appeals, the resources tend to be too generic to pertain 
+			precisely to the situations patients face. In reality, the details of appeals processes depend heavily on 
+			the details of ones plan, and even basic information such as the forms that must be filled out, the supporting 
+			documentation that must accompany an external appeal, and the existence or lack of a fee associated with an external 
+			appeal process is made opaque until one receives direct correspondence about the process from their insurer, or looks 
+			up bespoke rules pertaining to their situation. This leads to a landscape of processes that is difficult for 
+			consumers, regulators and lawmakers to navigate, monitor, evaluate and regulate.
 			
-			\item Regulators and lawmakers ought to standardize appeal processes across all insurance markets and plans, so that regardless of employment status or insurance market, a consistent set of standards for appeal rights and processes are guaranteed across the board. For example, one should not have to download a particular form specific to Insurer X when they externally appeal a decision; this allows Insurer X to impose implicit barriers (e.g. maybe they require the form to be faxed, rather than emailed), in a way that is essentially undetectable to the public, and puts undue burden on consumers to access the form, submit it, and abide by its bespoke, potentially unreasonable, rules and processes.
+			\item Regulators and lawmakers ought to standardize appeal processes across all commercial insurance markets and plans, 
+			so that regardless of employment status or insurance market, a consistent set of standards for appeal rights and 
+			processes are guaranteed across the board. For example, one should not have to download a particular form specific 
+			to Insurer X when they externally appeal a decision; this allows Insurer X to impose implicit barriers (e.g. maybe 
+			they require the form to be faxed, rather than emailed, so now those few people without a fax machine need to: take 
+			time off work and pay money to go access one; or, in all likelihood, just abandon the appeal), in a way that is essentially undetectable to the public, and puts 
+			undue burden on consumers to access the form, submit it, and abide by its bespoke, and potentially unreasonable, 
+			rules and processes.
 		\end{itemize}
 		
 		\subsection{Patient Recourse}
 		
-		In this section, we provide suggestions for patients, consumers, physicians and others seeking recourse in contexts that appear to involve contractually inappropriate denials. Our suggestions are informed by the data we analyzed throughout the article.
+		In this section, we provide suggestions for patients, consumers, physicians and others seeking recourse in
+		contexts that appear to involve contractually inappropriate denials received from commercial health insurance plans.
 		
 		\subsubsection{Appeal}
 		
-		When you receive a denial for coverage, keep an eye out for signs that it may be contractually inappropriate. If you suspect a denial is contractually inappropriate, or are not sure, it is worthwhile to appeal if you can navigate the process without committing too much time. Appealing denials can be time consuming and difficult, but all of the data we've studied here indicates high likelihood of success for those who appeal.
+		When you receive a denial for coverage, keep an eye out for signs that it may be contractually inappropriate. If you
+		suspect a denial is contractually inappropriate, or are not sure, it may be worthwhile to appeal if you can afford
+		to spend the time navigating the process. Appealing denials can be time consuming and difficult, but all of the data
+		we've studied here indicates high likelihood of success for those who appeal.
 		
 		\subsubsection{Contact Regulators}
 		
-		Contact your state department of insurance, state attorney generals offices, employer benefits managers, employers, and any other agencies or entities that wield power in regulating or affecting the behavior of your insurer. Do not settle for contractually inappropriate determinations. Reach out to us at \href{info@persius.org}{info@persius.org} if you are not sure who to contact or who the appropriate regulatory agency is in your particular situation.
+		Contact your state department of insurance, state attorney generals offices, employer benefits managers, employers, 
+		or whichever agencies or entities wield power in regulating or affecting the behavior of your particular insurance plan. 
+		Do not settle for contractually inappropriate determinations. Reach out to us at \href{info@persius.org}{info@persius.org} if you are not sure who 
+		to contact or who the appropriate regulatory agency is in your particular situation, and we can try to help guide you
+		to the most relevant help.
 		
 		\subsubsection{Contact Our Team For Help}
 		
 		We are building tools to help people navigate issues with their insurance, including internal and external appeals processes. If you are facing what you suspect is a contractually inappropriate denial, please feel free to reach out to our team at \href{info@persius.org}{info@persius.org}. Our services are and will always be completely free for individuals.
 		
-		Our vision is to build highly scalable, tech based tools to help drive initial appeal rates from a fraction of a percent to greater than 10\% among contractually inappropriate denials, and thereby change the monetary calculus for contractually inappropriate denials. More on this effort in forthcoming work.
+		      Our goal is to build scalable, tech based tools to help drive initial appeal rates higher for contractually inappropriate denials,
+		and thereby change the applicable monetary calculus.
+		Our goal is only to help with those denials which are contractually inappropriate, but we will work with you to determine if a denial appears 
+		contractually appropriate or not, and try to help in whatever ways we can. More on this effort in forthcoming work.
 		
 		
 		\subsubsection{Share Your Stories}
 		
-		Collectively, we as consumers have access to denial statistics related to our care that can serve as ground truth for the data submitted by insurers that we've studied in this article. The insurer submitted data is apparently neither manually vetted nor automatically validated for accuracy in reporting, which makes it troublesome and difficult to act on. We would like to crowd source our collective understanding of certain denial behaviors, without jeopardizing the privacy of peoples medical information, and we believe doing so in a community maintained, standardized way will empower consumers and regulators. Reach out to us at \href{info@persius.org}{info@persius.org} if you'd like to get involved or have a story to share.
+		Collectively, we as consumers have access to denial statistics related to our care that can serve as ground truth for the
+		data submitted by insurers that we've studied in this article. The insurer submitted data is sparse and not standardized, 
+		which makes it troublesome and difficult to act on. We would like to crowd source
+		our collective understanding of certain denial behaviors, and we believe doing so in a community maintained,
+		standardized way will empower consumers and regulators. Reach out to us at \href{info@persius.org}{info@persius.org} if you'd like to get involved
+		in the effort or have a story to share.
 
 		
 		\bibliographystyle{alpha}
