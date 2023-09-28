@@ -4,8 +4,9 @@ This repository houses the code and analyses for investigations and articles pro
 by [Persius](https://github.com/TPAFS).
 
 For every article we produce, our goal is to provide an accessible, transparent and open source view of the processes
-and analyses we performed on raw, publicly available data in order to draw our conclusions. Our hope is that this will empower
-readers and the community at large to:
+and analyses we performed on raw, publicly available data in order to draw our conclusions.
+
+Our hope is that this will empower readers and the community at large to:
 
 - Validate and audit all of our claims and results.
 - Improve on and fix our work in case of omissions or mistakes.
