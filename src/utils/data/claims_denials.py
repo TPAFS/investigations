@@ -3,6 +3,20 @@ import typing as t
 import pandas as pd
 
 
+def get_overturn_rate(
+    df: pd.DataFrame,
+    outcome_col_name: str = "Outcome",
+    overturn_val: str = "Insurer Denial Overturned",
+):
+    """
+    Given a pandas dataframe and outcome column, calculate overturn rate across the dataframe.
+    """
+    total_count = len(df)
+    overturn_count = len(df[df[outcome_col_name] == overturn_val])
+    fraction = overturn_count / total_count if total_count > 0 else -1
+    return fraction
+
+
 def get_overturn_rates_by_categorical_col(
     df: pd.DataFrame,
     categorical_col_name: str,
