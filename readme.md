@@ -4,8 +4,9 @@ This repository houses the code and analyses for investigations and articles pro
 by [Persius](https://github.com/TPAFS).
 
 For every article we produce, our goal is to provide an accessible, transparent and open source view of the processes
-and analyses we performed on raw, publicly available data in order to draw our conclusions. Our hope is that this will empower
-readers and the community at large to:
+and analyses we performed on raw, publicly available data in order to draw our conclusions.
+
+Our hope is that this will empower readers and the community at large to:
 
 - Validate and audit all of our claims and results.
 - Improve on and fix our work in case of omissions or mistakes.
@@ -17,8 +18,8 @@ Every folder in [./investigations](./investigations) corresponds to an article h
 
 Each folder will house a collection of code and artifacts such as preprocessing logic, jupyter notebooks, plots, etc., which will allow one to reproduce all of the data, analyses and (static) figures appearing in an article.
 
-For those who are unable or would prefer not to actually setup a necessary environment and run the jupyter notebooks, we also provide static html outputs corresponding to the
-result of running each notebook.
+For those who are unable or would prefer not to actually setup a necessary environment to run the jupyter notebooks, the notebook outputs are retained, and can be
+viewed without setup.
 
 ## Running Notebooks
 
@@ -43,7 +44,7 @@ Each notebook in each investigation should now be usable in a self-contained way
 
 We welcome contributions from all, and constructive feedback and discussion of any form.
 
-Please see .github/CONTRIBUTING.md for more information about how to contribute to this project, or head to the github Discussions tab to join or start a conversation.
+Please see [./.github/CONTRIBUTING.md](./.github/CONTRIBUTING.md) for more information about how to contribute to this project, or head to the github Discussions tab to join or start a conversation.
 ## License
 
 **Data, Documentation and Other Media**
